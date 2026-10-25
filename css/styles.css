@@ -266,6 +266,70 @@ p {
   transform: translateY(-6px) rotate(-45deg);
 }
 
+/* Header actions: language toggle + hamburger */
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.65rem;
+  flex-shrink: 0;
+}
+
+.language-toggle {
+  display: inline-flex;
+  min-width: 76px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1rem;
+
+  border: 1px solid var(--color-primary, #164e8a);
+  border-radius: 999px;
+
+  background: #ffffff;
+  color: var(--color-primary, #164e8a);
+
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.language-toggle:hover {
+  background: var(--color-primary, #164e8a);
+  color: #ffffff;
+}
+
+.language-toggle:focus-visible {
+  outline: 3px solid #e4a83b;
+  outline-offset: 3px;
+}
+
+/* Keep both controls accessible on small screens */
+@media (max-width: 768px) {
+  .header-actions {
+    gap: 0.5rem;
+  }
+
+  .language-toggle {
+    min-width: 72px;
+    min-height: 46px;
+    padding: 0.65rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .language-toggle {
+    transition: none;
+  }
+}
+
 /* =========================================================
    Hero
    ========================================================= */
@@ -304,20 +368,20 @@ p {
   max-width: 860px;
 }
 
-.hero-eyebrow {
+/* .hero-eyebrow {
   padding: 8px 15px;
   margin-bottom: 26px;
-  border: 1px solid #d7e7f7;
+  border: 1px solid #e5ebf2;
   border-radius: var(--radius-pill);
   background: rgb(255 255 255 / 75%);
-}
+} */
 
 .hero-title {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 0 25px;
-  color: var(--color-primary-dark);
+  margin: 0 0 2px;
+  color: #dee2e7;
   font-size: clamp(3.7rem, 10vw, 7.5rem);
   font-weight: 800;
   letter-spacing: -0.085em;
@@ -326,17 +390,17 @@ p {
 
 .hero-title > span + span {
   margin-top: 8px;
-  color: var(--color-primary);
+  color: #dee2e7;
 }
 
 .title-period {
-  color: #75a9dd;
+  color: #f5ca7b;
 }
 
 .hero-tagline {
   max-width: 650px;
   margin-bottom: 14px;
-  color: #273e58;
+  color: #d5e1ef;
   font-size: clamp(1.15rem, 2.6vw, 1.7rem);
   font-weight: 600;
   letter-spacing: -0.025em;
@@ -348,11 +412,12 @@ p {
   margin-bottom: 20px;
   font-size: 0.98rem;
   line-height: 1.85;
+  color: #dee2e7;
 }
 
 .hero-mantra {
   margin-bottom: 30px;
-  color: var(--color-primary);
+  color: #dee2e7;
   font-size: 1.13rem;
   font-weight: 600;
   letter-spacing: 0.025em;
@@ -398,7 +463,7 @@ p {
 
 .hero-secondary-link {
   margin-top: 19px;
-  color: var(--color-primary);
+  color: #dee2e7;
   font-size: 0.88rem;
   font-weight: 600;
 }
@@ -1792,4 +1857,62 @@ p {
   .catalogue-card-image img {
     transition: none;
   }
+}
+
+/* =========================================================
+   Homepage Hero — Responsive Background Images
+   ========================================================= */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+
+  background-color: #123b65;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(8, 32, 58, 0.84) 0%,
+      rgba(8, 32, 58, 0.62) 50%,
+      rgba(8, 32, 58, 0.28) 100%
+    ),
+    url("../images/bg-desktop-t2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Tablet */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .hero {
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(8, 32, 58, 0.82) 0%,
+        rgba(8, 32, 58, 0.55) 65%,
+        rgba(8, 32, 58, 0.3) 100%
+      ),
+      url("../images/bg-desktop.jpg");
+    background-position: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .hero {
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(8, 32, 58, 0.15) 0%,
+        rgba(8, 32, 58, 0.15) 45%,
+        rgba(8, 32, 58, 0.10) 100%
+      ),
+      /* url("../images/hero-mobile.jpg"); */
+    url("../images/k-m-morning-bg.avif");
+    background-position: center;
+  }
+}
+
+/* Avoid decorative shapes competing with the photograph */
+.hero-decoration {
+  display: none;
 }
