@@ -1,0 +1,292 @@
+{
+  "pageTitle": "Kailash ki Karuna | Care Beyond Boundaries",
+  "metaDescription": "Kailash ki Karuna helps people access home-care medical equipment through a refundable security deposit.",
+
+  "skipLink": "Skip to content",
+  "languageLabel": "Language",
+  "menuLabel": "Open navigation menu",
+  "brandHomeLabel": "Kailash ki Karuna home",
+
+  "navHome": "Home",
+  "navStory": "Our Story",
+  "navEquipment": "Equipment",
+  "navImpact": "Social Services",
+  "navAchievements": "Achievements",
+  "navContact": "Contact Us",
+
+  "heroEyebrow": "Compassion in action",
+  "heroTagline": "Medical equipment when you need it. Compassion when it matters.",
+  "heroDescription": "Access essential home-care medical equipment with a fully refundable security deposit, subject to our terms.",
+  "heroCta": "Get home-care equipment",
+  "heroSecondary": "Discover our mission",
+  "trustNote": "Care with dignity. Support with transparency.",
+
+  "scrollToStory": "Scroll to our story",
+
+  "storyEyebrow": "Who we are",
+  "storyTitle": "Care should never be out of reach.",
+  "storyDescription": "A little support can make recovery at home easier for an entire family.",
+  "carouselLabel": "Our story",
+
+  "storyCard1Title": "The heart behind our work",
+  "storyCard1Text": "Our mission begins with a simple belief: everyone deserves access to essential care.",
+  "storyCard2Title": "Support for families",
+  "storyCard2Text": "We help families access equipment they need for recovery and care at home.",
+  "storyCard3Title": "Service with dignity",
+  "storyCard3Text": "We aim to make support more accessible while treating every person with respect.",
+
+  "storyImage1Alt": "Photograph representing the organization's mission",
+  "storyImage2Alt": "Photograph of the team helping a family",
+  "storyImage3Alt": "Photograph representing community service",
+  "imagePlaceholder": "Your image",
+  "pauseCarousel": "Pause",
+
+  "equipmentEyebrow": "Home-care essentials",
+  "equipmentTitle": "Equipment for better recovery.",
+  "equipmentDescription": "Practical support for patients and caregivers at home.",
+  "viewAll": "View all equipment →",
+  "learnMore": "Learn more",
+
+  "wheelchairTitle": "Wheelchairs",
+  "wheelchairText": "Support for safe, more comfortable mobility.",
+  "wheelchairImageLabel": "Learn about wheelchairs",
+
+  "bedTitle": "Hospital beds",
+  "bedText": "Home-care support for rest and recovery.",
+  "bedImageLabel": "Learn about hospital beds",
+
+  "oxygenTitle": "Oxygen concentrators",
+  "oxygenText": "Equipment for prescribed oxygen support.",
+  "oxygenImageLabel": "Learn about oxygen concentrators",
+
+  "nebulizerTitle": "Nebulizers",
+  "nebulizerText": "Respiratory-care equipment for home use.",
+  "nebulizerImageLabel": "Learn about nebulizers",
+
+  "walkerTitle": "Walkers",
+  "walkerText": "Extra stability and support while walking.",
+  "walkerImageLabel": "Learn about walkers",
+
+  "mattressTitle": "Medical air mattresses",
+  "mattressText": "Pressure-relief support for suitable home-care needs.",
+  "mattressImageLabel": "Learn about medical air mattresses",
+
+  "impactEyebrow": "Why it matters",
+  "impactTitle": "Care that supports the whole family.",
+  "impactText": "Access to appropriate medical equipment can make caring for a loved one at home more manageable. We work to reduce barriers and offer practical support with dignity.",
+  "impactCta": "Connect with us",
+
+  "impact1Title": "Accessible support",
+  "impact1Text": "Essential equipment made available through our support model.",
+  "impact2Title": "Transparent process",
+  "impact2Text": "Clear information about deposits, eligibility, and returns.",
+  "impact3Title": "Community first",
+  "impact3Text": "Support shaped around the needs of patients and caregivers.",
+
+  "achievementsEyebrow": "Our commitment",
+  "achievementsTitle": "Every act of care counts.",
+  "achievementsText": "Our impact is built through the people we serve, the families we support, and the community that stands with us.",
+  "achievementsLink": "Discover our achievements →",
+
+  "footerDescription": "Compassionate support for better care at home.",
+  "footerExplore": "Explore",
+  "footerConnect": "Get in touch",
+  "footerPrivacy": "Privacy Policy",
+  "footerTerms": "Terms & Conditions",
+  "copyright": "Kailash ki Karuna. All rights reserved.",
+  "footerNote": "Equipment availability and deposit terms apply.",
+
+  "Note": "----------------- EQUIPMENT JSON DATA STARTS --------------",
+
+
+  "equipmentPageTitle": "Home-Care Medical Equipment | Kailash ki Karuna",
+  "equipmentMetaDescription": "Explore home-care medical equipment from Kailash ki Karuna and request availability with a refundable security deposit.",
+  "mainNavigationLabel": "Main navigation",
+
+  "equipmentHeroTitle": "Get home-care equipment.",
+  "equipmentHeroDescription": "Find the equipment you need. Send us a request, and our team will guide you through availability and the refundable security deposit.",
+  "equipmentSearchPlaceholder": "Search wheelchairs, beds, oxygen care...",
+  "clearSearchLabel": "Clear search",
+  "equipmentSearchHint": "Search by equipment name. Results update as you type.",
+  "availableEquipment": "Available equipment",
+  "exploreEquipment": "Explore equipment",
+  "noEquipmentFound": "No matching equipment found",
+  "noEquipmentDescription": "Try a different equipment name, or contact our team for assistance.",
+  "showAllEquipment": "Show all equipment",
+  "beyondEquipment": "Beyond equipment",
+  "otherServicesTitle": "Other services",
+  "otherServicesDescription": "Additional community services we aim to connect people with.",
+  "ambulanceService": "Ambulance service",
+  "ambulanceDescription": "Assistance connecting with ambulance services.",
+  "foggingServices": "Fogging services",
+  "foggingDescription": "Community-focused mosquito-control services.",
+  "hypoSpray": "Hypo spray",
+  "hypoSprayDescription": "Information about this service will be added soon.",
+  "detailsComingSoon": "Details coming soon",
+
+
+  "footerEquipment": "Home-care equipment",
+  "footerGetInTouch": "Get in touch",
+
+
+  "copyrightText": "Kailash ki Karuna. All rights reserved.",
+  "equipmentFooterNote": "Equipment availability and deposit terms apply.",
+  "equipmentRequest": "Equipment request",
+  "requestAvailability": "Request availability",
+  "closeRequestForm": "Close request form",
+  "importantConditions": "Important conditions",
+  "equipmentCondition1": "Use equipment according to its instructions and under appropriate medical-professional guidance. It is not a substitute for medical advice or emergency care.",
+  "equipmentCondition2": "Return equipment by the agreed date in the condition received, allowing for ordinary wear and tear. Report damage or faults promptly.",
+  "equipmentCondition3": "The standard maximum loan period is 30 days, subject to availability and any written extension approved by the organization.",
+  "equipmentCondition4": "Provide accurate information, use the equipment only for its intended purpose, and do not transfer, sell, or misuse it.",
+  "equipmentConditionsNote": "Requests are subject to availability, identity/eligibility checks where applicable, and the organization's equipment handover process. The organization will explain the deposit and refund terms before handover.",
+  "readFullTerms": "Read full terms and conditions →",
+  "yourFullName": "Your full name *",
+  "equipmentFor": "Equipment is for *",
+  "equipmentRecipientPlaceholder": "Self, mother, father...",
+  "requiredFrom": "Required from *",
+  "intendedReturnDate": "Intended return date *",
+  "fullAddressCity": "Full address and city *",
+  "acceptConditionsText": "I have read and understood the conditions above and the",
+  "fullTermsLink": "full terms and conditions",
+  "requestPrivacyNote": "Your details will be included in the request message you choose to send to our team. Please avoid entering unnecessary medical or other sensitive information.",
+  "continueToContact": "Continue to contact",
+  "almostThere": "Almost there",
+  "sendYourRequest": "Send your request",
+  "requestReadyDescription": "Your request is ready. Choose how you'd like to contact us.",
+  "closeContactOptions": "Close contact options",
+  "continueWhatsApp": "Continue with WhatsApp",
+  "continueEmail": "Continue with email",
+  "contactSendNotice": "Your messaging or email application will open with a prepared draft. You must send the message yourself. Your request is not a confirmed reservation until our team responds.",
+
+  "com":"------------------------ OUR STORY PAGE -----------",
+
+
+  "aboutPageTitle": "Our Story | Kailash ki Karuna",
+  "aboutMetaDescription": "Discover the journey, people, and stories behind Kailash ki Karuna.",
+  "aboutHeroEyebrow": "A journey of faith, compassion and service",
+  "aboutHeroTitle": "Every journey begins with a thought.",
+  "aboutHeroDescription": "Discover the people, moments, and purpose behind Kailash ki Karuna.",
+  "aboutHeroCta": "Meet our founder",
+  "founderEyebrow": "A personal message",
+  "founderTitle": "The thought behind our service.",
+  "founderDescription": "Hear directly from our founder about the vision, experiences, and values behind Kailash ki Karuna.",
+  "founderNote": "This is our story, told by the person whose vision helped shape it.",
+  "exploreMilestones": "Explore our journey",
+  "founderVideoLabel": "Founder introduction video",
+  "founderVideoCaption": "A message from our founder.",
+  "storyLibraryEyebrow": "Moments that matter",
+  "storyLibraryTitle": "A journey told through stories.",
+  "storyLibraryDescription": "Each photograph holds a moment. Each moment has a story. Explore the experiences that have shaped our journey.",
+  "storiesLoading": "Loading our stories…",
+  "storiesCountLabel": "stories",
+  "storiesEmptyMessage": "Our stories will be added soon.",
+  "readStoryLabel": "Read the full story",
+  "videoLabel": "Video",
+  "imageUnavailable": "Image unavailable",
+  "closeStoryLabel": "Close story",
+  "storyLibraryNote": "These stories reflect our journey. We remain grateful to everyone who has been part of it.",
+  "locationsEyebrow": "Connected with our communities",
+  "locationsTitle": "Our presence.",
+  "locationsDescription": "Find our locations and connect with the people who represent us.",
+  "locationLabel": "Our location",
+  "representativeNamePlaceholder": "Representative name",
+  "localRepresentative": "Local representative",
+  "getInTouch": "Get in touch",
+  "contactDetailsPlaceholder": "Contact details to be added.",
+  "closingEyebrow": "The journey continues",
+  "closingTitle": "There is more to every story.",
+  "closingDescription": "Discover our work and find out how you can be part of the journey.",
+  "closingCta": "Connect with us",
+  "stories": [
+    {
+      "id": "kailash-journey",
+      "type": "image",
+      "category": "The inspiration",
+      "date": "",
+      "title": "The journey to Kailash Mansarovar",
+      "excerpt": "Share the founder's personal experience and the inspiration behind this journey.",
+      "content": [
+        "Add the founder's personal account of travelling to Kailash Mansarovar, including what inspired the journey and what the experience meant to them.",
+        "Explain how this experience connects to the values and purpose of Kailash ki Karuna. Include only details that accurately reflect the founder's experience."
+      ],
+      "image": "images/bg-desktop.jpg",
+      "alt": "Mount Kailash and the surrounding landscape"
+    },
+    {
+      "id": "beginning",
+      "type": "image",
+      "category": "Our beginnings",
+      "date": "",
+      "title": "Where our journey began",
+      "excerpt": "Tell visitors how the idea for Kailash ki Karuna first took shape.",
+      "content": [
+        "Add the real story of how Kailash ki Karuna began. Explain the original idea, the people involved, and the circumstances that led to the initiative.",
+        "Add verified dates, names, and details where available."
+      ],
+      "image": "images/about-story-1.jpg",
+      "alt": "A photograph from the early days of Kailash ki Karuna"
+    },
+    {
+      "id": "people-and-meetings",
+      "type": "image",
+      "category": "People and connections",
+      "date": "",
+      "title": "People we have met along the way",
+      "excerpt": "Add the story behind a meaningful meeting or photograph with a notable person.",
+      "content": [
+        "Identify the person in the photograph and explain when and where the meeting took place.",
+        "Describe the context and significance of the meeting accurately. Avoid implying an endorsement, partnership, or affiliation unless it has been confirmed."
+      ],
+      "image": "images/about-story-2.jpg",
+      "alt": "A photograph from a meeting or event"
+    },
+    {
+      "id": "service-in-action",
+      "type": "image",
+      "category": "Service in action",
+      "date": "",
+      "title": "Turning intention into action",
+      "excerpt": "Describe a real activity, service, or initiative carried out by the organization.",
+      "content": [
+        "Describe the activity, who it was intended to help, and what the organization actually did.",
+        "Add the location, date, and outcomes if these details are available and can be shared accurately."
+      ],
+      "image": "images/about-story-3.jpg",
+      "alt": "A photograph of an organizational activity"
+    },
+    {
+      "id": "founder-video-story",
+      "type": "video",
+      "category": "In our own words",
+      "date": "",
+      "title": "A moment from our journey",
+      "excerpt": "Add a video that captures an important moment or explains a meaningful part of the work.",
+      "content": [
+        "Introduce the video and explain why this moment matters to the organization's story.",
+        "Add any additional context that helps visitors understand the people, place, and activity shown."
+      ],
+      "poster": "images/about-story-video-1.jpg",
+      "video": "videos/about-story-1.mp4",
+      "alt": "Video about a moment from our journey"
+    },
+    {
+      "id": "looking-ahead",
+      "type": "image",
+      "category": "Looking ahead",
+      "date": "",
+      "title": "The journey continues",
+      "excerpt": "Share the organization's current priorities and hopes for the future.",
+      "content": [
+        "Describe the goals the organization is genuinely working towards and why they matter.",
+        "Explain how people can learn more, get involved, or contact the organization."
+      ],
+      "image": "images/about-story-4.jpg",
+      "alt": "A photograph representing the organization's ongoing journey"
+    }
+  ]
+
+
+}
+
+
