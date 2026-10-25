@@ -1,4 +1,3 @@
-
 "use strict";
 
 /* =========================================================
@@ -65,8 +64,7 @@ const translations = {
     walkerTitle: "Walkers",
     walkerText: "Extra stability and support while walking.",
     mattressTitle: "Medical air mattresses",
-    mattressText:
-      "Pressure-relief support for suitable home-care needs.",
+    mattressText: "Pressure-relief support for suitable home-care needs.",
 
     impactEyebrow: "Why it matters",
     impactTitle: "Care that supports the whole family.",
@@ -77,11 +75,9 @@ const translations = {
     impact1Text:
       "Essential equipment made available through our support model.",
     impact2Title: "Transparent process",
-    impact2Text:
-      "Clear information about deposits, eligibility, and returns.",
+    impact2Text: "Clear information about deposits, eligibility, and returns.",
     impact3Title: "Community first",
-    impact3Text:
-      "Support shaped around the needs of patients and caregivers.",
+    impact3Text: "Support shaped around the needs of patients and caregivers.",
 
     achievementsEyebrow: "Our commitment",
     achievementsTitle: "Every act of care counts.",
@@ -95,7 +91,7 @@ const translations = {
     footerPrivacy: "Privacy Policy",
     footerTerms: "Terms & Conditions",
     copyright: "Kailash ki Karuna. All rights reserved.",
-    footerNote: "Equipment availability and deposit terms apply."
+    footerNote: "Equipment availability and deposit terms apply.",
   },
 
   hi: {
@@ -108,8 +104,7 @@ const translations = {
     navContact: "संपर्क करें",
 
     heroEyebrow: "करुणा से सेवा",
-    heroTagline:
-      "ज़रूरत के समय चिकित्सा उपकरण, हर कदम पर संवेदनशील सहयोग।",
+    heroTagline: "ज़रूरत के समय चिकित्सा उपकरण, हर कदम पर संवेदनशील सहयोग।",
     heroDescription:
       "नियमों और शर्तों के अधीन, पूरी तरह वापसी योग्य सुरक्षा जमा राशि पर आवश्यक घरेलू चिकित्सा उपकरण प्राप्त करें।",
     heroCta: "घरेलू चिकित्सा उपकरण प्राप्त करें",
@@ -149,8 +144,7 @@ const translations = {
     walkerTitle: "वॉकर",
     walkerText: "चलते समय अतिरिक्त सहारा और स्थिरता।",
     mattressTitle: "मेडिकल एयर मैट्रेस",
-    mattressText:
-      "उपयुक्त घरेलू देखभाल में दबाव कम करने के लिए सहायक उपकरण।",
+    mattressText: "उपयुक्त घरेलू देखभाल में दबाव कम करने के लिए सहायक उपकरण।",
 
     impactEyebrow: "यह क्यों महत्वपूर्ण है",
     impactTitle: "पूरे परिवार को सहारा देने वाली देखभाल।",
@@ -179,16 +173,15 @@ const translations = {
     footerPrivacy: "गोपनीयता नीति",
     footerTerms: "नियम एवं शर्तें",
     copyright: "कैलाश की करुणा। सर्वाधिकार सुरक्षित।",
-    footerNote: "उपकरणों की उपलब्धता और जमा राशि की शर्तें लागू हैं।"
-  }
+    footerNote: "उपकरणों की उपलब्धता और जमा राशि की शर्तें लागू हैं।",
+  },
 };
 
 /* =========================================================
    DOM utilities
    ========================================================= */
 
-const select = (selector, root = document) =>
-  root.querySelector(selector);
+const select = (selector, root = document) => root.querySelector(selector);
 
 const selectAll = (selector, root = document) =>
   Array.from(root.querySelectorAll(selector));
@@ -208,7 +201,7 @@ function initNavigation() {
 
     menuButton.setAttribute(
       "aria-label",
-      isOpen ? "Close navigation menu" : "Open navigation menu"
+      isOpen ? "Close navigation menu" : "Open navigation menu",
     );
 
     navigation.classList.toggle("is-open", isOpen);
@@ -248,41 +241,152 @@ function initNavigation() {
   });
 }
 
-/* =========================================================
-   Internationalization
-   ========================================================= */
+/* ========================================
+   Internationalisation (i18n)
+======================================== */
 
-function setLanguage(language) {
-  const dictionary = translations[language];
+const supportedLanguages = ["en", "hi"];
+const translationCache = {};
 
-  if (!dictionary) {
-    console.warn(`Unsupported language: ${language}`);
-    return;
+let currentLanguage = "en";
+
+/**
+ * Load and cache a language's JSON dictionary.
+ */
+async function loadTranslations(language) {
+  if (!supportedLanguages.includes(language)) {
+    language = "en";
   }
 
-  selectAll("[data-i18n]").forEach((element) => {
-    const key = element.dataset.i18n;
+  if (translationCache[language]) {
+    return translationCache[language];
+  }
 
-    if (Object.hasOwn(dictionary, key)) {
-      element.textContent = dictionary[key];
-    }
-  });
+  const response = await fetch(`locales/${language}.json`);
 
-  document.documentElement.lang = language;
+  if (!response.ok) {
+    throw new Error(`Could not load locales/${language}.json`);
+  }
+
+  const dictionary = await response.json();
+  translationCache[language] = dictionary;
+
+  return dictionary;
 }
 
 /**
- * For now, English is the default.
+ * Apply translations to the page.
  *
- * Later, a language selector can call:
- * setLanguage("en");
- * setLanguage("hi");
+ * HTML text:
+ *   data-i18n="heroTitle"
  *
- * Once dictionaries move to JSON, load them asynchronously
- * during application initialization.
+ * HTML attributes:
+ *   data-i18n-attr="aria-label:menuLabel"
+ */
+async function setLanguage(language) {
+  if (!supportedLanguages.includes(language)) {
+    language = "en";
+  }
+
+  try {
+    const dictionary = await loadTranslations(language);
+
+    // Translate regular text content.
+    document.querySelectorAll("[data-i18n]").forEach((element) => {
+      const key = element.dataset.i18n;
+
+      if (Object.prototype.hasOwnProperty.call(dictionary, key)) {
+        element.textContent = dictionary[key];
+      }
+    });
+
+    // Translate HTML attributes.
+    document.querySelectorAll("[data-i18n-attr]").forEach((element) => {
+      const mappings = element.dataset.i18nAttr.split(",");
+
+      mappings.forEach((mapping) => {
+        const [attribute, key] = mapping.trim().split(":");
+
+        if (
+          attribute &&
+          key &&
+          Object.prototype.hasOwnProperty.call(dictionary, key)
+        ) {
+          element.setAttribute(attribute.trim(), dictionary[key]);
+        }
+      });
+    });
+
+    // Update document language and current state.
+    document.documentElement.lang = language;
+    currentLanguage = language;
+
+    // Update the toggle to show the language the user can switch TO.
+    const toggle = document.querySelector("#language-toggle");
+
+    if (toggle) {
+      const nextLanguage = language === "en" ? "hi" : "en";
+
+      toggle.textContent = nextLanguage === "hi" ? "हिन्दी" : "English";
+
+      toggle.setAttribute(
+        "aria-label",
+        nextLanguage === "hi"
+          ? "Switch language to Hindi"
+          : "Switch language to English",
+      );
+
+      toggle.setAttribute("aria-pressed", String(language === "hi"));
+    }
+
+    // Remember the user's choice.
+    try {
+      localStorage.setItem("kkk-language", language);
+    } catch {
+      // Translation still works if storage is unavailable.
+    }
+
+    return true;
+  } catch (error) {
+    console.error("Language change failed:", error);
+    return false;
+  }
+}
+
+/**
+ * Initialise language toggle and restore saved language.
  */
 function initInternationalization() {
-  setLanguage("en");
+  const toggle = document.querySelector("#language-toggle");
+
+  let savedLanguage = "en";
+
+  try {
+    const storedLanguage = localStorage.getItem("kkk-language");
+
+    if (supportedLanguages.includes(storedLanguage)) {
+      savedLanguage = storedLanguage;
+    }
+  } catch {
+    // Default to English if storage is unavailable.
+  }
+
+  if (toggle) {
+    toggle.addEventListener("click", async () => {
+      const nextLanguage = currentLanguage === "en" ? "hi" : "en";
+
+      toggle.disabled = true;
+
+      try {
+        await setLanguage(nextLanguage);
+      } finally {
+        toggle.disabled = false;
+      }
+    });
+  }
+
+  // Apply the saved language on page load.
+  setLanguage(savedLanguage);
 }
 
 /* =========================================================
@@ -310,14 +414,12 @@ function initCarousel(carousel) {
 
   if (slides.length < 2) return;
 
-  const reducedMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  );
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
   const state = {
     index: 0,
     paused: reducedMotion.matches,
-    timer: null
+    timer: null,
   };
 
   function getVisibleCount() {
@@ -342,10 +444,7 @@ function initCarousel(carousel) {
 
       button.type = "button";
       button.className = "carousel-dot";
-      button.setAttribute(
-        "aria-label",
-        `Show story ${index + 1}`
-      );
+      button.setAttribute("aria-label", `Show story ${index + 1}`);
 
       button.addEventListener("click", () => {
         state.index = Math.min(index, getMaxIndex());
@@ -358,26 +457,16 @@ function initCarousel(carousel) {
   }
 
   function render() {
-    state.index = Math.max(
-      0,
-      Math.min(state.index, getMaxIndex())
-    );
+    state.index = Math.max(0, Math.min(state.index, getMaxIndex()));
 
     const firstSlide = slides[0];
-    const distance =
-      firstSlide.getBoundingClientRect().width + getGap();
+    const distance = firstSlide.getBoundingClientRect().width + getGap();
 
-    track.style.transform =
-      `translateX(-${state.index * distance}px)`;
+    track.style.transform = `translateX(-${state.index * distance}px)`;
 
-    selectAll(".carousel-dot", dotsContainer).forEach(
-      (dot, index) => {
-        dot.setAttribute(
-          "aria-current",
-          String(index === state.index)
-        );
-      }
-    );
+    selectAll(".carousel-dot", dotsContainer).forEach((dot, index) => {
+      dot.setAttribute("aria-current", String(index === state.index));
+    });
 
     previousButton.disabled = state.index === 0;
     nextButton.disabled = state.index === getMaxIndex();
@@ -412,10 +501,7 @@ function initCarousel(carousel) {
 
   function updatePauseButton() {
     pauseButton.textContent = state.paused ? "Play" : "Pause";
-    pauseButton.setAttribute(
-      "aria-pressed",
-      String(state.paused)
-    );
+    pauseButton.setAttribute("aria-pressed", String(state.paused));
   }
 
   previousButton.addEventListener("click", () => {
@@ -425,8 +511,7 @@ function initCarousel(carousel) {
   });
 
   nextButton.addEventListener("click", () => {
-    state.index =
-      state.index >= getMaxIndex() ? 0 : state.index + 1;
+    state.index = state.index >= getMaxIndex() ? 0 : state.index + 1;
 
     render();
     restartTimer();
@@ -497,15 +582,13 @@ function initApp() {
 
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initApp, {
-    once: true
+    once: true,
   });
 } else {
   initApp();
 }
 
-
-
-"use strict";
+("use strict");
 
 /* =========================================================
    Kailash ki Karuna - Equipment catalogue
@@ -523,43 +606,43 @@ const EQUIPMENT = [
     name: "Wheelchair",
     image: "images/wheelchair.jpg",
     deposit: null,
-    description: "Mobility support for suitable home-care needs."
+    description: "Mobility support for suitable home-care needs.",
   },
   {
-    id: "hospital-bed",
-    name: "Hospital Bed",
-    image: "images/hospital-bed.jpg",
+    id: "Water-bed",
+    name: "Water Bed",
+    image: "images/water-bed.jpg",
     deposit: null,
-    description: "Support for comfortable rest and recovery at home."
+    description: "Support for comfortable rest and recovery at home.",
   },
   {
     id: "oxygen-concentrator",
     name: "Oxygen Concentrator",
     image: "images/oxygen-concentrator.jpg",
     deposit: null,
-    description: "Oxygen-support equipment when medically prescribed."
+    description: "Oxygen-support equipment when medically prescribed.",
   },
   {
     id: "nebulizer",
     name: "Nebulizer",
     image: "images/nebulizer.jpg",
     deposit: null,
-    description: "Equipment for prescribed respiratory care."
+    description: "Equipment for prescribed respiratory care.",
   },
   {
     id: "walker",
     name: "Walker",
     image: "images/walker.jpg",
     deposit: null,
-    description: "Additional stability and support while walking."
+    description: "Additional stability and support while walking.",
   },
   {
     id: "air-mattress",
     name: "Medical Air Mattress",
     image: "images/air-mattress.jpg",
     deposit: null,
-    description: "Pressure-relief support for suitable care needs."
-  }
+    description: "Pressure-relief support for suitable care needs.",
+  },
 ];
 
 /**
@@ -571,8 +654,8 @@ const EQUIPMENT = [
  * Do not include +, spaces, brackets, or hyphens.
  */
 const CONTACT_CONFIG = {
-  web3formsAccessKey: "YOUR_WEB3FORMS_ACCESS_KEY",
-  whatsappNumber: "91XXXXXXXXXX"
+  web3formsAccessKey: "60733148-9061-4b9b-934f-6ab2b7700deb",
+  whatsappNumber: "91XXXXXXXXXX",
 };
 
 /* =========================================================
@@ -597,7 +680,7 @@ const formStatus = document.querySelector("#form-status");
 
 const contactDialog = document.querySelector("#contact-dialog");
 const closeContactDialogButton = document.querySelector(
-  "#close-contact-dialog"
+  "#close-contact-dialog",
 );
 const sendWhatsAppButton = document.querySelector("#send-whatsapp");
 const sendEmailButton = document.querySelector("#send-email");
@@ -618,7 +701,7 @@ function formatDeposit(amount) {
   return new Intl.NumberFormat("en-IN", {
     style: "currency",
     currency: "INR",
-    maximumFractionDigits: 0
+    maximumFractionDigits: 0,
   }).format(amount);
 }
 
@@ -641,9 +724,13 @@ function createEquipmentCard(item) {
   image.loading = "lazy";
   image.decoding = "async";
 
-  image.addEventListener("error", () => {
-    imageLink.classList.add("image-missing");
-  }, { once: true });
+  image.addEventListener(
+    "error",
+    () => {
+      imageLink.classList.add("image-missing");
+    },
+    { once: true },
+  );
 
   const placeholder = document.createElement("span");
   placeholder.className = "image-placeholder-label";
@@ -666,9 +753,10 @@ function createEquipmentCard(item) {
   price.textContent = formatDeposit(item.deposit);
 
   const priceNote = document.createElement("small");
-  priceNote.textContent = item.deposit === null
-    ? " · confirm amount"
-    : " · refundable, subject to terms";
+  priceNote.textContent =
+    item.deposit === null
+      ? " · confirm amount"
+      : " · refundable, subject to terms";
 
   price.append(priceNote);
 
@@ -725,7 +813,7 @@ function filterEquipment(query) {
   }
 
   return EQUIPMENT.filter((item) =>
-    item.name.toLocaleLowerCase("en").startsWith(normalizedQuery)
+    item.name.toLocaleLowerCase("en").startsWith(normalizedQuery),
   );
 }
 
@@ -778,11 +866,12 @@ function getFormValues() {
 
   return {
     name: String(data.get("name") || "").trim(),
+    email: String(data.get("email") || "").trim(),
     recipient: String(data.get("recipient") || "").trim(),
     startDate: String(data.get("startDate") || ""),
     endDate: String(data.get("endDate") || ""),
     address: String(data.get("address") || "").trim(),
-    acceptedTerms: acceptTermsCheckbox.checked
+    acceptedTerms: acceptTermsCheckbox.checked,
   };
 }
 
@@ -791,12 +880,17 @@ function validateRequest(values) {
 
   if (
     !values.name ||
+    !values.email ||
     !values.recipient ||
     !values.startDate ||
     !values.endDate ||
     !values.address
   ) {
     return "Please complete all required fields.";
+  }
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
+    return "Please enter a valid email address.";
   }
 
   if (values.startDate < today) {
@@ -808,18 +902,16 @@ function validateRequest(values) {
   }
 
   // Calendar-day duration, inclusive of the start date.
-  const [startYear, startMonth, startDay] =
-    values.startDate.split("-").map(Number);
+  const [startYear, startMonth, startDay] = values.startDate
+    .split("-")
+    .map(Number);
 
-  const [endYear, endMonth, endDay] =
-    values.endDate.split("-").map(Number);
+  const [endYear, endMonth, endDay] = values.endDate.split("-").map(Number);
 
   const start = Date.UTC(startYear, startMonth - 1, startDay);
   const end = Date.UTC(endYear, endMonth - 1, endDay);
 
-  const durationDays = Math.floor(
-    (end - start) / (24 * 60 * 60 * 1000)
-  ) + 1;
+  const durationDays = Math.floor((end - start) / (24 * 60 * 60 * 1000)) + 1;
 
   if (durationDays > 30) {
     return "The standard maximum request period is 30 calendar days.";
@@ -917,10 +1009,7 @@ requestDialog.addEventListener("click", (event) => {
 requestForm.addEventListener("input", updateSubmitButton);
 requestForm.addEventListener("change", updateSubmitButton);
 
-requestForm.elements.startDate.addEventListener(
-  "change",
-  updateSubmitButton
-);
+requestForm.elements.startDate.addEventListener("change", updateSubmitButton);
 
 /* =========================================================
    Request message
@@ -933,7 +1022,7 @@ function formatDisplayDate(dateString) {
     day: "2-digit",
     month: "short",
     year: "numeric",
-    timeZone: "UTC"
+    timeZone: "UTC",
   }).format(new Date(Date.UTC(year, month - 1, day)));
 }
 
@@ -944,6 +1033,7 @@ function buildRequestMessage(values, item) {
     `Item: ${item.name}`,
     `Security deposit: ${formatDeposit(item.deposit)}`,
     `Name: ${values.name}`,
+    `Email: ${values.email}`,
     `Equipment for: ${values.recipient}`,
     `Address: ${values.address}`,
     `Required from: ${formatDisplayDate(values.startDate)}`,
@@ -953,10 +1043,9 @@ function buildRequestMessage(values, item) {
     "Please confirm availability, the applicable security deposit,",
     "eligibility requirements, and the next steps for collection.",
     "",
-    "This is an availability request, not a confirmed booking."
+    "This is an availability request, not a confirmed booking.",
   ].join("\n");
 }
-
 
 requestForm.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -969,15 +1058,13 @@ requestForm.addEventListener("submit", async (event) => {
   const error = validateRequest(values);
 
   if (error || !selectedItem) {
-    formStatus.textContent =
-      error || "Please select an equipment item.";
+    formStatus.textContent = error || "Please select an equipment item.";
     return;
   }
 
   if (
     !CONTACT_CONFIG.web3formsAccessKey ||
-    CONTACT_CONFIG.web3formsAccessKey ===
-      "YOUR_WEB3FORMS_ACCESS_KEY"
+    CONTACT_CONFIG.web3formsAccessKey === "YOUR_WEB3FORMS_ACCESS_KEY"
   ) {
     formStatus.textContent =
       "The email service is not configured yet. Please contact us directly.";
@@ -987,15 +1074,21 @@ requestForm.addEventListener("submit", async (event) => {
   const message = buildRequestMessage(values, selectedItem);
 
   // Prepare the email submission for the NGO.
+
   const payload = {
     access_key: CONTACT_CONFIG.web3formsAccessKey,
     subject: `[KKK EQUIPMENT REQUEST] ${selectedItem.id}`,
     from_name: "Kailash ki Karuna Website",
+
+    // Customer's email: lets you reply to the requester.
+    email: values.email,
+    replyto: values.email,
+
     botcheck: "",
     equipment_id: selectedItem.id,
     equipment_name: selectedItem.name,
     request_status: "REQUESTED_NOT_CONFIRMED",
-    message
+    message,
   };
 
   const originalButtonText = submitRequestButton.textContent;
@@ -1005,24 +1098,19 @@ requestForm.addEventListener("submit", async (event) => {
   formStatus.textContent = "Sending your request...";
 
   try {
-    const response = await fetch(
-      "https://api.web3forms.com/submit",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json"
-        },
-        body: JSON.stringify(payload)
-      }
-    );
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
 
     const result = await response.json();
 
     if (!response.ok || !result.success) {
-      throw new Error(
-        result.message || "The request could not be submitted."
-      );
+      throw new Error(result.message || "The request could not be submitted.");
     }
 
     // Keep the message for the WhatsApp handoff.
@@ -1033,7 +1121,6 @@ requestForm.addEventListener("submit", async (event) => {
     // The email has been accepted by the form service.
     // WhatsApp still requires the visitor to tap Send.
     contactDialog.showModal();
-
   } catch (error) {
     console.error("Equipment request submission failed:", error);
 
@@ -1070,7 +1157,7 @@ sendEmailButton.addEventListener("click", () => {
 
   if (!email) {
     window.alert(
-      "Email is not configured yet. Add the NGO's email address in js/equipment.js."
+      "Email is not configured yet. Add the NGO's email address in js/equipment.js.",
     );
     return;
   }
@@ -1096,7 +1183,6 @@ contactDialog.addEventListener("click", (event) => {
   }
 });
 
-
 /* =========================================================
    Page initialization
    ========================================================= */
@@ -1118,8 +1204,295 @@ function initEquipmentPage() {
 
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initEquipmentPage, {
-    once: true
+    once: true,
   });
 } else {
   initEquipmentPage();
 }
+
+/* ========================================
+   OUR STORY — DATA-DRIVEN STORY GALLERY
+======================================== */
+
+(() => {
+  const grid = document.querySelector("#story-grid");
+  const count = document.querySelector("#story-count");
+  const dialog = document.querySelector("#story-dialog");
+  const closeButton = document.querySelector("#story-dialog-close");
+
+  if (!grid || !dialog || !closeButton) return;
+
+  const categoryElement = document.querySelector("#story-dialog-category");
+  const titleElement = document.querySelector("#story-dialog-title");
+  const dateElement = document.querySelector("#story-dialog-date");
+  const mediaElement = document.querySelector("#story-dialog-media");
+  const bodyElement = document.querySelector("#story-dialog-body");
+
+  let activeDictionary = null;
+  let activeLanguage = document.documentElement.lang || "en";
+  let lastFocusedElement = null;
+
+  function text(value) {
+    return typeof value === "string" ? value : "";
+  }
+
+  function makeElement(tag, className, content) {
+    const element = document.createElement(tag);
+
+    if (className) element.className = className;
+    if (content !== undefined) element.textContent = content;
+
+    return element;
+  }
+
+  function addImageFallback(container, label) {
+    const fallback = makeElement(
+      "span",
+      "story-card-media-fallback",
+      label || "Image unavailable",
+    );
+
+    container.replaceChildren(fallback);
+  }
+
+  function makeCardMedia(story) {
+    const button = makeElement("button", "story-card-media-button");
+    button.type = "button";
+    button.setAttribute(
+      "aria-label",
+      `${text(story.title)} — ${text(activeDictionary.readStoryLabel)}`,
+    );
+
+    const image = document.createElement("img");
+    image.className = "story-card-media";
+    image.loading = "lazy";
+    image.alt = text(story.alt);
+    image.src = story.type === "video" ? text(story.poster) : text(story.image);
+
+    image.addEventListener(
+      "error",
+      () => {
+        addImageFallback(button, text(activeDictionary.imageUnavailable));
+      },
+      { once: true },
+    );
+
+    button.append(image);
+
+    if (story.type === "video") {
+      button.append(
+        makeElement(
+          "span",
+          "story-media-badge",
+          `▶ ${text(activeDictionary.videoLabel)}`,
+        ),
+      );
+    }
+
+    button.addEventListener("click", () => openStory(story, button));
+
+    return button;
+  }
+
+  function makeCard(story, index) {
+    const article = makeElement("article", "story-card");
+    const mediaButton = makeCardMedia(story);
+    const copy = makeElement("div", "story-card-copy");
+
+    copy.append(makeElement("p", "story-card-category", text(story.category)));
+
+    if (text(story.date)) {
+      copy.append(makeElement("p", "story-card-date", text(story.date)));
+    }
+
+    copy.append(
+      makeElement("h3", "", text(story.title)),
+      makeElement("p", "", text(story.excerpt)),
+    );
+
+    const readButton = makeElement(
+      "button",
+      "story-read-button",
+      `${text(activeDictionary.readStoryLabel)} →`,
+    );
+
+    readButton.type = "button";
+    readButton.addEventListener("click", () => openStory(story, readButton));
+
+    copy.append(readButton);
+    article.append(mediaButton, copy);
+
+    article.style.setProperty("--story-index", String(index));
+
+    return article;
+  }
+
+  function renderStories(dictionary, language) {
+    activeDictionary = dictionary;
+    activeLanguage = language;
+
+    const stories = Array.isArray(dictionary.stories) ? dictionary.stories : [];
+
+    grid.replaceChildren();
+
+    if (count) {
+      count.textContent = `${stories.length} ${text(dictionary.storiesCountLabel)}`;
+    }
+
+    if (stories.length === 0) {
+      grid.append(
+        makeElement("p", "story-empty", text(dictionary.storiesEmptyMessage)),
+      );
+      grid.setAttribute("aria-busy", "false");
+      return;
+    }
+
+    const fragment = document.createDocumentFragment();
+
+    stories.forEach((story, index) => {
+      fragment.append(makeCard(story, index));
+    });
+
+    grid.append(fragment);
+    grid.setAttribute("aria-busy", "false");
+  }
+
+  function addStoryParagraphs(story) {
+    bodyElement.replaceChildren();
+
+    const paragraphs = Array.isArray(story.content)
+      ? story.content
+      : [text(story.content)];
+
+    paragraphs.forEach((paragraph) => {
+      if (!text(paragraph).trim()) return;
+
+      bodyElement.append(makeElement("p", "", paragraph));
+    });
+  }
+
+  function openStory(story, triggerElement) {
+    if (!activeDictionary) return;
+
+    lastFocusedElement = triggerElement || document.activeElement;
+
+    categoryElement.textContent = text(story.category);
+    titleElement.textContent = text(story.title);
+    dateElement.textContent = text(story.date);
+    dateElement.hidden = !text(story.date);
+
+    mediaElement.replaceChildren();
+
+    if (story.type === "video" && text(story.video)) {
+      const video = document.createElement("video");
+      video.controls = true;
+      video.playsInline = true;
+      video.preload = "metadata";
+      video.poster = text(story.poster);
+
+      const source = document.createElement("source");
+      source.src = text(story.video);
+      source.type = "video/mp4";
+
+      video.append(source);
+      mediaElement.append(video);
+    } else if (text(story.image)) {
+      const image = document.createElement("img");
+      image.src = text(story.image);
+      image.alt = text(story.alt);
+      image.loading = "eager";
+
+      image.addEventListener(
+        "error",
+        () => {
+          addImageFallback(
+            mediaElement,
+            text(activeDictionary.imageUnavailable),
+          );
+        },
+        { once: true },
+      );
+
+      mediaElement.append(image);
+    }
+
+    addStoryParagraphs(story);
+
+    if (!dialog.open) {
+      dialog.showModal();
+    }
+
+    closeButton.focus();
+  }
+
+  function closeStory() {
+    if (dialog.open) dialog.close();
+  }
+
+  closeButton.addEventListener("click", closeStory);
+
+  // Clicking the backdrop closes the dialog.
+  dialog.addEventListener("click", (event) => {
+    if (event.target === dialog) {
+      closeStory();
+    }
+  });
+
+  // Stop any story video and restore focus when the dialog closes.
+  dialog.addEventListener("close", () => {
+    mediaElement.querySelectorAll("video").forEach((video) => {
+      video.pause();
+      video.removeAttribute("src");
+
+      video.querySelectorAll("source").forEach((source) => {
+        source.removeAttribute("src");
+      });
+
+      video.load();
+    });
+
+    if (lastFocusedElement && lastFocusedElement.isConnected) {
+      lastFocusedElement.focus();
+    }
+  });
+
+  // app.js dispatches this event after applying the language dictionary.
+  window.addEventListener("kkk:language-changed", (event) => {
+    const detail = event.detail || {};
+
+    if (!detail.dictionary) return;
+
+    if (dialog.open) closeStory();
+
+    renderStories(detail.dictionary, detail.language || "en");
+  });
+
+  // Fallback in case app.js initialised before this listener was registered.
+  async function initialiseStories() {
+    if (activeDictionary) return;
+
+    try {
+      const language = document.documentElement.lang || "en";
+      const response = await fetch(`locales/${language}.json`);
+
+      if (!response.ok) {
+        throw new Error(`Could not load locales/${language}.json`);
+      }
+
+      const dictionary = await response.json();
+      renderStories(dictionary, language);
+    } catch (error) {
+      console.error("Could not load story data:", error);
+      grid.replaceChildren(
+        makeElement(
+          "p",
+          "story-error",
+          "Stories could not be loaded. Please refresh the page.",
+        ),
+      );
+      grid.setAttribute("aria-busy", "false");
+    }
+  }
+
+  initialiseStories();
+})();
