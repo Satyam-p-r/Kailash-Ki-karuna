@@ -1,56 +1,94 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#164e8a" />
-  <meta
-    name="description"
-    content="Kailash ki Karuna helps people access home-care medical equipment through a refundable security deposit."
-  />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#164e8a" />
+    <meta
+      name="description"
+      content="Kailash ki Karuna helps people access home-care medical equipment through a refundable security deposit."
+    />
 
-  <title>Kailash ki Karuna | Care Beyond Boundaries</title>
+    <title data-i18n="pageTitle">
+      Kailash ki Karuna | Care Beyond Boundaries
+    </title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="css/styles.css" />
+    <meta
+      name="description"
+      content="Kailash ki Karuna helps people access home-care medical equipment through a refundable security deposit."
+      data-i18n-attr="content:metaDescription"
+    />
 
-  <script src="js/app.js" defer></script>
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
 
-<body>
-  <a class="skip-link" href="#main" data-i18n="skipLink">
-    Skip to content
-  </a>
+    <script src="js/app.js" defer></script>
+  </head>
 
-  <!-- Reusable site header -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#home" aria-label="Kailash ki Karuna home">
-        <!-- Replace with your actual logo -->
-        <img
-          class="brand-logo"
-          src="images/logo.png"
-          alt=""
-          width="48"
-          height="48"
-          onerror="this.hidden=true"
-        />
-        <span class="brand-name">
-          <span>Kailash</span>
-          <span class="brand-subtitle">ki Karuna</span>
-        </span>
+  <body>
+    <a class="skip-link" href="#main" data-i18n="skipLink"> Skip to content </a>
+
+<!-- Reusable site header -->
+<header class="site-header">
+  <div class="container header-inner">
+
+    <a
+      class="brand"
+      href="#home"
+      aria-label="Kailash ki Karuna home"
+      data-i18n-attr="aria-label:brandHomeLabel"
+    >
+      <img
+        class="brand-logo"
+        src="images/logo.png"
+        alt=""
+        width="48"
+        height="48"
+        onerror="this.hidden = true"
+      />
+
+      <span class="brand-name">
+        <span>Kailash</span>
+        <span class="brand-subtitle">ki Karuna</span>
+      </span>
+    </a>
+
+    <nav
+      class="site-navigation"
+      id="site-navigation"
+      aria-label="Main navigation"
+    >
+      <a href="#home" data-i18n="navHome">Home</a>
+      <a href="about.html" data-i18n="navStory">Our Story</a>
+      <a href="#equipment" data-i18n="navEquipment">Equipment</a>
+      <a href="#social-impact" data-i18n="navImpact">Social Services</a>
+      <a href="#achievements" data-i18n="navAchievements">Achievements</a>
+      <a class="nav-contact" href="#contact" data-i18n="navContact">
+        Contact Us
       </a>
+    </nav>
+
+    <!-- Always visible, even when navigation is collapsed -->
+    <div class="header-actions">
+      <button
+        class="language-toggle"
+        id="language-toggle"
+        type="button"
+        aria-label="Switch language to Hindi"
+      >
+        हिन्दी
+      </button>
 
       <button
         class="menu-toggle"
         type="button"
         aria-label="Open navigation menu"
+        data-i18n-attr="aria-label:menuLabel"
         aria-controls="site-navigation"
         aria-expanded="false"
       >
@@ -58,488 +96,510 @@
         <span></span>
         <span></span>
       </button>
-
-      <nav
-        class="site-navigation"
-        id="site-navigation"
-        aria-label="Main navigation"
-      >
-        <a href="#home" data-i18n="navHome">Home</a>
-        <a href="#story" data-i18n="navStory">Our Story</a>
-        <a href="#equipment" data-i18n="navEquipment">Equipment</a>
-        <a href="#social-impact" data-i18n="navImpact">Social Services</a>
-        <a href="#achievements" data-i18n="navAchievements">Achievements</a>
-        <a class="nav-contact" href="#contact" data-i18n="navContact">
-          Contact Us
-        </a>
-      </nav>
     </div>
-  </header>
 
-  <main id="main">
-    <!-- Hero: naturally fills at least the first viewport -->
-    <section class="hero" id="home" aria-labelledby="hero-title">
-      <div class="hero-decoration hero-decoration-one"></div>
-      <div class="hero-decoration hero-decoration-two"></div>
+  </div>
+</header>
 
-      <div class="container hero-content">
-        <span class="eyebrow hero-eyebrow" data-i18n="heroEyebrow">
-          Compassion in action
-        </span>
+    <main id="main">
+      <!-- Hero: naturally fills at least the first viewport -->
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="hero-decoration hero-decoration-one"></div>
+        <div class="hero-decoration hero-decoration-two"></div>
 
-        <h1 id="hero-title" class="hero-title">
-          <span>Kailash</span>
-          <span>ki Karuna<span class="title-period">.</span></span>
-        </h1>
+        <div class="container hero-content">
+          <!-- <span class="eyebrow hero-eyebrow" data-i18n="heroEyebrow">
+            Compassion in action
+          </span> -->
 
-        <p class="hero-tagline" data-i18n="heroTagline">
-          Medical equipment when you need it. Compassion when it matters.
-        </p>
+          <h1 id="hero-title" class="hero-title">
+            <span>Kailash</span>
+            <span>ki Karuna<span class="title-period">.</span></span>
+          </h1>
 
-        <p class="hero-description" data-i18n="heroDescription">
-          Access essential home-care medical equipment with a fully
-          refundable security deposit, subject to our terms.
-        </p>
-
-        <p class="hero-mantra" lang="hi">शिव ही सेवा है</p>
-
-        <a class="button button-primary hero-cta" href="equipment.html">
-          <span data-i18n="heroCta">Get home-care equipment</span>
-          <span aria-hidden="true">→</span>
-        </a>
-
-        <a class="hero-secondary-link" href="#story" data-i18n="heroSecondary">
-          Discover our mission
-        </a>
-
-        <div class="hero-trust-note">
-          <span class="trust-icon" aria-hidden="true">✓</span>
-          <span data-i18n="trustNote">
-            Care with dignity. Support with transparency.
-          </span>
-        </div>
-      </div>
-
-      <a class="scroll-cue" href="#story" aria-label="Scroll to our story">
-        <span></span>
-      </a>
-    </section>
-
-    <!-- Our story: automatic, accessible carousel -->
-    <section class="section section-soft" id="story">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow" data-i18n="storyEyebrow">Who we are</span>
-          <h2 data-i18n="storyTitle">Care should never be out of reach.</h2>
-          <p data-i18n="storyDescription">
-            A little support can make recovery at home easier for an entire
-            family.
+          <p class="hero-tagline" data-i18n="heroTagline">
+            Medical equipment when you need it. Compassion when it matters.
           </p>
-        </div>
 
-        <div
-          class="story-carousel"
-          data-carousel
-          aria-roledescription="carousel"
-          aria-label="Our story"
-        >
-          <div class="story-track" data-carousel-track>
-            <article class="story-card">
-              <div class="story-image-wrap">
-                <img
-                  src="images/our-story-1.jpg"
-                  alt="Add a photograph representing your organization's mission"
-                  loading="lazy"
-                  onerror="this.parentElement.classList.add('image-missing')"
-                />
-                <span class="image-placeholder-label">Your image</span>
-              </div>
-              <div class="story-card-content">
-                <span class="card-number">01</span>
-                <h3 data-i18n="storyCard1Title">The heart behind our work</h3>
-                <p data-i18n="storyCard1Text">
-                  Our mission begins with a simple belief: everyone deserves
-                  access to essential care.
-                </p>
-              </div>
-            </article>
+          <p class="hero-description" data-i18n="heroDescription">
+            Access essential home-care medical equipment with a fully refundable
+            security deposit, subject to our terms.
+          </p>
 
-            <article class="story-card">
-              <div class="story-image-wrap">
-                <img
-                  src="images/our-story-2.jpg"
-                  alt="Add a photograph of your team helping a family"
-                  loading="lazy"
-                  onerror="this.parentElement.classList.add('image-missing')"
-                />
-                <span class="image-placeholder-label">Your image</span>
-              </div>
-              <div class="story-card-content">
-                <span class="card-number">02</span>
-                <h3 data-i18n="storyCard2Title">Support for families</h3>
-                <p data-i18n="storyCard2Text">
-                  We help families access equipment they need for recovery
-                  and care at home.
-                </p>
-              </div>
-            </article>
+          <p class="hero-mantra" lang="hi">शिव ही सेवा है</p>
 
-            <article class="story-card">
-              <div class="story-image-wrap">
-                <img
-                  src="images/our-story-3.jpg"
-                  alt="Add a photograph of your community service"
-                  loading="lazy"
-                  onerror="this.parentElement.classList.add('image-missing')"
-                />
-                <span class="image-placeholder-label">Your image</span>
-              </div>
-              <div class="story-card-content">
-                <span class="card-number">03</span>
-                <h3 data-i18n="storyCard3Title">Service with dignity</h3>
-                <p data-i18n="storyCard3Text">
-                  We aim to make support more accessible while treating every
-                  person with respect.
-                </p>
-              </div>
-            </article>
-          </div>
+          <a class="button button-primary hero-cta" href="equipment.html">
+            <span data-i18n="heroCta">Get home-care equipment</span>
+            <span aria-hidden="true">→</span>
+          </a>
 
-          <div class="carousel-controls">
-            <button
-              class="carousel-arrow"
-              type="button"
-              data-carousel-prev
-              aria-label="Previous story"
-            >←</button>
+          <a
+            class="hero-secondary-link"
+            href="#story"
+            data-i18n="heroSecondary"
+          >
+            Discover our mission
+          </a>
 
-            <div class="carousel-dots" data-carousel-dots></div>
-
-            <button
-              class="carousel-arrow"
-              type="button"
-              data-carousel-next
-              aria-label="Next story"
-            >→</button>
-
-            <button
-              class="carousel-pause"
-              type="button"
-              data-carousel-pause
-              aria-pressed="false"
-              data-i18n="pauseCarousel"
-            >Pause</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Equipment catalogue preview -->
-    <section class="section" id="equipment">
-      <div class="container">
-        <div class="section-heading section-heading-row">
-          <div>
-            <span class="eyebrow" data-i18n="equipmentEyebrow">
-              Home-care essentials
+          <div class="hero-trust-note">
+            <span class="trust-icon" aria-hidden="true">✓</span>
+            <span data-i18n="trustNote">
+              Care with dignity. Support with transparency.
             </span>
-            <h2 data-i18n="equipmentTitle">Equipment for better recovery.</h2>
-            <p data-i18n="equipmentDescription">
-              Practical support for patients and caregivers at home.
+          </div>
+        </div>
+
+        <a class="scroll-cue" href="#story" aria-label="Scroll to our story">
+          <span></span>
+        </a>
+      </section>
+
+      <!-- Our story: automatic, accessible carousel -->
+      <section class="section section-soft" id="story">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow" data-i18n="storyEyebrow">Who we are</span>
+            <h2 data-i18n="storyTitle">Care should never be out of reach.</h2>
+            <p data-i18n="storyDescription">
+              A little support can make recovery at home easier for an entire
+              family.
             </p>
           </div>
 
-          <a
-            class="text-link desktop-only"
-            href="equipment.html"
-            data-i18n="viewAll"
+          <div
+            class="story-carousel"
+            data-carousel
+            aria-roledescription="carousel"
+            aria-label="Our story"
           >
-            View all equipment →
-          </a>
+            <div class="story-track" data-carousel-track>
+              <article class="story-card">
+                <div class="story-image-wrap">
+                  <img
+                    src="images/our-story-1.jpg"
+                    alt="Add a photograph representing your organization's mission"
+                    loading="lazy"
+                    onerror="this.parentElement.classList.add('image-missing')"
+                    data-i18n-attr="alt:storyImage1Alt"
+                  />
+                  <span class="image-placeholder-label" data-i18n="imagePlaceholder">Your image</span>
+                </div>
+                <div class="story-card-content">
+                  <span class="card-number">01</span>
+                  <h3 data-i18n="storyCard1Title">The heart behind our work</h3>
+                  <p data-i18n="storyCard1Text">
+                    Our mission begins with a simple belief: everyone deserves
+                    access to essential care.
+                  </p>
+                </div>
+              </article>
+
+              <article class="story-card">
+                <div class="story-image-wrap">
+                  <img
+                    src="images/our-story-2.jpg"
+                    alt="Add a photograph of your team helping a family"
+                    loading="lazy"
+                    onerror="this.parentElement.classList.add('image-missing')"
+                    data-i18n-attr="alt:storyImage1Alt"
+                  />
+                  <span class="image-placeholder-label" data-i18n="imagePlaceholder">Your image</span>
+                </div>
+                <div class="story-card-content">
+                  <span class="card-number">02</span>
+                  <h3 data-i18n="storyCard2Title">Support for families</h3>
+                  <p data-i18n="storyCard2Text">
+                    We help families access equipment they need for recovery and
+                    care at home.
+                  </p>
+                </div>
+              </article>
+
+              <article class="story-card">
+                <div class="story-image-wrap">
+                  <img
+                    src="images/our-story-3.jpg"
+                    alt="Add a photograph of your community service"
+                    loading="lazy"
+                    onerror="this.parentElement.classList.add('image-missing')"
+                  />
+                  <span class="image-placeholder-label" data-i18n="imagePlaceholder">Your image</span>
+                </div>
+                <div class="story-card-content">
+                  <span class="card-number">03</span>
+                  <h3 data-i18n="storyCard3Title">Service with dignity</h3>
+                  <p data-i18n="storyCard3Text">
+                    We aim to make support more accessible while treating every
+                    person with respect.
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <div class="carousel-controls">
+              <button
+                class="carousel-arrow"
+                type="button"
+                data-carousel-prev
+                aria-label="Previous story"
+              >
+                ←
+              </button>
+
+              <div class="carousel-dots" data-carousel-dots></div>
+
+              <button
+                class="carousel-arrow"
+                type="button"
+                data-carousel-next
+                aria-label="Next story"
+              >
+                →
+              </button>
+
+              <button
+                class="carousel-pause"
+                type="button"
+                data-carousel-pause
+                aria-pressed="false"
+                data-i18n="pauseCarousel"
+              >
+                Pause
+              </button>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div class="equipment-grid">
-          <article class="equipment-card">
-            <a
-              class="equipment-image-link"
-              href="equipment.html#wheelchair"
-              aria-label="Learn about wheelchairs"
-            >
-              <img
-                src="images/wheelchair.jpg"
-                alt="Wheelchair"
-                loading="lazy"
-                onerror="this.parentElement.classList.add('image-missing')"
-              />
-              <span class="image-placeholder-label">Your image</span>
-            </a>
-            <div class="equipment-card-body">
-              <h3 data-i18n="wheelchairTitle">Wheelchairs</h3>
-              <p data-i18n="wheelchairText">
-                Support for safe, more comfortable mobility.
+      <!-- Equipment catalogue preview -->
+      <section class="section" id="equipment">
+        <div class="container">
+          <div class="section-heading section-heading-row">
+            <div>
+              <span class="eyebrow" data-i18n="equipmentEyebrow">
+                Home-care essentials
+              </span>
+              <h2 data-i18n="equipmentTitle">Equipment for better recovery.</h2>
+              <p data-i18n="equipmentDescription">
+                Practical support for patients and caregivers at home.
               </p>
-              <a class="card-link" href="equipment.html#wheelchair">
-                <span data-i18n="learnMore">Learn more</span> <span>→</span>
-              </a>
             </div>
-          </article>
 
-          <article class="equipment-card">
             <a
-              class="equipment-image-link"
-              href="equipment.html#hospital-bed"
-              aria-label="Learn about hospital beds"
+              class="text-link desktop-only"
+              href="equipment.html"
+              data-i18n="viewAll"
             >
-              <img
-                src="images/hospital-bed.jpg"
-                alt="Hospital bed"
-                loading="lazy"
-                onerror="this.parentElement.classList.add('image-missing')"
-              />
-              <span class="image-placeholder-label">Your image</span>
+              View all equipment →
             </a>
-            <div class="equipment-card-body">
-              <h3 data-i18n="bedTitle">Hospital beds</h3>
-              <p data-i18n="bedText">
-                Home-care support for rest and recovery.
-              </p>
-              <a class="card-link" href="equipment.html#hospital-bed">
-                <span data-i18n="learnMore">Learn more</span> <span>→</span>
-              </a>
-            </div>
-          </article>
+          </div>
 
-          <article class="equipment-card">
-            <a
-              class="equipment-image-link"
-              href="equipment.html#oxygen-concentrator"
-              aria-label="Learn about oxygen concentrators"
-            >
-              <img
-                src="images/oxygen-concentrator.jpg"
-                alt="Oxygen concentrator"
-                loading="lazy"
-                onerror="this.parentElement.classList.add('image-missing')"
-              />
-              <span class="image-placeholder-label">Your image</span>
-            </a>
-            <div class="equipment-card-body">
-              <h3 data-i18n="oxygenTitle">Oxygen concentrators</h3>
-              <p data-i18n="oxygenText">
-                Equipment for prescribed oxygen support.
-              </p>
-              <a class="card-link" href="equipment.html#oxygen-concentrator">
-                <span data-i18n="learnMore">Learn more</span> <span>→</span>
+          <div class="equipment-grid">
+            <article class="equipment-card">
+              <a
+                class="equipment-image-link"
+                href="equipment.html#wheelchair"
+                aria-label="Learn about wheelchairs"
+              >
+                <img
+                  src="images/wheelchair.jpg"
+                  alt="Wheelchair"
+                  loading="lazy"
+                  onerror="this.parentElement.classList.add('image-missing')"
+                />
+                <span class="image-placeholder-label" data-i18n="imagePlaceholder">Your image</span>
               </a>
-            </div>
-          </article>
+              <div class="equipment-card-body">
+                <h3 data-i18n="wheelchairTitle">Wheelchairs</h3>
+                <p data-i18n="wheelchairText">
+                  Support for safe, more comfortable mobility.
+                </p>
+                <a class="card-link" href="equipment.html#wheelchair">
+                  <span data-i18n="learnMore">Learn more</span> <span>→</span>
+                </a>
+              </div>
+            </article>
 
-          <article class="equipment-card">
-            <a
-              class="equipment-image-link"
-              href="equipment.html#nebulizer"
-              aria-label="Learn about nebulizers"
-            >
-              <img
-                src="images/nebulizer.jpg"
-                alt="Nebulizer"
-                loading="lazy"
-                onerror="this.parentElement.classList.add('image-missing')"
-              />
-              <span class="image-placeholder-label">Your image</span>
-            </a>
-            <div class="equipment-card-body">
-              <h3 data-i18n="nebulizerTitle">Nebulizers</h3>
-              <p data-i18n="nebulizerText">
-                Respiratory-care equipment for home use.
-              </p>
-              <a class="card-link" href="equipment.html#nebulizer">
-                <span data-i18n="learnMore">Learn more</span> <span>→</span>
+            <article class="equipment-card">
+              <a
+                class="equipment-image-link"
+                href="equipment.html#hospital-bed"
+                aria-label="Learn about hospital beds"
+              >
+                <img
+                  src="images/water-bed.jpg"
+                  alt="Water bed"
+                  loading="lazy"
+                  onerror="this.parentElement.classList.add('image-missing')"
+                />
+                <span class="image-placeholder-label" data-i18n="imagePlaceholder">Your image</span>
               </a>
-            </div>
-          </article>
+              <div class="equipment-card-body">
+                <h3 data-i18n="bedTitle">Hospital beds</h3>
+                <p data-i18n="bedText">
+                  Home-care support for rest and recovery.
+                </p>
+                <a class="card-link" href="equipment.html#hospital-bed">
+                  <span data-i18n="learnMore">Learn more</span> <span>→</span>
+                </a>
+              </div>
+            </article>
 
-          <article class="equipment-card">
-            <a
-              class="equipment-image-link"
-              href="equipment.html#walker"
-              aria-label="Learn about walkers"
-            >
-              <img
-                src="images/walker.jpg"
-                alt="Walking frame"
-                loading="lazy"
-                onerror="this.parentElement.classList.add('image-missing')"
-              />
-              <span class="image-placeholder-label">Your image</span>
-            </a>
-            <div class="equipment-card-body">
-              <h3 data-i18n="walkerTitle">Walkers</h3>
-              <p data-i18n="walkerText">
-                Extra stability and support while walking.
-              </p>
-              <a class="card-link" href="equipment.html#walker">
-                <span data-i18n="learnMore">Learn more</span> <span>→</span>
+            <article class="equipment-card">
+              <a
+                class="equipment-image-link"
+                href="equipment.html#oxygen-concentrator"
+                aria-label="Learn about oxygen concentrators"
+              >
+                <img
+                  src="images/oxygen-concentrator.jpg"
+                  alt="Oxygen concentrator"
+                  loading="lazy"
+                  onerror="this.parentElement.classList.add('image-missing')"
+                />
+                <span class="image-placeholder-label" data-i18n="imagePlaceholder">Your image</span>
               </a>
-            </div>
-          </article>
+              <div class="equipment-card-body">
+                <h3 data-i18n="oxygenTitle">Oxygen concentrators</h3>
+                <p data-i18n="oxygenText">
+                  Equipment for prescribed oxygen support.
+                </p>
+                <a class="card-link" href="equipment.html#oxygen-concentrator">
+                  <span data-i18n="learnMore">Learn more</span> <span>→</span>
+                </a>
+              </div>
+            </article>
 
-          <article class="equipment-card">
-            <a
-              class="equipment-image-link"
-              href="equipment.html#air-mattress"
-              aria-label="Learn about medical air mattresses"
-            >
-              <img
-                src="images/air-mattress.jpg"
-                alt="Medical air mattress"
-                loading="lazy"
-                onerror="this.parentElement.classList.add('image-missing')"
-              />
-              <span class="image-placeholder-label">Your image</span>
-            </a>
-            <div class="equipment-card-body">
-              <h3 data-i18n="mattressTitle">Medical air mattresses</h3>
-              <p data-i18n="mattressText">
-                Pressure-relief support for suitable home-care needs.
-              </p>
-              <a class="card-link" href="equipment.html#air-mattress">
-                <span data-i18n="learnMore">Learn more</span> <span>→</span>
+            <article class="equipment-card">
+              <a
+                class="equipment-image-link"
+                href="equipment.html#nebulizer"
+                aria-label="Learn about nebulizers"
+              >
+                <img
+                  src="images/nebulizer.jpg"
+                  alt="Nebulizer"
+                  loading="lazy"
+                  onerror="this.parentElement.classList.add('image-missing')"
+                />
+                <span class="image-placeholder-label" data-i18n="imagePlaceholder">Your image</span>
               </a>
-            </div>
-          </article>
+              <div class="equipment-card-body">
+                <h3 data-i18n="nebulizerTitle">Nebulizers</h3>
+                <p data-i18n="nebulizerText">
+                  Respiratory-care equipment for home use.
+                </p>
+                <a class="card-link" href="equipment.html#nebulizer">
+                  <span data-i18n="learnMore">Learn more</span> <span>→</span>
+                </a>
+              </div>
+            </article>
+
+            <article class="equipment-card">
+              <a
+                class="equipment-image-link"
+                href="equipment.html#walker"
+                aria-label="Learn about walkers"
+              >
+                <img
+                  src="images/walker.jpg"
+                  alt="Walking frame"
+                  loading="lazy"
+                  onerror="this.parentElement.classList.add('image-missing')"
+                />
+                <span class="image-placeholder-label" data-i18n="imagePlaceholder">Your image</span>
+              </a>
+              <div class="equipment-card-body">
+                <h3 data-i18n="walkerTitle">Walkers</h3>
+                <p data-i18n="walkerText">
+                  Extra stability and support while walking.
+                </p>
+                <a class="card-link" href="equipment.html#walker">
+                  <span data-i18n="learnMore">Learn more</span> <span>→</span>
+                </a>
+              </div>
+            </article>
+
+            <article class="equipment-card">
+              <a
+                class="equipment-image-link"
+                href="equipment.html#air-mattress"
+                aria-label="Learn about medical air mattresses"
+              >
+                <img
+                  src="images/air-mattress.jpg"
+                  alt="Medical air mattress"
+                  loading="lazy"
+                  onerror="this.parentElement.classList.add('image-missing')"
+                />
+                <span class="image-placeholder-label" data-i18n="imagePlaceholder">Your image</span>
+              </a>
+              <div class="equipment-card-body">
+                <h3 data-i18n="mattressTitle">Medical air mattresses</h3>
+                <p data-i18n="mattressText">
+                  Pressure-relief support for suitable home-care needs.
+                </p>
+                <a class="card-link" href="equipment.html#air-mattress">
+                  <span data-i18n="learnMore">Learn more</span> <span>→</span>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="mobile-view-all">
+            <a
+              class="button button-outline"
+              href="equipment.html"
+              data-i18n="viewAll"
+            >
+              View all equipment →
+            </a>
+          </div>
         </div>
+      </section>
 
-        <div class="mobile-view-all">
-          <a class="button button-outline" href="equipment.html" data-i18n="viewAll">
-            View all equipment →
-          </a>
+      <!-- Social services / impact -->
+      <section class="section impact-section" id="social-impact">
+        <div class="container impact-layout">
+          <div class="impact-copy">
+            <span class="eyebrow" data-i18n="impactEyebrow"
+              >Why it matters</span
+            >
+            <h2 data-i18n="impactTitle">
+              Care that supports the whole family.
+            </h2>
+            <p data-i18n="impactText">
+              Access to appropriate medical equipment can make caring for a
+              loved one at home more manageable. We work to reduce barriers and
+              offer practical support with dignity.
+            </p>
+            <a
+              class="button button-light"
+              href="#contact"
+              data-i18n="impactCta"
+            >
+              Connect with us
+            </a>
+          </div>
+
+          <div class="impact-points">
+            <article class="impact-point">
+              <span class="impact-number">01</span>
+              <div>
+                <h3 data-i18n="impact1Title">Accessible support</h3>
+                <p data-i18n="impact1Text">
+                  Essential equipment made available through our support model.
+                </p>
+              </div>
+            </article>
+
+            <article class="impact-point">
+              <span class="impact-number">02</span>
+              <div>
+                <h3 data-i18n="impact2Title">Transparent process</h3>
+                <p data-i18n="impact2Text">
+                  Clear information about deposits, eligibility, and returns.
+                </p>
+              </div>
+            </article>
+
+            <article class="impact-point">
+              <span class="impact-number">03</span>
+              <div>
+                <h3 data-i18n="impact3Title">Community first</h3>
+                <p data-i18n="impact3Text">
+                  Support shaped around the needs of patients and caregivers.
+                </p>
+              </div>
+            </article>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Social services / impact -->
-    <section class="section impact-section" id="social-impact">
-      <div class="container impact-layout">
-        <div class="impact-copy">
-          <span class="eyebrow" data-i18n="impactEyebrow">Why it matters</span>
-          <h2 data-i18n="impactTitle">Care that supports the whole family.</h2>
-          <p data-i18n="impactText">
-            Access to appropriate medical equipment can make caring for a
-            loved one at home more manageable. We work to reduce barriers
-            and offer practical support with dignity.
+      <!-- Achievements: add verified milestones when available -->
+      <section class="section achievements-section" id="achievements">
+        <div class="container achievements-inner">
+          <span class="eyebrow" data-i18n="achievementsEyebrow">
+            Our commitment
+          </span>
+          <h2 data-i18n="achievementsTitle">Every act of care counts.</h2>
+          <p data-i18n="achievementsText">
+            Our impact is built through the people we serve, the families we
+            support, and the community that stands with us.
           </p>
-          <a class="button button-light" href="#contact" data-i18n="impactCta">
-            Connect with us
+          <a
+            class="text-link"
+            href="achievements.html"
+            data-i18n="achievementsLink"
+          >
+            Discover our achievements →
           </a>
         </div>
+      </section>
+    </main>
 
-        <div class="impact-points">
-          <article class="impact-point">
-            <span class="impact-number">01</span>
-            <div>
-              <h3 data-i18n="impact1Title">Accessible support</h3>
-              <p data-i18n="impact1Text">
-                Essential equipment made available through our support model.
-              </p>
-            </div>
-          </article>
+    <!-- Reusable footer -->
+    <footer class="site-footer" id="contact">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="brand footer-brand-link" href="#home">
+              <img
+                class="brand-logo"
+                src="images/logo.png"
+                alt=""
+                width="48"
+                height="48"
+                onerror="this.hidden = true"
+                data-i18n-attr="alt:storyImage1Alt"
+              />
+              <span class="brand-name">
+                <span>Kailash</span>
+                <span class="brand-subtitle">ki Karuna</span>
+              </span>
+            </a>
 
-          <article class="impact-point">
-            <span class="impact-number">02</span>
-            <div>
-              <h3 data-i18n="impact2Title">Transparent process</h3>
-              <p data-i18n="impact2Text">
-                Clear information about deposits, eligibility, and returns.
-              </p>
-            </div>
-          </article>
+            <p data-i18n="footerDescription">
+              Compassionate support for better care at home.
+            </p>
 
-          <article class="impact-point">
-            <span class="impact-number">03</span>
-            <div>
-              <h3 data-i18n="impact3Title">Community first</h3>
-              <p data-i18n="impact3Text">
-                Support shaped around the needs of patients and caregivers.
-              </p>
-            </div>
-          </article>
+            <p class="footer-mantra" lang="hi">शिव ही सेवा है</p>
+          </div>
+
+          <div class="footer-column">
+            <h2 data-i18n="footerExplore">Explore</h2>
+            <a href="#home" data-i18n="navHome">Home</a>
+            <a href="equipment.html" data-i18n="navEquipment"
+              >Home-care equipment</a
+            >
+            <a href="#story" data-i18n="navStory">Our Story</a>
+            <a href="#social-impact" data-i18n="navImpact">Social Services</a>
+            <a href="achievements.html" data-i18n="navAchievements"
+              >Achievements</a
+            >
+          </div>
+
+          <div class="footer-column">
+            <h2 data-i18n="footerConnect">Get in touch</h2>
+            <!-- Replace these placeholders with verified contact details -->
+            <a href="contact.html" data-i18n="navContact">Contact Us</a>
+            <a href="privacy.html" data-i18n="footerPrivacy">Privacy Policy</a>
+            <a href="terms.html" data-i18n="footerTerms">Terms & Conditions</a>
+          </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Achievements: add verified milestones when available -->
-    <section class="section achievements-section" id="achievements">
-      <div class="container achievements-inner">
-        <span class="eyebrow" data-i18n="achievementsEyebrow">
-          Our commitment
-        </span>
-        <h2 data-i18n="achievementsTitle">Every act of care counts.</h2>
-        <p data-i18n="achievementsText">
-          Our impact is built through the people we serve, the families we
-          support, and the community that stands with us.
-        </p>
-        <a class="text-link" href="achievements.html" data-i18n="achievementsLink">
-          Discover our achievements →
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <!-- Reusable footer -->
-  <footer class="site-footer" id="contact">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a class="brand footer-brand-link" href="#home">
-            <img
-              class="brand-logo"
-              src="images/logo.png"
-              alt=""
-              width="48"
-              height="48"
-              onerror="this.hidden=true"
-            />
-            <span class="brand-name">
-              <span>Kailash</span>
-              <span class="brand-subtitle">ki Karuna</span>
-            </span>
-          </a>
-
-          <p data-i18n="footerDescription">
-            Compassionate support for better care at home.
+        <div class="footer-bottom">
+          <p>
+            © <span id="current-year"></span>
+            <span data-i18n="copyright"
+              >Kailash ki Karuna. All rights reserved.</span
+            >
           </p>
-
-          <p class="footer-mantra" lang="hi">शिव ही सेवा है</p>
-        </div>
-
-        <div class="footer-column">
-          <h2 data-i18n="footerExplore">Explore</h2>
-          <a href="#home" data-i18n="navHome">Home</a>
-          <a href="equipment.html" data-i18n="navEquipment">Home-care equipment</a>
-          <a href="#story" data-i18n="navStory">Our Story</a>
-          <a href="#social-impact" data-i18n="navImpact">Social Services</a>
-          <a href="achievements.html" data-i18n="navAchievements">Achievements</a>
-        </div>
-
-        <div class="footer-column">
-          <h2 data-i18n="footerConnect">Get in touch</h2>
-          <!-- Replace these placeholders with verified contact details -->
-          <a href="contact.html" data-i18n="navContact">Contact Us</a>
-          <a href="privacy.html" data-i18n="footerPrivacy">Privacy Policy</a>
-          <a href="terms.html" data-i18n="footerTerms">Terms & Conditions</a>
+          <p data-i18n="footerNote">
+            Equipment availability and deposit terms apply.
+          </p>
         </div>
       </div>
-
-      <div class="footer-bottom">
-        <p>
-          © <span id="current-year"></span>
-          <span data-i18n="copyright">Kailash ki Karuna. All rights reserved.</span>
-        </p>
-        <p data-i18n="footerNote">
-          Equipment availability and deposit terms apply.
-        </p>
-      </div>
-    </div>
-  </footer>
-</body>
+    </footer>
+  </body>
 </html>
