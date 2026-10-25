@@ -2,20 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#164e8a">
 
-  <title>Contact Us | Kailash ki Karuna</title>
+  <title data-i18n="aboutPageTitle">Our Story | Kailash ki Karuna</title>
   <meta
     name="description"
-    content="Contact Kailash ki Karuna. Find our locations in Jodhpur, Jaitaran, and Ranchi, call our team, or connect with us on WhatsApp."
+    data-i18n-attr="content:aboutMetaDescription"
+    content="Discover the journey, people, and stories behind Kailash ki Karuna."
   >
-  <meta name="theme-color" content="#ffffff">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/about.css">
 
-  <!-- Reuse the existing shared JavaScript -->
   <script src="js/app.js" defer></script>
+
 </head>
 
 <body>
@@ -26,40 +34,35 @@
   <!-- Shared site header -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Kailash ki Karuna home">
+      <a
+        class="brand"
+        href="index.html"
+        aria-label="Kailash ki Karuna home"
+        data-i18n-attr="aria-label:brandHomeLabel"
+      >
         <img
           class="brand-logo"
           src="images/logo.png"
           alt=""
           width="48"
           height="48"
-          onerror="this.hidden=true"
-        />
+        >
         <span class="brand-name">
           <span>Kailash</span>
           <span class="brand-subtitle">ki Karuna</span>
         </span>
       </a>
 
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-label="Open navigation menu"
-        aria-controls="site-navigation"
-        aria-expanded="false"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
       <nav
         class="site-navigation"
         id="site-navigation"
         aria-label="Main navigation"
+        data-i18n-attr="aria-label:mainNavigationLabel"
       >
         <a href="index.html" data-i18n="navHome">Home</a>
-        <a href="about.html" aria-current="page">About Us</a>
+        <a href="about.html" aria-current="page" data-i18n="navStory">
+          Our Story
+        </a>
         <a href="equipment.html" data-i18n="navEquipment">Equipment</a>
         <a href="index.html#social-impact" data-i18n="navImpact">
           Social Services
@@ -71,439 +74,236 @@
           Contact Us
         </a>
       </nav>
+
+      <div class="header-actions">
+        <button
+          class="language-toggle"
+          id="language-toggle"
+          type="button"
+          aria-label="Switch language to Hindi"
+          aria-pressed="false"
+        >हिन्दी</button>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          data-i18n-attr="aria-label:menuLabel"
+          aria-controls="site-navigation"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main id="main">
-    <br><br>
-    <!-- About hero: replace the background image when ready -->
-    <section class="about-hero" aria-labelledby="about-hero-title">
-      <div class="about-hero-overlay"></div>
 
-      <div class="container about-hero-content">
-        <span class="eyebrow">Our purpose. Our journey.</span>
+<main class="story-page">
 
-        <h1 id="about-hero-title">
-          About Kailash ki Karuna
-        </h1>
+  <!-- Story hero -->
+  <section class="story-hero">
+    <div class="container story-hero-inner">
+      <p class="story-eyebrow">OUR JOURNEY</p>
+      <h1>A journey of faith, compassion and service.</h1>
+      <p class="story-hero-description">
+        Kailash ki Karuna is built around a simple belief:
+        care and compassion should reach people when they need them most.
+      </p>
+      <a href="#our-beginning" class="button button-primary">
+        Discover Our Story ↓
+      </a>
+    </div>
+  </section>
 
+  <!-- The beginning -->
+  <section class="story-section" id="our-beginning">
+    <div class="container story-split">
+      <div class="story-section-label">
+        <span class="story-number">01</span>
+        <p>THE BEGINNING</p>
+      </div>
+
+      <div class="story-copy">
+        <h2>Where the journey began</h2>
         <p>
-          A journey of compassion, service, and support for people
-          and families when they need it most.
+          [Write the founder's real story here. Explain what inspired
+          the journey, the challenges faced, and why this work began.]
         </p>
-
-        <a class="button button-primary" href="#our-story">
-          Discover our story <span aria-hidden="true">↓</span>
-        </a>
+        <p>
+          [Add the personal experiences and important moments that
+          shaped the vision of Kailash ki Karuna.]
+        </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Section 1: Founder introduction video -->
-    <section
-      class="section founder-intro-section"
-      id="founder"
-      aria-labelledby="founder-title"
-    >
-      <div class="container founder-intro-layout">
-
-        <div class="founder-intro-copy">
-          <span class="eyebrow">A message from our founder</span>
-
-          <h2 id="founder-title">
-            The thought behind our service.
-          </h2>
-
-          <p>
-            Every meaningful initiative begins with a thought.
-            Hear directly from our founder about the purpose,
-            values, and vision behind Kailash ki Karuna.
-          </p>
-
-          <p class="founder-intro-note">
-            Our work is guided by compassion, dignity, and a
-            commitment to supporting our community.
-          </p>
-        </div>
-
-        <div class="founder-video-frame">
-          <video
-            class="founder-video"
-            controls
-            playsinline
-            preload="metadata"
-            poster="images/founder-introduction-poster.jpg"
-          >
-            <source
-              src="videos/founder-introduction.mp4"
-              type="video/mp4"
-            />
-            Your browser does not support HTML video.
-          </video>
-
-          <p class="media-caption">
-            Founder introduction — video coming soon.
-          </p>
-        </div>
-
+  <!-- Kailash Mansarovar journey -->
+  <section class="story-section story-section-soft">
+    <div class="container story-split">
+      <div class="story-section-label">
+        <span class="story-number">02</span>
+        <p>THE INSPIRATION</p>
       </div>
-    </section>
 
-    <!-- Section 2: Our story carousel -->
-    <section
-      class="section section-soft about-stories-section"
-      id="our-story"
-      aria-labelledby="stories-title"
-    >
-      <div class="container">
+      <div class="story-copy">
+        <h2>The Kailash Mansarovar journey</h2>
+        <p>
+          [Describe the actual pilgrimage, what the founder experienced,
+          and how the journey influenced the organisation's values.]
+        </p>
+        <p>
+          [Add a meaningful personal reflection or lesson from the journey.]
+        </p>
+      </div>
+    </div>
+  </section>
 
-        <div class="section-heading">
-          <span class="eyebrow">Our journey</span>
+  <!-- From belief to action -->
+  <section class="story-section">
+    <div class="container story-split">
+      <div class="story-section-label">
+        <span class="story-number">03</span>
+        <p>TAKING ACTION</p>
+      </div>
 
-          <h2 id="stories-title">
-            Stories that define us.
-          </h2>
+      <div class="story-copy">
+        <h2>Turning compassion into practical support</h2>
+        <p>
+          [Explain how the idea developed into real work, including
+          the people served, the challenges addressed, and the
+          services the organisation provides.]
+        </p>
+        <p>
+          [Add verified examples of the work and its impact on families
+          and the community.]
+        </p>
+      </div>
+    </div>
+  </section>
 
-          <p>
-            Explore the people, moments, and experiences that
-            reflect the spirit of Kailash ki Karuna.
-          </p>
-        </div>
+  <!-- People and milestones -->
+  <section class="story-section story-section-soft">
+    <div class="container">
+      <div class="story-heading">
+        <p class="story-eyebrow">OUR MILESTONES</p>
+        <h2>Every step has a story.</h2>
+        <p>
+          The people, experiences and milestones that have shaped
+          our journey so far.
+        </p>
+      </div>
 
-        <!-- Reuses the existing carousel in js/app.js -->
-        <div
-          class="story-carousel"
-          data-carousel
-          aria-roledescription="carousel"
-          aria-label="Stories from Kailash ki Karuna"
-        >
-          <div class="story-track" data-carousel-track>
+      <div class="milestone-list">
 
-            <!-- Story 1: Photo -->
-            <article class="story-card">
-              <div class="story-image-wrap">
-                <img
-                  src="images/about-story-1.jpg"
-                  alt="Photograph representing the beginning of our journey"
-                  loading="lazy"
-                  onerror="this.parentElement.classList.add('image-missing')"
-                />
-                <span class="image-placeholder-label">Add photo</span>
-              </div>
-
-              <div class="story-card-content">
-                <span class="card-number">01</span>
-                <h3>Where our journey began</h3>
-                <p>
-                  Add the story of how Kailash ki Karuna began
-                  and the idea that inspired its creation.
-                </p>
-              </div>
-            </article>
-
-            <!-- Story 2: Photo -->
-            <article class="story-card">
-              <div class="story-image-wrap">
-                <img
-                  src="images/about-story-2.jpg"
-                  alt="Photograph of a community service activity"
-                  loading="lazy"
-                  onerror="this.parentElement.classList.add('image-missing')"
-                />
-                <span class="image-placeholder-label">Add photo</span>
-              </div>
-
-              <div class="story-card-content">
-                <span class="card-number">02</span>
-                <h3>Service in action</h3>
-                <p>
-                  Share a real initiative, activity, or experience
-                  that demonstrates your organisation's work.
-                </p>
-              </div>
-            </article>
-
-            <!-- Story 3: Video -->
-            <article class="story-card">
-              <div class="story-image-wrap story-media-wrap">
-                <video
-                  controls
-                  playsinline
-                  preload="none"
-                  poster="images/about-story-video-1.jpg"
-                  aria-label="Video story: Our work in the community"
-                >
-                  <source
-                    src="videos/about-story-1.mp4"
-                    type="video/mp4"
-                  />
-                  Your browser does not support HTML video.
-                </video>
-              </div>
-
-              <div class="story-card-content">
-                <span class="card-number">03</span>
-                <h3>Our work, in our words</h3>
-                <p>
-                  Use a short video to show an activity or let
-                  a team member share a meaningful experience.
-                </p>
-              </div>
-            </article>
-
-            <!-- Story 4: Photo -->
-            <article class="story-card">
-              <div class="story-image-wrap">
-                <img
-                  src="images/about-story-3.jpg"
-                  alt="Photograph of people involved in our initiative"
-                  loading="lazy"
-                  onerror="this.parentElement.classList.add('image-missing')"
-                />
-                <span class="image-placeholder-label">Add photo</span>
-              </div>
-
-              <div class="story-card-content">
-                <span class="card-number">04</span>
-                <h3>People at the heart of our work</h3>
-                <p>
-                  Tell a story about the people, volunteers,
-                  and community members behind the initiative.
-                </p>
-              </div>
-            </article>
-
-            <!-- Story 5: Video -->
-            <article class="story-card">
-              <div class="story-image-wrap story-media-wrap">
-                <video
-                  controls
-                  playsinline
-                  preload="none"
-                  poster="images/about-story-video-2.jpg"
-                  aria-label="Video story: A moment from our journey"
-                >
-                  <source
-                    src="videos/about-story-2.mp4"
-                    type="video/mp4"
-                  />
-                  Your browser does not support HTML video.
-                </video>
-              </div>
-
-              <div class="story-card-content">
-                <span class="card-number">05</span>
-                <h3>Moments worth remembering</h3>
-                <p>
-                  Feature an event, milestone, or short message
-                  that captures your organisation's journey.
-                </p>
-              </div>
-            </article>
-
-            <!-- Story 6: Photo -->
-            <article class="story-card">
-              <div class="story-image-wrap">
-                <img
-                  src="images/about-story-4.jpg"
-                  alt="Photograph representing our future vision"
-                  loading="lazy"
-                  onerror="this.parentElement.classList.add('image-missing')"
-                />
-                <span class="image-placeholder-label">Add photo</span>
-              </div>
-
-              <div class="story-card-content">
-                <span class="card-number">06</span>
-                <h3>The journey ahead</h3>
-                <p>
-                  Share your future goals and the difference
-                  you hope to make in the community.
-                </p>
-              </div>
-            </article>
-
+        <article class="milestone">
+          <span class="milestone-marker"></span>
+          <div>
+            <p class="milestone-label">MILESTONE 01</p>
+            <h3>[First important milestone]</h3>
+            <p>
+              [Describe what happened, when it happened, and why
+              it mattered.]
+            </p>
           </div>
+        </article>
 
-          <div class="carousel-controls">
-            <button
-              class="carousel-arrow"
-              type="button"
-              data-carousel-prev
-              aria-label="Previous story"
-            >←</button>
-
-            <div class="carousel-dots" data-carousel-dots></div>
-
-            <button
-              class="carousel-arrow"
-              type="button"
-              data-carousel-next
-              aria-label="Next story"
-            >→</button>
-
-            <button
-              class="carousel-pause"
-              type="button"
-              data-carousel-pause
-              aria-pressed="false"
-              data-i18n="pauseCarousel"
-            >Pause</button>
+        <article class="milestone">
+          <span class="milestone-marker"></span>
+          <div>
+            <p class="milestone-label">MILESTONE 02</p>
+            <h3>[A meaningful meeting or achievement]</h3>
+            <p>
+              [Describe the event and its significance. Include
+              names and dates only when verified.]
+            </p>
           </div>
-        </div>
+        </article>
+
+        <article class="milestone">
+          <span class="milestone-marker"></span>
+          <div>
+            <p class="milestone-label">MILESTONE 03</p>
+            <h3>[The next chapter]</h3>
+            <p>
+              [Explain how the organisation has grown and what it
+              hopes to accomplish next.]
+            </p>
+          </div>
+        </article>
+
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Section 3: Our locations -->
-    <section
-      class="section locations-section"
-      id="locations"
-      aria-labelledby="locations-title"
-    >
-      <div class="container">
-
-        <div class="section-heading">
-          <span class="eyebrow">Where to find us</span>
-
-          <h2 id="locations-title">
-            Rooted in our communities.
-          </h2>
-
-          <p>
-            Find our locations and the people you can contact
-            for information about our services.
-          </p>
-        </div>
-
-        <div class="locations-grid">
-
-          <!-- Jodhpur -->
-          <article class="location-card">
-            <div class="location-map">
-              <iframe
-                src="https://www.google.com/maps?q=Jodhpur%2C%20Rajasthan%2C%20India&output=embed"
-                title="Map showing Jodhpur, Rajasthan"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                allowfullscreen
-              ></iframe>
-            </div>
-
-            <div class="location-card-body">
-              <span class="location-label">Our location</span>
-              <h3>Jodhpur</h3>
-              <p class="location-region">Rajasthan, India</p>
-
-              <div class="founder-profile">
-                <img
-                  src="images/founder-jodhpur.jpg"
-                  alt="Founder or local representative in Jodhpur"
-                  loading="lazy"
-                  onerror="this.hidden=true"
-                />
-
-                <div>
-                  <h4>Founder name</h4>
-                  <p>Local contact / representative</p>
-                </div>
-              </div>
-
-              <div class="location-contact">
-                <h4>Get in touch</h4>
-                <p>Phone: Contact number to be added</p>
-                <p>Social media: Profile links to be added</p>
-              </div>
-            </div>
-          </article>
-
-          <!-- Jaitaran -->
-          <article class="location-card">
-            <div class="location-map">
-              <iframe
-                src="https://www.google.com/maps?q=Jaitaran%2C%20Rajasthan%2C%20India&output=embed"
-                title="Map showing Jaitaran, Rajasthan"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                allowfullscreen
-              ></iframe>
-            </div>
-
-            <div class="location-card-body">
-              <span class="location-label">Our location</span>
-              <h3>Jaitaran</h3>
-              <p class="location-region">Rajasthan, India</p>
-
-              <div class="founder-profile">
-                <img
-                  src="images/founder-jaitaran.jpg"
-                  alt="Founder or local representative in Jaitaran"
-                  loading="lazy"
-                  onerror="this.hidden=true"
-                />
-
-                <div>
-                  <h4>Founder name</h4>
-                  <p>Local contact / representative</p>
-                </div>
-              </div>
-
-              <div class="location-contact">
-                <h4>Get in touch</h4>
-                <p>Phone: Contact number to be added</p>
-                <p>Social media: Profile links to be added</p>
-              </div>
-            </div>
-          </article>
-
-          <!-- Ranchi -->
-          <article class="location-card">
-            <div class="location-map">
-              <iframe
-                src="https://www.google.com/maps?q=Ranchi%2C%20Jharkhand%2C%20India&output=embed"
-                title="Map showing Ranchi, Jharkhand"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                allowfullscreen
-              ></iframe>
-            </div>
-
-            <div class="location-card-body">
-              <span class="location-label">Our location</span>
-              <h3>Ranchi</h3>
-              <p class="location-region">Jharkhand, India</p>
-
-              <div class="founder-profile">
-                <img
-                  src="images/founder-ranchi.jpg"
-                  alt="Founder or local representative in Ranchi"
-                  loading="lazy"
-                  onerror="this.hidden=true"
-                />
-
-                <div>
-                  <h4>Founder name</h4>
-                  <p>Local contact / representative</p>
-                </div>
-              </div>
-
-              <div class="location-contact">
-                <h4>Get in touch</h4>
-                <p>Phone: Contact number to be added</p>
-                <p>Social media: Profile links to be added</p>
-              </div>
-            </div>
-          </article>
-
-        </div>
+  <!-- Our values -->
+  <section class="story-section">
+    <div class="container">
+      <div class="story-heading">
+        <p class="story-eyebrow">WHAT GUIDES US</p>
+        <h2>Compassion in action.</h2>
       </div>
-    </section>
 
-  </main>
+      <div class="story-values">
+        <article class="story-value">
+          <span class="value-symbol" aria-hidden="true">01</span>
+          <h3>Dignity</h3>
+          <p>Every person deserves to be treated with respect.</p>
+        </article>
+
+        <article class="story-value">
+          <span class="value-symbol" aria-hidden="true">02</span>
+          <h3>Compassion</h3>
+          <p>We believe care should be guided by understanding and kindness.</p>
+        </article>
+
+        <article class="story-value">
+          <span class="value-symbol" aria-hidden="true">03</span>
+          <h3>Transparency</h3>
+          <p>Clear communication and responsible service matter.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder video: optional -->
+  <section class="story-section story-section-soft" id="founder-message">
+    <div class="container founder-message">
+      <p class="story-eyebrow">A MESSAGE FROM OUR FOUNDER</p>
+      <h2>The story, in our own words.</h2>
+      <p>
+        Hear directly from the founder about the journey,
+        the purpose, and the vision for the future.
+      </p>
+
+      <video class="founder-video" controls playsinline preload="metadata">
+        <source src="videos/founder-introduction.mp4" type="video/mp4">
+        Your browser does not support video playback.
+      </video>
+    </div>
+  </section>
+
+  <!-- Closing CTA -->
+  <section class="story-closing">
+    <div class="container">
+      <p class="story-eyebrow">THE JOURNEY CONTINUES</p>
+      <h2>Be part of a more compassionate community.</h2>
+      <p>
+        Learn more about our work and how we support people
+        who need home-care assistance.
+      </p>
+      <a href="contact.html" class="button button-primary">
+        Connect With Us
+      </a>
+    </div>
+  </section>
+
+</main>
 
   <!-- Shared site footer -->
   <footer class="site-footer" id="contact">
     <div class="container">
       <div class="footer-grid">
-
         <div class="footer-brand">
           <a class="brand footer-brand-link" href="index.html">
             <img
@@ -512,8 +312,7 @@
               alt=""
               width="48"
               height="48"
-              onerror="this.hidden=true"
-            />
+            >
             <span class="brand-name">
               <span>Kailash</span>
               <span class="brand-subtitle">ki Karuna</span>
@@ -530,10 +329,8 @@
         <div class="footer-column">
           <h2 data-i18n="footerExplore">Explore</h2>
           <a href="index.html" data-i18n="navHome">Home</a>
-          <a href="about.html">About Us</a>
-          <a href="equipment.html" data-i18n="navEquipment">
-            Home-care equipment
-          </a>
+          <a href="about.html" data-i18n="navStory">Our Story</a>
+          <a href="equipment.html" data-i18n="navEquipment">Equipment</a>
           <a href="index.html#social-impact" data-i18n="navImpact">
             Social Services
           </a>
@@ -543,7 +340,7 @@
         </div>
 
         <div class="footer-column">
-          <h2 data-i18n="footerConnect">Get in touch</h2>
+          <h2 data-i18n="footerGetInTouch">Get in touch</h2>
           <a href="contact.html" data-i18n="navContact">Contact Us</a>
           <a href="privacy.html" data-i18n="footerPrivacy">
             Privacy Policy
@@ -552,19 +349,14 @@
             Terms &amp; Conditions
           </a>
         </div>
-
       </div>
 
       <div class="footer-bottom">
         <p>
           © <span id="current-year"></span>
-          <span data-i18n="copyright">
+          <span data-i18n="copyrightText">
             Kailash ki Karuna. All rights reserved.
           </span>
-        </p>
-
-        <p data-i18n="footerNote">
-          Equipment availability and deposit terms apply.
         </p>
       </div>
     </div>
