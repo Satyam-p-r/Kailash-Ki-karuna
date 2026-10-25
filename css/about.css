@@ -1,0 +1,239 @@
+
+/* =========================================
+   OUR STORY — STATIC HTML
+   ========================================= */
+
+.story-page {
+  color: var(--color-text, #17324d);
+}
+
+.story-page p {
+  line-height: 1.85;
+}
+
+.story-hero {
+  padding: clamp(76px, 12vw, 150px) 0;
+  background: linear-gradient(135deg, #eef6fc, #ffffff 70%);
+  border-bottom: 1px solid #e3edf5;
+}
+
+.story-hero-inner {
+  max-width: 900px;
+}
+
+.story-eyebrow,
+.story-section-label p,
+.milestone-label {
+  color: #3276a8;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.story-hero h1 {
+  max-width: 820px;
+  margin: 18px 0;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+.story-hero-description {
+  max-width: 650px;
+  margin-bottom: 30px;
+  color: #53697d;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.story-section {
+  padding: clamp(60px, 9vw, 110px) 0;
+}
+
+.story-section-soft {
+  background: #f5f8fb;
+}
+
+.story-split {
+  display: grid;
+  grid-template-columns: minmax(160px, 0.7fr) 2fr;
+  gap: clamp(30px, 7vw, 100px);
+}
+
+.story-section-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.story-section-label p {
+  margin-top: 7px;
+}
+
+.story-number {
+  color: #3276a8;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.story-copy {
+  max-width: 760px;
+}
+
+.story-copy h2,
+.story-heading h2,
+.founder-message h2,
+.story-closing h2 {
+  margin: 0 0 22px;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+
+.story-copy p {
+  color: #586d80;
+  margin: 0 0 18px;
+}
+
+.story-heading {
+  max-width: 700px;
+  margin-bottom: 44px;
+}
+
+.story-heading > p:last-child {
+  color: #586d80;
+}
+
+.milestone-list {
+  max-width: 850px;
+  margin-left: 8px;
+  padding-left: 30px;
+  border-left: 2px solid #d6e6f2;
+}
+
+.milestone {
+  position: relative;
+  padding: 0 0 38px 20px;
+}
+
+.milestone:last-child {
+  padding-bottom: 0;
+}
+
+.milestone-marker {
+  position: absolute;
+  top: 5px;
+  left: -38px;
+  width: 14px;
+  height: 14px;
+  border: 3px solid #3276a8;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.milestone-label {
+  margin: 0 0 8px;
+}
+
+.milestone h3,
+.story-value h3 {
+  margin: 0 0 10px;
+  font-size: 1.3rem;
+}
+
+.milestone p:last-child,
+.story-value p,
+.founder-message > p:not(.story-eyebrow),
+.story-closing > .container > p:not(.story-eyebrow) {
+  color: #586d80;
+}
+
+.story-values {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.story-value {
+  padding: 28px;
+  border: 1px solid #e0eaf2;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.value-symbol {
+  display: inline-block;
+  margin-bottom: 22px;
+  color: #3276a8;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.story-value p {
+  margin-bottom: 0;
+}
+
+.founder-message {
+  max-width: 900px;
+}
+
+.founder-video {
+  display: block;
+  width: 100%;
+  max-height: 560px;
+  margin-top: 30px;
+  border-radius: 18px;
+  background: #10283b;
+}
+
+.story-closing {
+  padding: clamp(65px, 10vw, 120px) 0;
+  text-align: center;
+  background: #eaf4fb;
+}
+
+.story-closing .container {
+  max-width: 850px;
+}
+
+.story-closing h2 {
+  margin-top: 14px;
+}
+
+.story-closing > .container > p:not(.story-eyebrow) {
+  max-width: 620px;
+  margin: 0 auto 28px;
+}
+
+@media (max-width: 700px) {
+  .story-split {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .story-values {
+    grid-template-columns: 1fr;
+  }
+
+  .story-value {
+    padding: 24px;
+  }
+
+  .story-section-label {
+    align-items: center;
+  }
+
+  .story-hero h1 {
+    letter-spacing: -0.025em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .story-page *,
+  .story-page *::before,
+  .story-page *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
