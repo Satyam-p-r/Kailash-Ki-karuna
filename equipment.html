@@ -4,164 +4,136 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#164e8a" />
-
     <title>Home-Care Medical Equipment | Kailash ki Karuna</title>
     <meta
       name="description"
       content="Explore home-care medical equipment from Kailash ki Karuna and request availability with a refundable security deposit."
     />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/equipment.css" />
-
     <script src="js/app.js" defer></script>
-
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7QFD929EKF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-7QFD929EKF');
-</script>
+    <link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+/>
   </head>
-
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-
-<!-- Reusable site header -->
-<header class="site-header">
-  <div class="container header-inner">
-
-    <a
-      class="brand"
-      href="index.html"
-      aria-label="Kailash ki Karuna home"
-      data-i18n-attr="aria-label:brandHomeLabel"
+    <a class="skip-link" href="#main" data-i18n="skipContent"
+      >Skip to content</a
     >
-      <img
-        class="brand-logo"
-        src="images/logo.png"
-        alt=""
-        width="48"
-        height="48"
-        onerror="this.hidden = true"
-      />
-
-      <span class="brand-name">
-        <span>Kailash</span>
-        <span class="brand-subtitle">ki Karuna</span>
-      </span>
-    </a>
-
-    <nav
-      class="site-navigation"
-      id="site-navigation"
-      aria-label="Main navigation"
-    >
-      <a href="index.html" data-i18n="navHome">Home</a>
-      <a href="about.html" data-i18n="navStory">Our Story</a>
-      <a href="equipment.html" data-i18n="navEquipment">Equipment</a>
-      <a href="achivements.html" data-i18n="navImpact">Social Services</a>
-      <a href="achvements.html" data-i18n="navAchievements">Achievements</a>
-      <a class="nav-contact" href="contact.html" data-i18n="navContact">
-        Contact Us
-      </a>
-    </nav>
-
-    <!-- Always visible, even when navigation is collapsed -->
-    <div class="header-actions">
-      <button
-        class="language-toggle"
-        id="language-toggle"
-        type="button"
-        aria-label="Switch language to Hindi"
-      >
-        हिन्दी
-      </button>
-
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-label="Open navigation menu"
-        data-i18n-attr="aria-label:menuLabel"
-        aria-controls="site-navigation"
-        aria-expanded="false"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-
-  </div>
-</header>
-
+    <header class="site-header">
+      <div class="container header-inner">
+        <a
+          class="brand"
+          href="index.html"
+          aria-label="Kailash ki Karuna home"
+          data-i18n-attr="aria-label:brandHomeLabel"
+          ><img
+            class="brand-logo"
+            src="images/logo.png"
+            alt=""
+            width="48"
+            height="48"
+            onerror="this.hidden = true"
+          /><span class="brand-name"
+            ><span>Kailash</span
+            ><span class="brand-subtitle">ki Karuna</span></span
+          ></a
+        >
+        <nav
+          class="site-navigation"
+          id="site-navigation"
+          aria-label="Main navigation"
+        >
+          <a href="index.html" data-i18n="navHome">Home</a
+          ><a href="about.html" data-i18n="navStory">Our Story</a
+          ><a href="equipment.html" data-i18n="navEquipment">Equipment</a
+          ><a href="achivements.html" data-i18n="navImpact">Social Services</a
+          ><a href="achvements.html" data-i18n="navAchievements">Achievements</a
+          ><a class="nav-contact" href="contact.html" data-i18n="navContact"
+            >Contact Us</a
+          >
+        </nav>
+        <div class="header-actions">
+          <button
+            class="language-toggle"
+            id="language-toggle"
+            type="button"
+            aria-label="Switch language to Hindi"
+          >
+            हिन्दी</button
+          ><button
+            class="menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            data-i18n-attr="aria-label:menuLabel"
+            aria-controls="site-navigation"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
     <main id="main">
-      <!-- Catalogue heading -->
       <section class="catalogue-hero">
         <div class="container">
-          <span class="eyebrow">Care at home</span>
-          <h1>Get home-care equipment.</h1>
-          <p>
+          <span class="eyebrow" data-i18n="eqHeroEyebrow">Care at home</span>
+          <h1 data-i18n="eqHeroTitle">Get home-care equipment.</h1>
+          <p data-i18n="eqHeroDescription">
             Find the equipment you need. Send us a request, and our team will
             guide you through availability and the refundable security deposit.
           </p>
-
           <div class="catalogue-search">
-            <label class="search-box" for="equipment-search">
-              <span class="search-icon" aria-hidden="true">⌕</span>
-              <input
+            <label class="search-box" for="equipment-search"
+              ><span class="search-icon" aria-hidden="true">⌕</span
+              ><input
                 id="equipment-search"
                 type="search"
                 placeholder="Search wheelchairs, beds, oxygen care..."
+                data-i18n-attr="placeholder:eqSearchPlaceholder"
                 autocomplete="off"
                 aria-controls="equipment-grid"
-              />
-              <button
+              /><button
                 id="clear-search"
                 class="clear-search"
                 type="button"
                 aria-label="Clear search"
+                data-i18n-attr="aria-label:eqClearSearch"
                 hidden
               >
                 ×
-              </button>
-            </label>
-            <p class="search-hint">
+              </button></label
+            >
+            <p class="search-hint" data-i18n="eqSearchHint">
               Search by equipment name. Results update as you type.
             </p>
           </div>
         </div>
       </section>
-
-      <!-- JavaScript-generated equipment cards -->
       <section class="catalogue-section" aria-labelledby="equipment-heading">
         <div class="container">
           <div class="catalogue-section-heading">
             <div>
-              <span class="eyebrow">Available equipment</span>
-              <h2 id="equipment-heading">Explore equipment</h2>
+              <span class="eyebrow" data-i18n="eqAvailableEyebrow"
+                >Available equipment</span
+              >
+              <h2 id="equipment-heading" data-i18n="eqExploreTitle">
+                Explore equipment
+              </h2>
             </div>
             <p id="result-count" class="result-count" aria-live="polite"></p>
           </div>
-
-          <div id="equipment-grid" class="catalogue-grid">
-            <!-- Cards are generated from the equipment data in equipment.js -->
-          </div>
-
+          <div id="equipment-grid" class="catalogue-grid"></div>
           <div id="empty-results" class="empty-results" hidden>
             <span class="empty-icon" aria-hidden="true">⌕</span>
-            <h3>No matching equipment found</h3>
-            <p>
+            <h3 data-i18n="eqEmptyTitle">No matching equipment found</h3>
+            <p data-i18n="eqEmptyDescription">
               Try a different equipment name, or contact our team for
               assistance.
             </p>
@@ -169,98 +141,123 @@
               id="reset-search"
               class="button button-outline"
               type="button"
+              data-i18n="eqShowAll"
             >
               Show all equipment
             </button>
           </div>
         </div>
       </section>
-
-      <!-- Other services: add services and destinations later -->
       <section class="other-services section-soft" id="other-services">
         <div class="container">
           <div class="section-heading">
-            <span class="eyebrow">Beyond equipment</span>
-            <h2>Other services</h2>
-            <p>Additional community services we aim to connect people with.</p>
+            <span class="eyebrow" data-i18n="eqServicesEyebrow"
+              >Beyond equipment</span
+            >
+            <h2 data-i18n="eqServicesTitle">Other services</h2>
+            <p data-i18n="eqServicesDescription">
+              Additional community services we aim to connect people with.
+            </p>
           </div>
-
           <div class="services-grid">
             <article class="service-tile">
               <span class="service-icon" aria-hidden="true">+</span>
-              <h3>Ambulance service</h3>
-              <p>Assistance connecting with ambulance services.</p>
-              <span class="service-status">Details coming soon</span>
+              <h3 data-i18n="eqAmbulanceTitle">Ambulance service</h3>
+              <p data-i18n="eqAmbulanceDescription">
+                Assistance connecting with ambulance services.
+              </p>
+              <span class="service-status" data-i18n="eqComingSoon"
+                >Details coming soon</span
+              >
             </article>
-
+            <article class="service-tile">
+              <span class="service-icon" aria-hidden="true">✝</span>
+              <h3 data-i18n="eqTransportTitle">
+                Deceased-person transport to pilgrimage destinations
+              </h3>
+              <p data-i18n="eqTransportDescription">
+                Contact our team for information about respectful transport
+                arrangements to pilgrimage destinations. A dedicated request
+                form will be added soon.
+              </p>
+              <span class="service-status" data-i18n="eqComingSoon"
+                >Details coming soon</span
+              >
+            </article>
             <article class="service-tile">
               <span class="service-icon" aria-hidden="true">✳</span>
-              <h3>Fogging services</h3>
-              <p>Community-focused mosquito-control services.</p>
-              <span class="service-status">Details coming soon</span>
+              <h3 data-i18n="eqFoggingTitle">Fogging services</h3>
+              <p data-i18n="eqFoggingDescription">
+                Community-focused mosquito-control services.
+              </p>
+              <span class="service-status" data-i18n="eqComingSoon"
+                >Details coming soon</span
+              >
             </article>
-
             <article class="service-tile">
               <span class="service-icon" aria-hidden="true">◇</span>
-              <h3>Hypo spray</h3>
-              <p>Information about this service will be added soon.</p>
-              <span class="service-status">Details coming soon</span>
+              <h3 data-i18n="eqHypoTitle">Hypo spray</h3>
+              <p data-i18n="eqHypoDescription">
+                Information about this service will be added soon.
+              </p>
+              <span class="service-status" data-i18n="eqComingSoon"
+                >Details coming soon</span
+              >
             </article>
           </div>
         </div>
       </section>
     </main>
-
-    <!-- Shared footer -->
     <footer class="site-footer" id="contact">
       <div class="container">
         <div class="footer-grid">
           <div class="footer-brand">
-            <a class="brand footer-brand-link" href="index.html">
-              <img
+            <a class="brand footer-brand-link" href="index.html"
+              ><img
                 class="brand-logo"
                 src="images/logo.png"
                 alt=""
                 width="48"
                 height="48"
-              />
-              <span class="brand-name">
-                <span>Kailash</span>
-                <span class="brand-subtitle">ki Karuna</span>
-              </span>
-            </a>
-            <p>Compassionate support for better care at home.</p>
+              /><span class="brand-name"
+                ><span>Kailash</span
+                ><span class="brand-subtitle">ki Karuna</span></span
+              ></a
+            >
+            <p data-i18n="eqFooterTagline">
+              Compassionate support for better care at home.
+            </p>
             <p class="footer-mantra" lang="hi">शिव ही सेवा है</p>
           </div>
-
           <div class="footer-column">
-            <h2>Explore</h2>
-            <a href="index.html">Home</a>
-            <a href="equipment.html">Home-care equipment</a>
-            <a href="about.html">Our Story</a>
-            <a href="about.html">Social Services</a>
-            <a href="achivements.html">Achievements</a>
+            <h2 data-i18n="eqFooterExplore">Explore</h2>
+            <a href="index.html" data-i18n="navHome">Home</a
+            ><a href="equipment.html" data-i18n="eqFooterEquipment"
+              >Home-care equipment</a
+            ><a href="about.html" data-i18n="navStory">Our Story</a
+            ><a href="about.html" data-i18n="navImpact">Social Services</a
+            ><a href="achivements.html" data-i18n="navAchievements"
+              >Achievements</a
+            >
           </div>
-
           <div class="footer-column">
-            <h2>Get in touch</h2>
-            <a href="contact.html">Contact Us</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms &amp; Conditions</a>
+            <h2 data-i18n="eqFooterContactHeading">Get in touch</h2>
+            <a href="contact.html" data-i18n="navContact">Contact Us</a
+            ><a href="privacy.html" data-i18n="eqPrivacy">Privacy Policy</a
+            ><a href="terms.html" data-i18n="eqTerms">Terms &amp; Conditions</a>
           </div>
         </div>
-
         <div class="footer-bottom">
           <p>
-            © <span id="current-year"></span> Kailash ki Karuna. All rights
-            reserved.
+            © <span id="current-year"></span> Kailash ki Karuna.
+            <span data-i18n="eqRights">All rights reserved.</span>
           </p>
-          <p>Equipment availability and deposit terms apply.</p>
+          <p data-i18n="eqFooterDisclaimer">
+            Equipment availability and deposit terms apply.
+          </p>
         </div>
       </div>
     </footer>
-
-    <!-- Equipment request dialog -->
     <dialog
       id="request-dialog"
       class="request-dialog"
@@ -268,8 +265,12 @@
     >
       <div class="dialog-header">
         <div>
-          <span class="eyebrow">Equipment request</span>
-          <h2 id="request-title">Request availability</h2>
+          <span class="eyebrow" data-i18n="eqRequestEyebrow"
+            >Equipment request</span
+          >
+          <h2 id="request-title" data-i18n="eqRequestTitle">
+            Request availability
+          </h2>
           <p id="selected-equipment" class="selected-equipment"></p>
         </div>
         <button
@@ -277,51 +278,55 @@
           class="dialog-close"
           type="button"
           aria-label="Close request form"
+          data-i18n-attr="aria-label:eqCloseRequest"
         >
           ×
         </button>
       </div>
-
       <div class="dialog-content">
         <div class="terms-summary">
-          <h3>Important conditions</h3>
+          <h3 data-i18n="eqConditionsTitle">Important conditions</h3>
           <ol>
-            <li>
+            <li data-i18n="eqCondition1">
               Use equipment according to its instructions and under appropriate
               medical-professional guidance. It is not a substitute for medical
               advice or emergency care.
             </li>
-            <li>
+            <li data-i18n="eqCondition2">
               Return equipment by the agreed date in the condition received,
               allowing for ordinary wear and tear. Report damage or faults
               promptly.
             </li>
-            <li>
+            <li data-i18n="eqCondition3">
               The standard maximum loan period is 30 days, subject to
               availability and any written extension approved by the
               organization.
             </li>
-            <li>
+            <li data-i18n="eqCondition4">
               Provide accurate information, use the equipment only for its
               intended purpose, and do not transfer, sell, or misuse it.
             </li>
           </ol>
-          <p>
+          <p data-i18n="eqConditionsNote">
             Requests are subject to availability, identity/eligibility checks
             where applicable, and the organization's equipment handover process.
             The organization will explain the deposit and refund terms before
             handover.
           </p>
-          <a href="terms.html" target="_blank" rel="noopener noreferrer">
-            Read full terms and conditions →
-          </a>
+          <a
+            href="terms.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="eqReadTerms"
+            >Read full terms and conditions →</a
+          >
         </div>
-
         <form id="request-form">
           <div class="form-grid">
             <div class="form-field">
-              <label for="request-name">Your full name *</label>
-              <input
+              <label for="request-name" data-i18n="eqNameLabel"
+                >Your full name *</label
+              ><input
                 id="request-name"
                 name="name"
                 type="text"
@@ -330,10 +335,29 @@
                 required
               />
             </div>
-
-            <div class="form-field">
-              <label for="request-email">Your email address *</label>
-              <input
+            <div class="form-field form-field-full">
+              <fieldset class="reply-preference">
+                <legend data-i18n="eqReplyMethod">
+                  How would you like to receive our reply? *
+                </legend>
+                <label
+                  ><input
+                    type="radio"
+                    name="replyMethod"
+                    value="email"
+                    checked
+                  />
+                  <span data-i18n="eqReplyEmail">Email</span></label
+                ><label
+                  ><input type="radio" name="replyMethod" value="phone" />
+                  <span data-i18n="eqReplyPhone">Phone call / SMS</span></label
+                >
+              </fieldset>
+            </div>
+            <div class="form-field" id="email-field">
+              <label for="request-email" data-i18n="eqEmailLabel"
+                >Your email address *</label
+              ><input
                 id="request-email"
                 name="email"
                 type="email"
@@ -343,32 +367,52 @@
                 required
               />
             </div>
-
+            <div class="form-field" id="phone-field" hidden>
+              <label for="request-phone" data-i18n="eqPhoneLabel"
+                >Your phone number *</label
+              ><input
+                id="request-phone"
+                name="phone"
+                type="tel"
+                autocomplete="tel"
+                inputmode="tel"
+                maxlength="20"
+                placeholder="+91 98765 43210"
+                data-i18n-attr="placeholder:eqPhonePlaceholder"
+              />
+            </div>
             <div class="form-field">
-              <label for="request-recipient">Equipment is for *</label>
-              <input
+              <label for="request-recipient" data-i18n="eqRecipientLabel"
+                >Equipment is for *</label
+              ><input
                 id="request-recipient"
                 name="recipient"
                 type="text"
                 placeholder="Self, mother, father..."
+                data-i18n-attr="placeholder:eqRecipientPlaceholder"
                 maxlength="100"
                 required
               />
             </div>
-
             <div class="form-field">
-              <label for="request-start">Required from *</label>
-              <input id="request-start" name="startDate" type="date" required />
+              <label for="request-start" data-i18n="eqStartLabel"
+                >Required from *</label
+              ><input
+                id="request-start"
+                name="startDate"
+                type="date"
+                required
+              />
             </div>
-
             <div class="form-field">
-              <label for="request-end">Intended return date *</label>
-              <input id="request-end" name="endDate" type="date" required />
+              <label for="request-end" data-i18n="eqEndLabel"
+                >Intended return date *</label
+              ><input id="request-end" name="endDate" type="date" required />
             </div>
-
             <div class="form-field form-field-full">
-              <label for="request-address">Full address and city *</label>
-              <textarea
+              <label for="request-address" data-i18n="eqAddressLabel"
+                >Full address and city *</label
+              ><textarea
                 id="request-address"
                 name="address"
                 rows="3"
@@ -378,38 +422,39 @@
               ></textarea>
             </div>
           </div>
-
-          <label class="terms-checkbox">
-            <input
+          <label class="terms-checkbox"
+            ><input
               id="accept-terms"
               name="acceptTerms"
               type="checkbox"
               required
-            />
-            <span>
-              I have read and understood the conditions above and the
-              <a href="terms.html" target="_blank" rel="noopener noreferrer">
-                full terms and conditions </a
-              >.
-            </span>
-          </label>
-
-          <p class="form-privacy-note">
-            Your details will be included in the request message you choose to
-            send to our team. Please avoid entering unnecessary medical or other
-            sensitive information.
+            /><span
+              ><span data-i18n="eqAcceptTermsIntro"
+                >I have read and understood the conditions above and the</span
+              >
+              <a
+                href="terms.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-i18n="eqFullTerms"
+                >full terms and conditions</a
+              >.</span
+            ></label
+          >
+          <p class="form-privacy-note" data-i18n="eqPrivacyNote">
+            Your details will be included in the request sent to our team.
+            Please avoid entering unnecessary medical or other sensitive
+            information.
           </p>
-
           <button
             id="submit-request"
             class="button button-primary request-submit"
             type="submit"
             disabled
           >
-            ask for availability
+            <span data-i18n="eqSubmit">Ask for availability</span>
             <span aria-hidden="true">→</span>
           </button>
-
           <p
             id="form-status"
             class="form-status"
@@ -419,8 +464,6 @@
         </form>
       </div>
     </dialog>
-
-    <!-- Contact-channel chooser after validation -->
     <dialog
       id="contact-dialog"
       class="request-dialog contact-dialog"
@@ -428,31 +471,45 @@
     >
       <div class="dialog-header">
         <div>
-          <span class="eyebrow">Request Send Successfully!!</span>
-          <h2 id="contact-title">We will reply u back on Mail <br> आप हमसे सीधे संपर्क भी कर सकते हैं।</h2>
-          <p>Choose how you'd like to contact us.</p>
+          <span class="eyebrow" data-i18n="eqContactEyebrow"
+            >Request status</span
+          >
+          <h2 id="contact-title" data-i18n="eqContactTitle">
+            Your request details are ready
+          </h2>
+          <p data-i18n="eqContactDescription">
+            You can also contact our team directly using the options below.
+          </p>
         </div>
         <button
           id="close-contact-dialog"
           class="dialog-close"
           type="button"
           aria-label="Close contact options"
+          data-i18n-attr="aria-label:eqCloseContact"
         >
           ×
         </button>
       </div>
-
       <div class="contact-options">
-        <button id="send-whatsapp" class="button button-primary" type="button">
-          Continue with WhatsApp
-        </button>
-        <button id="send-email" class="button button-outline" type="button">
+        <button
+          id="send-whatsapp"
+          class="button button-primary"
+          type="button"
+          data-i18n="eqWhatsapp"
+        >
+          Continue with WhatsApp</button
+        ><button
+          id="send-email"
+          class="button button-outline"
+          type="button"
+          data-i18n="eqSendEmail"
+        >
           Continue with email
         </button>
-        <p class="form-privacy-note">
-          Your messaging or email application will open with a prepared draft.
-          You must send the message yourself. Your request is not a confirmed
-          reservation until our team responds.
+        <p class="form-privacy-note" data-i18n="eqContactNote">
+          These options open a prepared message. Please send it yourself. Your
+          request is not confirmed until our team responds.
         </p>
       </div>
     </dialog>

@@ -1,262 +1,42 @@
+
 "use strict";
 
 /* =========================================================
-   Kailash ki Karuna
-   Application entry point
+   KAILASH KI KARUNA — MAIN APP
    ========================================================= */
 
-/**
- * All user-facing copy lives here for now.
- * Future structure:
- * locales/
- *   en.json
- *   hi.json
- */
-const translations = {
-  en: {
-    skipLink: "Skip to content",
-    navHome: "Home",
-    navStory: "Our Story",
-    navEquipment: "Equipment",
-    navImpact: "Social Services",
-    navAchievements: "Achievements",
-    navContact: "Contact Us",
+/* ---------- Configuration ---------- */
 
-    heroEyebrow: "Compassion in action",
-    heroTagline:
-      "Medical equipment when you need it. Compassion when it matters.",
-    heroDescription:
-      "Access essential home-care medical equipment with a fully refundable security deposit, subject to our terms.",
-    heroCta: "Get home-care equipment",
-    heroSecondary: "Discover our mission",
-    trustNote: "Care with dignity. Support with transparency.",
-
-    storyEyebrow: "Who we are",
-    storyTitle: "Care should never be out of reach.",
-    storyDescription:
-      "A little support can make recovery at home easier for an entire family.",
-    storyCard1Title: "The heart behind our work",
-    storyCard1Text:
-      "Our mission begins with a simple belief: everyone deserves access to essential care.",
-    storyCard2Title: "Support for families",
-    storyCard2Text:
-      "We help families access equipment they need for recovery and care at home.",
-    storyCard3Title: "Service with dignity",
-    storyCard3Text:
-      "We aim to make support more accessible while treating every person with respect.",
-    pauseCarousel: "Pause",
-
-    equipmentEyebrow: "Home-care essentials",
-    equipmentTitle: "Equipment for better recovery.",
-    equipmentDescription:
-      "Practical support for patients and caregivers at home.",
-    viewAll: "View all equipment →",
-    learnMore: "Learn more",
-
-    wheelchairTitle: "Wheelchairs",
-    wheelchairText: "Support for safe, more comfortable mobility.",
-    bedTitle: "Hospital beds",
-    bedText: "Home-care support for rest and recovery.",
-    oxygenTitle: "Oxygen concentrators",
-    oxygenText: "Equipment for prescribed oxygen support.",
-    nebulizerTitle: "Nebulizers",
-    nebulizerText: "Respiratory-care equipment for home use.",
-    walkerTitle: "Walkers",
-    walkerText: "Extra stability and support while walking.",
-    mattressTitle: "Medical air mattresses",
-    mattressText: "Pressure-relief support for suitable home-care needs.",
-
-    impactEyebrow: "Why it matters",
-    impactTitle: "Care that supports the whole family.",
-    impactText:
-      "Access to appropriate medical equipment can make caring for a loved one at home more manageable. We work to reduce barriers and offer practical support with dignity.",
-    impactCta: "Connect with us",
-    impact1Title: "Accessible support",
-    impact1Text:
-      "Essential equipment made available through our support model.",
-    impact2Title: "Transparent process",
-    impact2Text: "Clear information about deposits, eligibility, and returns.",
-    impact3Title: "Community first",
-    impact3Text: "Support shaped around the needs of patients and caregivers.",
-
-    achievementsEyebrow: "Our commitment",
-    achievementsTitle: "Every act of care counts.",
-    achievementsText:
-      "Our impact is built through the people we serve, the families we support, and the community that stands with us.",
-    achievementsLink: "Discover our achievements →",
-
-    footerDescription: "Compassionate support for better care at home.",
-    footerExplore: "Explore",
-    footerConnect: "Get in touch",
-    footerPrivacy: "Privacy Policy",
-    footerTerms: "Terms & Conditions",
-    copyright: "Kailash ki Karuna. All rights reserved.",
-    footerNote: "Equipment availability and deposit terms apply.",
-  },
-
-  hi: {
-    skipLink: "मुख्य सामग्री पर जाएँ",
-    navHome: "होम",
-    navStory: "हमारी कहानी",
-    navEquipment: "चिकित्सा उपकरण",
-    navImpact: "समाज सेवा",
-    navAchievements: "उपलब्धियाँ",
-    navContact: "संपर्क करें",
-
-    heroEyebrow: "करुणा से सेवा",
-    heroTagline: "ज़रूरत के समय चिकित्सा उपकरण, हर कदम पर संवेदनशील सहयोग।",
-    heroDescription:
-      "नियमों और शर्तों के अधीन, पूरी तरह वापसी योग्य सुरक्षा जमा राशि पर आवश्यक घरेलू चिकित्सा उपकरण प्राप्त करें।",
-    heroCta: "घरेलू चिकित्सा उपकरण प्राप्त करें",
-    heroSecondary: "हमारे उद्देश्य को जानें",
-    trustNote: "सम्मान के साथ देखभाल। पारदर्शिता के साथ सहयोग।",
-
-    storyEyebrow: "हम कौन हैं",
-    storyTitle: "देखभाल हर किसी की पहुँच में होनी चाहिए।",
-    storyDescription:
-      "थोड़ा-सा सहयोग पूरे परिवार के लिए घर पर स्वास्थ्य लाभ को आसान बना सकता है।",
-    storyCard1Title: "हमारे कार्य के पीछे की भावना",
-    storyCard1Text:
-      "हमारा उद्देश्य इस विश्वास से शुरू होता है कि हर व्यक्ति को आवश्यक देखभाल मिलनी चाहिए।",
-    storyCard2Title: "परिवारों के लिए सहयोग",
-    storyCard2Text:
-      "हम परिवारों को घर पर देखभाल और स्वास्थ्य लाभ के लिए आवश्यक उपकरण उपलब्ध कराने में सहायता करते हैं।",
-    storyCard3Title: "सम्मान के साथ सेवा",
-    storyCard3Text:
-      "हम हर व्यक्ति के सम्मान को बनाए रखते हुए सहायता को अधिक सुलभ बनाने का प्रयास करते हैं।",
-    pauseCarousel: "रोकें",
-
-    equipmentEyebrow: "घरेलू देखभाल के उपकरण",
-    equipmentTitle: "बेहतर स्वास्थ्य लाभ के लिए उपकरण।",
-    equipmentDescription:
-      "मरीज़ों और उनकी देखभाल करने वालों के लिए उपयोगी सहयोग।",
-    viewAll: "सभी उपकरण देखें →",
-    learnMore: "और जानें",
-
-    wheelchairTitle: "व्हीलचेयर",
-    wheelchairText: "सुरक्षित और सुविधाजनक आवागमन में सहयोग।",
-    bedTitle: "अस्पताल के बेड",
-    bedText: "आराम और स्वास्थ्य लाभ के लिए घरेलू देखभाल।",
-    oxygenTitle: "ऑक्सीजन कंसंट्रेटर",
-    oxygenText: "चिकित्सकीय सलाह के अनुसार ऑक्सीजन सहायता।",
-    nebulizerTitle: "नेब्युलाइज़र",
-    nebulizerText: "घर पर श्वसन देखभाल के लिए उपकरण।",
-    walkerTitle: "वॉकर",
-    walkerText: "चलते समय अतिरिक्त सहारा और स्थिरता।",
-    mattressTitle: "मेडिकल एयर मैट्रेस",
-    mattressText: "उपयुक्त घरेलू देखभाल में दबाव कम करने के लिए सहायक उपकरण।",
-
-    impactEyebrow: "यह क्यों महत्वपूर्ण है",
-    impactTitle: "पूरे परिवार को सहारा देने वाली देखभाल।",
-    impactText:
-      "उपयुक्त चिकित्सा उपकरण घर पर अपने प्रियजन की देखभाल को आसान बना सकते हैं। हम बाधाओं को कम करने और सम्मान के साथ व्यावहारिक सहायता देने का प्रयास करते हैं।",
-    impactCta: "हमसे संपर्क करें",
-    impact1Title: "सुलभ सहायता",
-    impact1Text:
-      "हमारी सहायता व्यवस्था के माध्यम से आवश्यक उपकरण उपलब्ध कराने का प्रयास।",
-    impact2Title: "पारदर्शी प्रक्रिया",
-    impact2Text:
-      "सुरक्षा जमा राशि, पात्रता और वापसी के बारे में स्पष्ट जानकारी।",
-    impact3Title: "समुदाय सर्वोपरि",
-    impact3Text:
-      "मरीज़ों और उनकी देखभाल करने वालों की ज़रूरतों के अनुरूप सहायता।",
-
-    achievementsEyebrow: "हमारी प्रतिबद्धता",
-    achievementsTitle: "सेवा का हर प्रयास मायने रखता है।",
-    achievementsText:
-      "हमारा प्रभाव उन लोगों, परिवारों और समुदाय के सहयोग से बनता है जिनके साथ हम काम करते हैं।",
-    achievementsLink: "हमारी उपलब्धियाँ देखें →",
-
-    footerDescription: "घर पर बेहतर देखभाल के लिए संवेदनशील सहयोग।",
-    footerExplore: "जानकारी",
-    footerConnect: "संपर्क करें",
-    footerPrivacy: "गोपनीयता नीति",
-    footerTerms: "नियम एवं शर्तें",
-    copyright: "कैलाश की करुणा। सर्वाधिकार सुरक्षित।",
-    footerNote: "उपकरणों की उपलब्धता और जमा राशि की शर्तें लागू हैं।",
-  },
+const CONTACT_CONFIG = {
+  web3formsAccessKey: "60733148-9061-4b9b-934f-6ab2b7700deb",
+  whatsappNumber: "91XXXXXXXXXX",
+  emailAddress: "YOUR_NGO_EMAIL@example.com"
 };
 
-/* =========================================================
-   DOM utilities
-   ========================================================= */
+/* ---------- Utilities ---------- */
 
-const select = (selector, root = document) => root.querySelector(selector);
+const select = (selector, root = document) =>
+  root.querySelector(selector);
 
 const selectAll = (selector, root = document) =>
   Array.from(root.querySelectorAll(selector));
 
 /* =========================================================
-   Navigation
+   1. LANGUAGE SYSTEM
    ========================================================= */
-
-function initNavigation() {
-  const menuButton = select(".menu-toggle");
-  const navigation = select("#site-navigation");
-
-  if (!menuButton || !navigation) return;
-
-  function setMenuOpen(isOpen) {
-    menuButton.setAttribute("aria-expanded", String(isOpen));
-
-    menuButton.setAttribute(
-      "aria-label",
-      isOpen ? "Close navigation menu" : "Open navigation menu",
-    );
-
-    navigation.classList.toggle("is-open", isOpen);
-    document.body.classList.toggle("menu-open", isOpen);
-  }
-
-  menuButton.addEventListener("click", () => {
-    const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-    setMenuOpen(!isOpen);
-  });
-
-  selectAll("a", navigation).forEach((link) => {
-    link.addEventListener("click", () => setMenuOpen(false));
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      setMenuOpen(false);
-      menuButton.focus();
-    }
-  });
-
-  document.addEventListener("click", (event) => {
-    if (
-      menuButton.getAttribute("aria-expanded") === "true" &&
-      !navigation.contains(event.target) &&
-      !menuButton.contains(event.target)
-    ) {
-      setMenuOpen(false);
-    }
-  });
-
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 760) {
-      setMenuOpen(false);
-    }
-  });
-}
-
-/* ========================================
-   Internationalisation (i18n)
-======================================== */
 
 const supportedLanguages = ["en", "hi"];
 const translationCache = {};
 
 let currentLanguage = "en";
+let activeDictionary = {};
 
-/**
- * Load and cache a language's JSON dictionary.
- */
+function t(key, fallback = "") {
+  return activeDictionary[key] || fallback;
+}
+
 async function loadTranslations(language) {
-  if (!supportedLanguages.includes(language)) {
-    language = "en";
-  }
+  if (!supportedLanguages.includes(language)) language = "en";
 
   if (translationCache[language]) {
     return translationCache[language];
@@ -265,7 +45,7 @@ async function loadTranslations(language) {
   const response = await fetch(`locales/${language}.json`);
 
   if (!response.ok) {
-    throw new Error(`Could not load locales/${language}.json`);
+    throw new Error(`Unable to load locales/${language}.json`);
   }
 
   const dictionary = await response.json();
@@ -274,25 +54,20 @@ async function loadTranslations(language) {
   return dictionary;
 }
 
-/**
- * Apply translations to the page.
- *
- * HTML text:
- *   data-i18n="heroTitle"
- *
- * HTML attributes:
- *   data-i18n-attr="aria-label:menuLabel"
- */
 async function setLanguage(language) {
-  if (!supportedLanguages.includes(language)) {
-    language = "en";
-  }
+  if (!supportedLanguages.includes(language)) language = "en";
 
   try {
     const dictionary = await loadTranslations(language);
 
-    // Translate regular text content.
-    document.querySelectorAll("[data-i18n]").forEach((element) => {
+    activeDictionary = dictionary;
+    currentLanguage = language;
+
+    // Set language before updating content.
+    document.documentElement.lang = language;
+
+    // Translate text.
+    selectAll("[data-i18n]").forEach((element) => {
       const key = element.dataset.i18n;
 
       if (Object.prototype.hasOwnProperty.call(dictionary, key)) {
@@ -300,11 +75,9 @@ async function setLanguage(language) {
       }
     });
 
-    // Translate HTML attributes.
-    document.querySelectorAll("[data-i18n-attr]").forEach((element) => {
-      const mappings = element.dataset.i18nAttr.split(",");
-
-      mappings.forEach((mapping) => {
+    // Translate placeholders, aria-labels, titles, etc.
+    selectAll("[data-i18n-attr]").forEach((element) => {
+      element.dataset.i18nAttr.split(",").forEach((mapping) => {
         const [attribute, key] = mapping.trim().split(":");
 
         if (
@@ -317,34 +90,32 @@ async function setLanguage(language) {
       });
     });
 
-    // Update document language and current state.
-    document.documentElement.lang = language;
-    currentLanguage = language;
-
-    // Update the toggle to show the language the user can switch TO.
-    const toggle = document.querySelector("#language-toggle");
+    // Language toggle.
+    const toggle = select("#language-toggle");
 
     if (toggle) {
-      const nextLanguage = language === "en" ? "hi" : "en";
-
-      toggle.textContent = nextLanguage === "hi" ? "हिन्दी" : "English";
+      toggle.textContent = language === "en" ? "हिन्दी" : "English";
 
       toggle.setAttribute(
         "aria-label",
-        nextLanguage === "hi"
+        language === "en"
           ? "Switch language to Hindi"
-          : "Switch language to English",
+          : "Switch language to English"
       );
-
-      toggle.setAttribute("aria-pressed", String(language === "hi"));
     }
 
-    // Remember the user's choice.
     try {
       localStorage.setItem("kkk-language", language);
     } catch {
-      // Translation still works if storage is unavailable.
+      // Continue without local storage.
     }
+
+    // Update dynamic content.
+    window.dispatchEvent(
+      new CustomEvent("kkk:language-changed", {
+        detail: { dictionary, language }
+      })
+    );
 
     return true;
   } catch (error) {
@@ -353,128 +124,152 @@ async function setLanguage(language) {
   }
 }
 
-/**
- * Initialise language toggle and restore saved language.
- */
 function initInternationalization() {
-  const toggle = document.querySelector("#language-toggle");
+  const toggle = select("#language-toggle");
 
   let savedLanguage = "en";
 
   try {
-    const storedLanguage = localStorage.getItem("kkk-language");
-
-    if (supportedLanguages.includes(storedLanguage)) {
-      savedLanguage = storedLanguage;
-    }
+    const saved = localStorage.getItem("kkk-language");
+    if (supportedLanguages.includes(saved)) savedLanguage = saved;
   } catch {
-    // Default to English if storage is unavailable.
+    // English fallback.
   }
 
   if (toggle) {
     toggle.addEventListener("click", async () => {
-      const nextLanguage = currentLanguage === "en" ? "hi" : "en";
-
       toggle.disabled = true;
 
       try {
-        await setLanguage(nextLanguage);
+        await setLanguage(currentLanguage === "en" ? "hi" : "en");
       } finally {
         toggle.disabled = false;
       }
     });
   }
 
-  // Apply the saved language on page load.
   setLanguage(savedLanguage);
 }
 
 /* =========================================================
-   Story carousel
+   2. NAVIGATION
+   ========================================================= */
+
+function initNavigation() {
+  const button = select(".menu-toggle");
+  const navigation = select("#site-navigation");
+
+  if (!button || !navigation) return;
+
+  function setOpen(open) {
+    button.setAttribute("aria-expanded", String(open));
+    button.setAttribute(
+      "aria-label",
+      open ? "Close navigation menu" : "Open navigation menu"
+    );
+
+    navigation.classList.toggle("is-open", open);
+    document.body.classList.toggle("menu-open", open);
+  }
+
+  button.addEventListener("click", () => {
+    setOpen(button.getAttribute("aria-expanded") !== "true");
+  });
+
+  selectAll("a", navigation).forEach((link) => {
+    link.addEventListener("click", () => setOpen(false));
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setOpen(false);
+  });
+
+  document.addEventListener("click", (event) => {
+    if (
+      button.getAttribute("aria-expanded") === "true" &&
+      !navigation.contains(event.target) &&
+      !button.contains(event.target)
+    ) {
+      setOpen(false);
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 760) setOpen(false);
+  });
+}
+
+/* =========================================================
+   3. CAROUSEL
    ========================================================= */
 
 function initCarousel(carousel) {
   const track = select("[data-carousel-track]", carousel);
-  const previousButton = select("[data-carousel-prev]", carousel);
-  const nextButton = select("[data-carousel-next]", carousel);
-  const dotsContainer = select("[data-carousel-dots]", carousel);
-  const pauseButton = select("[data-carousel-pause]", carousel);
+  const previous = select("[data-carousel-prev]", carousel);
+  const next = select("[data-carousel-next]", carousel);
+  const dots = select("[data-carousel-dots]", carousel);
+  const pause = select("[data-carousel-pause]", carousel);
 
-  if (
-    !track ||
-    !previousButton ||
-    !nextButton ||
-    !dotsContainer ||
-    !pauseButton
-  ) {
-    return;
-  }
+  if (!track || !previous || !next || !dots || !pause) return;
 
   const slides = selectAll(".story-card", track);
-
   if (slides.length < 2) return;
-
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
   const state = {
     index: 0,
-    paused: reducedMotion.matches,
-    timer: null,
+    paused: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+    timer: null
   };
 
-  function getVisibleCount() {
+  function visibleCount() {
     if (window.innerWidth <= 520) return 1;
     if (window.innerWidth <= 960) return 2;
     return 3;
   }
 
-  function getMaxIndex() {
-    return Math.max(0, slides.length - getVisibleCount());
-  }
-
-  function getGap() {
-    return parseFloat(getComputedStyle(track).gap) || 0;
+  function maxIndex() {
+    return Math.max(0, slides.length - visibleCount());
   }
 
   function renderDots() {
-    dotsContainer.replaceChildren();
+    dots.replaceChildren();
 
     slides.forEach((slide, index) => {
-      const button = document.createElement("button");
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "carousel-dot";
+      dot.setAttribute("aria-label", `Show story ${index + 1}`);
 
-      button.type = "button";
-      button.className = "carousel-dot";
-      button.setAttribute("aria-label", `Show story ${index + 1}`);
-
-      button.addEventListener("click", () => {
-        state.index = Math.min(index, getMaxIndex());
+      dot.addEventListener("click", () => {
+        state.index = Math.min(index, maxIndex());
         render();
-        restartTimer();
+        startTimer();
       });
 
-      dotsContainer.append(button);
+      dots.append(dot);
     });
   }
 
   function render() {
-    state.index = Math.max(0, Math.min(state.index, getMaxIndex()));
+    state.index = Math.max(0, Math.min(state.index, maxIndex()));
 
-    const firstSlide = slides[0];
-    const distance = firstSlide.getBoundingClientRect().width + getGap();
+    const gap = parseFloat(getComputedStyle(track).gap) || 0;
+    const width = slides[0].getBoundingClientRect().width;
 
-    track.style.transform = `translateX(-${state.index * distance}px)`;
+    track.style.transform =
+      `translateX(-${state.index * (width + gap)}px)`;
 
-    selectAll(".carousel-dot", dotsContainer).forEach((dot, index) => {
+    selectAll(".carousel-dot", dots).forEach((dot, index) => {
       dot.setAttribute("aria-current", String(index === state.index));
     });
 
-    previousButton.disabled = state.index === 0;
-    nextButton.disabled = state.index === getMaxIndex();
+    previous.disabled = state.index === 0;
+    next.disabled = state.index === maxIndex();
   }
 
   function stopTimer() {
     if (state.timer !== null) {
-      window.clearInterval(state.timer);
+      clearInterval(state.timer);
       state.timer = null;
     }
   }
@@ -484,229 +279,172 @@ function initCarousel(carousel) {
 
     if (state.paused || document.hidden) return;
 
-    state.timer = window.setInterval(() => {
-      if (state.index >= getMaxIndex()) {
-        state.index = 0;
-      } else {
-        state.index += 1;
-      }
-
+    state.timer = setInterval(() => {
+      state.index = state.index >= maxIndex() ? 0 : state.index + 1;
       render();
     }, 5000);
   }
 
-  function restartTimer() {
+  function updatePause() {
+    pause.textContent = state.paused ? "Play" : "Pause";
+    pause.setAttribute("aria-pressed", String(state.paused));
+  }
+
+  previous.addEventListener("click", () => {
+    state.index--;
+    render();
     startTimer();
-  }
-
-  function updatePauseButton() {
-    pauseButton.textContent = state.paused ? "Play" : "Pause";
-    pauseButton.setAttribute("aria-pressed", String(state.paused));
-  }
-
-  previousButton.addEventListener("click", () => {
-    state.index = Math.max(0, state.index - 1);
-    render();
-    restartTimer();
   });
 
-  nextButton.addEventListener("click", () => {
-    state.index = state.index >= getMaxIndex() ? 0 : state.index + 1;
-
+  next.addEventListener("click", () => {
+    state.index = state.index >= maxIndex() ? 0 : state.index + 1;
     render();
-    restartTimer();
+    startTimer();
   });
 
-  pauseButton.addEventListener("click", () => {
+  pause.addEventListener("click", () => {
     state.paused = !state.paused;
-    updatePauseButton();
+    updatePause();
     startTimer();
   });
 
   document.addEventListener("visibilitychange", startTimer);
 
-  reducedMotion.addEventListener("change", (event) => {
-    if (event.matches) {
-      state.paused = true;
-      updatePauseButton();
-      stopTimer();
-    }
-  });
-
-  let resizeFrame = null;
-
   window.addEventListener("resize", () => {
-    if (resizeFrame !== null) {
-      window.cancelAnimationFrame(resizeFrame);
-    }
-
-    resizeFrame = window.requestAnimationFrame(() => {
-      renderDots();
-      render();
-      resizeFrame = null;
-    });
+    renderDots();
+    render();
   });
 
   renderDots();
   render();
-  updatePauseButton();
+  updatePause();
   startTimer();
 }
 
-function initCarousels() {
-  selectAll("[data-carousel]").forEach(initCarousel);
-}
-
 /* =========================================================
-   Footer
+   4. FOOTER
    ========================================================= */
 
 function initFooter() {
-  const yearElement = select("#current-year");
-
-  if (yearElement) {
-    yearElement.textContent = String(new Date().getFullYear());
-  }
+  const year = select("#current-year");
+  if (year) year.textContent = new Date().getFullYear();
 }
 
 /* =========================================================
-   Application bootstrap
+   5. EQUIPMENT DATA
    ========================================================= */
 
-function initApp() {
-  initInternationalization();
-  initNavigation();
-  initCarousels();
-  initFooter();
-}
-
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initApp, {
-    once: true,
-  });
-} else {
-  initApp();
-}
-
-("use strict");
-
-/* =========================================================
-   Kailash ki Karuna - Equipment catalogue
-   ========================================================= */
-
-/**
- * Replace sample deposits with your approved amounts.
- *
- * Later, this array can be moved into equipment.json or
- * retrieved from your backend without changing the UI.
- */
 const EQUIPMENT = [
   {
     id: "wheelchair",
     name: "Wheelchair",
+    nameKey: "eqWheelchair",
     image: "images/wheelchair.jpg",
     deposit: null,
     description: "Mobility support for suitable home-care needs.",
+    descriptionKey: "eqWheelchairDescription"
   },
   {
     id: "Water-bed",
     name: "Water Bed",
+    nameKey: "eqWaterBed",
     image: "images/water-bed.jpg",
     deposit: null,
     description: "Support for comfortable rest and recovery at home.",
+    descriptionKey: "eqWaterBedDescription"
   },
   {
     id: "oxygen-concentrator",
     name: "Oxygen Concentrator",
+    nameKey: "eqOxygen",
     image: "images/oxygen-concentrator.jpg",
     deposit: null,
     description: "Oxygen-support equipment when medically prescribed.",
+    descriptionKey: "eqOxygenDescription"
   },
   {
     id: "nebulizer",
     name: "Nebulizer",
+    nameKey: "eqNebulizer",
     image: "images/nebulizer.jpg",
     deposit: null,
     description: "Equipment for prescribed respiratory care.",
+    descriptionKey: "eqNebulizerDescription"
   },
   {
     id: "walker",
     name: "Walker",
+    nameKey: "eqWalker",
     image: "images/walker.jpg",
-    deposit: null,
+    deposit: 600,
     description: "Additional stability and support while walking.",
+    descriptionKey: "eqWalkerDescription"
   },
   {
     id: "air-mattress",
     name: "Medical Air Mattress",
+    nameKey: "eqAirMattress",
     image: "images/air-mattress.jpg",
     deposit: null,
     description: "Pressure-relief support for suitable care needs.",
-  },
+    descriptionKey: "eqAirMattressDescription"
+  }
 ];
 
-/**
- * Contact configuration.
- *
- * WhatsApp number: international digits only, including country code.
- * Example format for India: 91 followed by the 10-digit mobile number.
- *
- * Do not include +, spaces, brackets, or hyphens.
- */
-const CONTACT_CONFIG = {
-  web3formsAccessKey: "60733148-9061-4b9b-934f-6ab2b7700deb",
-  whatsappNumber: "91XXXXXXXXXX",
-};
+function equipmentName(item) {
+  return t(item.nameKey, item.name);
+}
+
+function equipmentDescription(item) {
+  return t(item.descriptionKey, item.description);
+}
+
+function formatDeposit(amount) {
+  if (amount === null || !Number.isFinite(amount)) {
+    return t("eqConfirmDeposit", "Confirm with our team");
+  }
+
+  return new Intl.NumberFormat(
+    currentLanguage === "hi" ? "hi-IN" : "en-IN",
+    {
+      style: "currency",
+      currency: "INR",
+      maximumFractionDigits: 0
+    }
+  ).format(amount);
+}
 
 /* =========================================================
-   DOM references
+   6. EQUIPMENT PAGE ELEMENTS
    ========================================================= */
 
-const equipmentGrid = document.querySelector("#equipment-grid");
-const searchInput = document.querySelector("#equipment-search");
-const clearSearchButton = document.querySelector("#clear-search");
-const resultCount = document.querySelector("#result-count");
-const emptyResults = document.querySelector("#empty-results");
-const resetSearchButton = document.querySelector("#reset-search");
+const equipmentGrid = select("#equipment-grid");
+const searchInput = select("#equipment-search");
+const clearSearch = select("#clear-search");
+const resultCount = select("#result-count");
+const emptyResults = select("#empty-results");
+const resetSearch = select("#reset-search");
 
-const requestDialog = document.querySelector("#request-dialog");
-const requestForm = document.querySelector("#request-form");
-const requestTitle = document.querySelector("#request-title");
-const selectedEquipment = document.querySelector("#selected-equipment");
-const closeDialogButton = document.querySelector("#close-dialog");
-const acceptTermsCheckbox = document.querySelector("#accept-terms");
-const submitRequestButton = document.querySelector("#submit-request");
-const formStatus = document.querySelector("#form-status");
+const requestDialog = select("#request-dialog");
+const requestForm = select("#request-form");
+const requestTitle = select("#request-title");
+const selectedEquipment = select("#selected-equipment");
+const closeDialog = select("#close-dialog");
+const acceptTerms = select("#accept-terms");
+const submitButton = select("#submit-request");
+const formStatus = select("#form-status");
 
-const contactDialog = document.querySelector("#contact-dialog");
-const closeContactDialogButton = document.querySelector(
-  "#close-contact-dialog",
-);
-const sendWhatsAppButton = document.querySelector("#send-whatsapp");
-const sendEmailButton = document.querySelector("#send-email");
+const contactDialog = select("#contact-dialog");
+const closeContactDialog = select("#close-contact-dialog");
+const sendWhatsApp = select("#send-whatsapp");
+const sendEmail = select("#send-email");
 
 let selectedItem = null;
 let preparedMessage = "";
 let lastFocusedElement = null;
 
 /* =========================================================
-   Formatting
-   ========================================================= */
-
-function formatDeposit(amount) {
-  if (!Number.isFinite(amount) || amount < 0) {
-    return "Confirm with our team";
-  }
-
-  return new Intl.NumberFormat("en-IN", {
-    style: "currency",
-    currency: "INR",
-    maximumFractionDigits: 0,
-  }).format(amount);
-}
-
-/* =========================================================
-   Render equipment cards
+   7. EQUIPMENT CARDS
    ========================================================= */
 
 function createEquipmentCard(item) {
@@ -716,25 +454,24 @@ function createEquipmentCard(item) {
   const imageLink = document.createElement("a");
   imageLink.className = "catalogue-card-image";
   imageLink.href = `#request-${item.id}`;
-  imageLink.setAttribute("aria-label", `Request ${item.name}`);
+  imageLink.setAttribute(
+    "aria-label",
+    `${t("eqCheckAvailability", "Check availability")}: ${equipmentName(item)}`
+  );
 
   const image = document.createElement("img");
   image.src = item.image;
-  image.alt = item.name;
+  image.alt = equipmentName(item);
   image.loading = "lazy";
   image.decoding = "async";
 
-  image.addEventListener(
-    "error",
-    () => {
-      imageLink.classList.add("image-missing");
-    },
-    { once: true },
-  );
+  image.addEventListener("error", () => {
+    imageLink.classList.add("image-missing");
+  }, { once: true });
 
   const placeholder = document.createElement("span");
   placeholder.className = "image-placeholder-label";
-  placeholder.textContent = "Equipment image";
+  placeholder.textContent = t("eqImageLabel", "Equipment image");
 
   imageLink.append(image, placeholder);
 
@@ -742,38 +479,48 @@ function createEquipmentCard(item) {
   body.className = "catalogue-card-body";
 
   const heading = document.createElement("h3");
-  heading.textContent = item.name;
+  heading.textContent = equipmentName(item);
+
+  const description = document.createElement("p");
+  description.textContent = equipmentDescription(item);
 
   const priceLabel = document.createElement("p");
   priceLabel.className = "catalogue-card-price-label";
-  priceLabel.textContent = "Refundable security deposit";
+  priceLabel.textContent = t(
+    "eqDepositLabel",
+    "Refundable security deposit"
+  );
 
   const price = document.createElement("p");
   price.className = "catalogue-card-price";
   price.textContent = formatDeposit(item.deposit);
 
-  const priceNote = document.createElement("small");
-  priceNote.textContent =
-    item.deposit === null
-      ? " · confirm amount"
-      : " · refundable, subject to terms";
+  const note = document.createElement("small");
+  note.textContent = item.deposit === null
+    ? t("eqDepositConfirmNote", " · confirm amount")
+    : t("eqDepositRefundNote", " · refundable, subject to terms");
 
-  price.append(priceNote);
+  price.append(note);
 
   const button = document.createElement("button");
   button.type = "button";
   button.className = "button button-primary";
-  button.textContent = "Check availability now";
+  button.textContent = t(
+    "eqCheckAvailability",
+    "Check availability now"
+  );
 
   button.addEventListener("click", () => openRequestDialog(item));
 
-  body.append(heading, priceLabel, price, button);
+  body.append(heading, description, priceLabel, price, button);
   article.append(imageLink, body);
 
   return article;
 }
 
 function renderEquipment(items) {
+  if (!equipmentGrid) return;
+
   const fragment = document.createDocumentFragment();
 
   items.forEach((item) => {
@@ -782,272 +529,310 @@ function renderEquipment(items) {
 
   equipmentGrid.replaceChildren(fragment);
 
-  const hasResults = items.length > 0;
+  const found = items.length > 0;
 
-  emptyResults.hidden = hasResults;
-  equipmentGrid.hidden = !hasResults;
+  equipmentGrid.hidden = !found;
+  if (emptyResults) emptyResults.hidden = found;
 
-  resultCount.textContent = hasResults
-    ? `${items.length} ${items.length === 1 ? "item" : "items"} found`
-    : "No items found";
+  if (resultCount) {
+    const label = items.length === 1
+      ? t("eqOneResult", "item found")
+      : t("eqManyResults", "items found");
+
+    resultCount.textContent = found
+      ? `${items.length} ${label}`
+      : t("eqNoItems", "No items found");
+  }
 }
 
 /* =========================================================
-   Live search
+   8. SEARCH — ENGLISH + HINDI
    ========================================================= */
 
-/**
- * Prefix search:
- * "w"       -> Wheelchair, Walker
- * "wheel"   -> Wheelchair
- * "oxygen"  -> Oxygen Concentrator
- * ""        -> all equipment
- *
- * Search is case-insensitive.
- */
 function filterEquipment(query) {
-  const normalizedQuery = query.trim().toLocaleLowerCase("en");
+  const q = query.trim().toLocaleLowerCase();
 
-  if (!normalizedQuery) {
-    return EQUIPMENT;
+  if (!q) return EQUIPMENT;
+
+  return EQUIPMENT.filter((item) => {
+    const values = [
+      item.name,
+      equipmentName(item),
+      item.description,
+      equipmentDescription(item)
+    ];
+
+    return values.some((value) =>
+      value.toLocaleLowerCase().includes(q)
+    );
+  });
+}
+
+function initEquipmentSearch() {
+  if (!searchInput) return;
+
+  searchInput.addEventListener("input", () => {
+    if (clearSearch) clearSearch.hidden = !searchInput.value;
+    renderEquipment(filterEquipment(searchInput.value));
+  });
+
+  clearSearch?.addEventListener("click", () => {
+    searchInput.value = "";
+    clearSearch.hidden = true;
+    renderEquipment(EQUIPMENT);
+    searchInput.focus();
+  });
+
+  resetSearch?.addEventListener("click", () => {
+    searchInput.value = "";
+    if (clearSearch) clearSearch.hidden = true;
+    renderEquipment(EQUIPMENT);
+    searchInput.focus();
+  });
+}
+
+/* =========================================================
+   9. FORM REPLY METHOD
+   ========================================================= */
+
+function updateReplyFields() {
+  if (!requestForm) return;
+
+  const method = requestForm.querySelector(
+    'input[name="replyMethod"]:checked'
+  )?.value || "email";
+
+  const emailField = select("#email-field");
+  const phoneField = select("#phone-field");
+  const emailInput = select("#request-email");
+  const phoneInput = select("#request-phone");
+
+  if (!emailField || !phoneField || !emailInput || !phoneInput) {
+    return;
   }
 
-  return EQUIPMENT.filter((item) =>
-    item.name.toLocaleLowerCase("en").startsWith(normalizedQuery),
-  );
-}
+  const emailSelected = method === "email";
 
-function initSearch() {
-  searchInput.addEventListener("input", () => {
-    const query = searchInput.value;
+  emailField.hidden = !emailSelected;
+  phoneField.hidden = emailSelected;
 
-    clearSearchButton.hidden = query.length === 0;
-    renderEquipment(filterEquipment(query));
-  });
+  emailInput.disabled = !emailSelected;
+  phoneInput.disabled = emailSelected;
 
-  clearSearchButton.addEventListener("click", () => {
-    searchInput.value = "";
-    clearSearchButton.hidden = true;
-    renderEquipment(EQUIPMENT);
-    searchInput.focus();
-  });
-
-  resetSearchButton.addEventListener("click", () => {
-    searchInput.value = "";
-    clearSearchButton.hidden = true;
-    renderEquipment(EQUIPMENT);
-    searchInput.focus();
-  });
+  emailInput.required = emailSelected;
+  phoneInput.required = !emailSelected;
 }
 
 /* =========================================================
-   Request form and date validation
+   10. FORM DATES
    ========================================================= */
 
-function getLocalDateString(date = new Date()) {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
-
-  return `${year}-${month}-${day}`;
+function localDate(date = new Date()) {
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, "0");
+  const d = String(date.getDate()).padStart(2, "0");
+  return `${y}-${m}-${d}`;
 }
 
 function addDays(dateString, days) {
-  const [year, month, day] = dateString.split("-").map(Number);
-  const date = new Date(year, month - 1, day);
-
+  const [y, m, d] = dateString.split("-").map(Number);
+  const date = new Date(y, m - 1, d);
   date.setDate(date.getDate() + days);
-
-  return getLocalDateString(date);
+  return localDate(date);
 }
+
+function updateDateConstraints() {
+  if (!requestForm) return;
+
+  const start = requestForm.elements.startDate;
+  const end = requestForm.elements.endDate;
+
+  if (!start || !end) return;
+
+  const today = localDate();
+
+  start.min = today;
+  end.min = start.value && start.value >= today
+    ? start.value
+    : today;
+
+  end.max = start.value
+    ? addDays(start.value, 29)
+    : addDays(today, 29);
+
+  if (end.value && (end.value < end.min || end.value > end.max)) {
+    end.value = "";
+  }
+}
+
+/* =========================================================
+   11. FORM VALUES + VALIDATION
+   ========================================================= */
 
 function getFormValues() {
   const data = new FormData(requestForm);
 
   return {
     name: String(data.get("name") || "").trim(),
+    replyMethod: String(data.get("replyMethod") || "email"),
     email: String(data.get("email") || "").trim(),
+    phone: String(data.get("phone") || "").trim(),
     recipient: String(data.get("recipient") || "").trim(),
     startDate: String(data.get("startDate") || ""),
     endDate: String(data.get("endDate") || ""),
     address: String(data.get("address") || "").trim(),
-    acceptedTerms: acceptTermsCheckbox.checked,
+    acceptedTerms: Boolean(acceptTerms?.checked)
   };
 }
 
 function validateRequest(values) {
-  const today = getLocalDateString();
-
   if (
     !values.name ||
-    !values.email ||
     !values.recipient ||
     !values.startDate ||
     !values.endDate ||
     !values.address
   ) {
-    return "Please complete all required fields.";
+    return t("eqErrorRequired", "Please complete all required fields.");
   }
 
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
-    return "Please enter a valid email address.";
+  if (values.replyMethod === "email") {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
+      return t("eqErrorEmail", "Please enter a valid email address.");
+    }
+  } else if (values.replyMethod === "phone") {
+    const digits = values.phone.replace(/\D/g, "");
+
+    if (digits.length < 10 || digits.length > 15) {
+      return t("eqErrorPhone", "Please enter a valid phone number.");
+    }
+  } else {
+    return t("eqErrorReplyMethod", "Please select a reply method.");
   }
+
+  const today = localDate();
 
   if (values.startDate < today) {
-    return "The requested start date cannot be in the past.";
+    return t("eqErrorPastDate", "The start date cannot be in the past.");
   }
 
   if (values.endDate < values.startDate) {
-    return "The return date must be on or after the start date.";
+    return t("eqErrorDateOrder", "The return date must be after the start date.");
   }
 
-  // Calendar-day duration, inclusive of the start date.
-  const [startYear, startMonth, startDay] = values.startDate
-    .split("-")
-    .map(Number);
+  const start = new Date(`${values.startDate}T00:00:00Z`);
+  const end = new Date(`${values.endDate}T00:00:00Z`);
 
-  const [endYear, endMonth, endDay] = values.endDate.split("-").map(Number);
+  const days = Math.round((end - start) / 86400000) + 1;
 
-  const start = Date.UTC(startYear, startMonth - 1, startDay);
-  const end = Date.UTC(endYear, endMonth - 1, endDay);
-
-  const durationDays = Math.floor((end - start) / (24 * 60 * 60 * 1000)) + 1;
-
-  if (durationDays > 30) {
-    return "The standard maximum request period is 30 calendar days.";
+  if (days > 30) {
+    return t("eqErrorMaxPeriod", "The maximum request period is 30 days.");
   }
 
   if (!values.acceptedTerms) {
-    return "Please confirm that you have read the terms.";
+    return t("eqErrorTerms", "Please accept the terms and conditions.");
   }
 
   return "";
 }
 
-function updateDateConstraints() {
-  const startInput = requestForm.elements.startDate;
-  const endInput = requestForm.elements.endDate;
-
-  const today = getLocalDateString();
-
-  startInput.min = today;
-
-  if (!startInput.value || startInput.value < today) {
-    endInput.min = today;
-  } else {
-    endInput.min = startInput.value;
-  }
-
-  endInput.max = startInput.value
-    ? addDays(startInput.value, 29)
-    : addDays(today, 29);
-
-  if (endInput.value && endInput.value < endInput.min) {
-    endInput.value = "";
-  }
-
-  if (endInput.value && endInput.value > endInput.max) {
-    endInput.value = "";
-  }
-}
-
 function updateSubmitButton() {
+  if (!requestForm || !submitButton) return;
+
+  updateReplyFields();
   updateDateConstraints();
 
-  const values = getFormValues();
-  const validationError = validateRequest(values);
+  const error = validateRequest(getFormValues());
 
-  submitRequestButton.disabled =
-    Boolean(validationError) || !requestForm.checkValidity();
+  submitButton.disabled =
+    Boolean(error) || !requestForm.checkValidity();
 
-  formStatus.textContent = validationError;
+  if (formStatus) formStatus.textContent = error;
 }
 
 /* =========================================================
-   Request dialog
+   12. REQUEST DIALOG
    ========================================================= */
 
 function openRequestDialog(item) {
+  if (!requestDialog || !requestForm) return;
+
   selectedItem = item;
   lastFocusedElement = document.activeElement;
 
   requestForm.reset();
+  updateReplyFields();
 
-  selectedEquipment.textContent = item.name;
-  requestTitle.textContent = `Request ${item.name.toLowerCase()}`;
+  if (selectedEquipment) {
+    selectedEquipment.textContent = equipmentName(item);
+  }
 
-  formStatus.textContent = "";
+  if (requestTitle) {
+    requestTitle.textContent =
+      `${t("eqRequestTitle", "Request availability")}: ${equipmentName(item)}`;
+  }
+
+  if (formStatus) formStatus.textContent = "";
 
   updateDateConstraints();
   updateSubmitButton();
 
-  if (!requestDialog.open) {
-    requestDialog.showModal();
-  }
+  if (!requestDialog.open) requestDialog.showModal();
 
-  requestForm.elements.name.focus();
+  select("#request-name")?.focus();
 }
 
-function closeRequestDialog() {
-  if (requestDialog.open) {
-    requestDialog.close();
-  }
-
-  if (lastFocusedElement instanceof HTMLElement) {
-    lastFocusedElement.focus();
-  }
+function closeRequestForm() {
+  if (requestDialog?.open) requestDialog.close();
+  if (lastFocusedElement?.isConnected) lastFocusedElement.focus();
 }
-
-closeDialogButton.addEventListener("click", closeRequestDialog);
-
-requestDialog.addEventListener("click", (event) => {
-  if (event.target === requestDialog) {
-    closeRequestDialog();
-  }
-});
-
-requestForm.addEventListener("input", updateSubmitButton);
-requestForm.addEventListener("change", updateSubmitButton);
-
-requestForm.elements.startDate.addEventListener("change", updateSubmitButton);
 
 /* =========================================================
-   Request message
+   13. REQUEST MESSAGE
    ========================================================= */
 
-function formatDisplayDate(dateString) {
-  const [year, month, day] = dateString.split("-").map(Number);
+function displayDate(value) {
+  const [y, m, d] = value.split("-").map(Number);
 
-  return new Intl.DateTimeFormat("en-IN", {
-    day: "2-digit",
-    month: "short",
-    year: "numeric",
-    timeZone: "UTC",
-  }).format(new Date(Date.UTC(year, month - 1, day)));
+  return new Intl.DateTimeFormat(
+    currentLanguage === "hi" ? "hi-IN" : "en-IN",
+    {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+      timeZone: "UTC"
+    }
+  ).format(new Date(Date.UTC(y, m - 1, d)));
 }
 
 function buildRequestMessage(values, item) {
+  const contact = values.replyMethod === "email"
+    ? `Preferred reply: Email\nEmail: ${values.email}`
+    : `Preferred reply: Phone call / SMS\nPhone: ${values.phone}`;
+
   return [
     "Kailash ki Karuna - Equipment Availability Request",
     "",
-    `Item: ${item.name}`,
+    `Equipment: ${item.name}`,
     `Security deposit: ${formatDeposit(item.deposit)}`,
     `Name: ${values.name}`,
-    `Email: ${values.email}`,
+    contact,
     `Equipment for: ${values.recipient}`,
     `Address: ${values.address}`,
-    `Required from: ${formatDisplayDate(values.startDate)}`,
-    `Intended return: ${formatDisplayDate(values.endDate)}`,
-    "Terms and conditions: Accepted by requester",
+    `Required from: ${displayDate(values.startDate)}`,
+    `Return date: ${displayDate(values.endDate)}`,
+    "Terms accepted: Yes",
     "",
-    "Please confirm availability, the applicable security deposit,",
-    "eligibility requirements, and the next steps for collection.",
-    "",
-    "This is an availability request, not a confirmed booking.",
+    "Please confirm availability and applicable deposit.",
+    "This is a request, not a confirmed booking."
   ].join("\n");
 }
 
-requestForm.addEventListener("submit", async (event) => {
+/* =========================================================
+   14. WEB3FORMS
+   ========================================================= */
+
+async function handleRequestSubmit(event) {
   event.preventDefault();
 
   updateSubmitButton();
@@ -1058,7 +843,10 @@ requestForm.addEventListener("submit", async (event) => {
   const error = validateRequest(values);
 
   if (error || !selectedItem) {
-    formStatus.textContent = error || "Please select an equipment item.";
+    if (formStatus) {
+      formStatus.textContent = error ||
+        t("eqErrorSelectEquipment", "Please select equipment.");
+    }
     return;
   }
 
@@ -1066,433 +854,443 @@ requestForm.addEventListener("submit", async (event) => {
     !CONTACT_CONFIG.web3formsAccessKey ||
     CONTACT_CONFIG.web3formsAccessKey === "YOUR_WEB3FORMS_ACCESS_KEY"
   ) {
-    formStatus.textContent =
-      "The email service is not configured yet. Please contact us directly.";
+    formStatus.textContent = t(
+      "eqErrorService",
+      "Email service is not configured."
+    );
     return;
   }
 
   const message = buildRequestMessage(values, selectedItem);
-
-  // Prepare the email submission for the NGO.
 
   const payload = {
     access_key: CONTACT_CONFIG.web3formsAccessKey,
     subject: `[KKK EQUIPMENT REQUEST] ${selectedItem.id}`,
     from_name: "Kailash ki Karuna Website",
 
-    // Customer's email: lets you reply to the requester.
-    email: values.email,
-    replyto: values.email,
+    // Do not use a phone number as an email reply-to.
+    email: values.replyMethod === "email" ? values.email : "",
+    replyto: values.replyMethod === "email" ? values.email : "",
 
-    botcheck: "",
+    reply_method: values.replyMethod,
+    reply_phone: values.replyMethod === "phone" ? values.phone : "",
+    reply_email: values.replyMethod === "email" ? values.email : "",
+
     equipment_id: selectedItem.id,
     equipment_name: selectedItem.name,
     request_status: "REQUESTED_NOT_CONFIRMED",
     message,
+    botcheck: ""
   };
 
-  const originalButtonText = submitRequestButton.textContent;
+  const oldText = submitButton.textContent;
 
-  submitRequestButton.disabled = true;
-  submitRequestButton.textContent = "Submitting request...";
-  formStatus.textContent = "Sending your request...";
+  submitButton.disabled = true;
+  submitButton.textContent = t("eqSending", "Sending request...");
+
+  if (formStatus) {
+    formStatus.textContent = t("eqSendingStatus", "Please wait...");
+  }
 
   try {
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify(payload),
-    });
+    const response = await fetch(
+      "https://api.web3forms.com/submit",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify(payload)
+      }
+    );
 
     const result = await response.json();
 
     if (!response.ok || !result.success) {
-      throw new Error(result.message || "The request could not be submitted.");
+      throw new Error(result.message || "Submission failed.");
     }
 
-    // Keep the message for the WhatsApp handoff.
     preparedMessage = message;
 
     requestDialog.close();
+    contactDialog?.showModal();
 
-    // The email has been accepted by the form service.
-    // WhatsApp still requires the visitor to tap Send.
-    contactDialog.showModal();
+    requestForm.reset();
+    updateReplyFields();
+    updateSubmitButton();
+
   } catch (error) {
-    console.error("Equipment request submission failed:", error);
+    console.error("Web3Forms error:", error);
 
-    formStatus.textContent =
-      "We couldn't submit your request by email. Please try again.";
+    if (formStatus) {
+      formStatus.textContent = t(
+        "eqErrorSubmit",
+        "Unable to send your request. Please try again."
+      );
+    }
 
-    submitRequestButton.disabled = false;
-    submitRequestButton.textContent = originalButtonText;
+    submitButton.disabled = false;
+    submitButton.textContent = oldText;
   }
-});
+}
 
 /* =========================================================
-   WhatsApp and email handoff
+   15. CONTACT HANDOFF
    ========================================================= */
 
-/**
- * These actions open a prefilled message for the user.
- * They do not send messages automatically.
- */
-sendWhatsAppButton.addEventListener("click", () => {
-  if (!CONTACT_CONFIG.whatsappNumber || !preparedMessage) {
+function handleWhatsApp() {
+  const number = CONTACT_CONFIG.whatsappNumber;
+
+  if (!number || number.includes("X") || !preparedMessage) {
+    window.alert("Please configure the NGO WhatsApp number.");
     return;
   }
 
   const url =
-    `https://wa.me/${CONTACT_CONFIG.whatsappNumber}` +
-    `?text=${encodeURIComponent(preparedMessage)}`;
+    `https://wa.me/${number}?text=${encodeURIComponent(preparedMessage)}`;
 
   window.open(url, "_blank", "noopener,noreferrer");
-});
+}
 
-sendEmailButton.addEventListener("click", () => {
-  const email = CONTACT_CONFIG.emailAddress.trim();
+function handleEmail() {
+  const email = CONTACT_CONFIG.emailAddress;
 
-  if (!email) {
-    window.alert(
-      "Email is not configured yet. Add the NGO's email address in js/equipment.js.",
-    );
+  if (!email || email.includes("YOUR_NGO_EMAIL")) {
+    window.alert("Please configure the NGO email address.");
     return;
   }
 
-  const subject = `Equipment availability request - ${
-    selectedItem ? selectedItem.name : "Medical equipment"
+  const subject = `Equipment request - ${
+    selectedItem?.name || "Medical equipment"
   }`;
 
-  const mailto = new URL(`mailto:${email}`);
-  mailto.searchParams.set("subject", subject);
-  mailto.searchParams.set("body", preparedMessage);
+  const url = new URL(`mailto:${email}`);
+  url.searchParams.set("subject", subject);
+  url.searchParams.set("body", preparedMessage);
 
-  window.location.href = mailto.href;
-});
+  window.location.href = url.href;
+}
 
-closeContactDialogButton.addEventListener("click", () => {
-  contactDialog.close();
-});
+/* =========================================================
+   16. EQUIPMENT PAGE INITIALISATION
+   ========================================================= */
 
-contactDialog.addEventListener("click", (event) => {
-  if (event.target === contactDialog) {
+function initEquipmentPage() {
+  if (!equipmentGrid || !requestForm || !searchInput) return;
+
+  renderEquipment(EQUIPMENT);
+  initEquipmentSearch();
+
+  closeDialog?.addEventListener("click", closeRequestForm);
+
+  requestDialog?.addEventListener("click", (event) => {
+    if (event.target === requestDialog) closeRequestForm();
+  });
+
+  requestForm.addEventListener("input", updateSubmitButton);
+  requestForm.addEventListener("change", updateSubmitButton);
+  requestForm.addEventListener("submit", handleRequestSubmit);
+
+  requestForm.querySelectorAll(
+    'input[name="replyMethod"]'
+  ).forEach((radio) => {
+    radio.addEventListener("change", () => {
+      updateReplyFields();
+      updateSubmitButton();
+    });
+  });
+
+  requestForm.elements.startDate?.addEventListener(
+    "change",
+    updateSubmitButton
+  );
+
+  sendWhatsApp?.addEventListener("click", handleWhatsApp);
+  sendEmail?.addEventListener("click", handleEmail);
+
+  closeContactDialog?.addEventListener("click", () => {
     contactDialog.close();
+  });
+
+  contactDialog?.addEventListener("click", (event) => {
+    if (event.target === contactDialog) contactDialog.close();
+  });
+
+  updateReplyFields();
+  updateDateConstraints();
+  updateSubmitButton();
+}
+
+/* =========================================================
+   17. LANGUAGE CHANGE: DYNAMIC EQUIPMENT
+   ========================================================= */
+
+window.addEventListener("kkk:language-changed", () => {
+  if (!equipmentGrid) return;
+
+  renderEquipment(filterEquipment(searchInput?.value || ""));
+
+  updateReplyFields();
+  updateSubmitButton();
+
+  if (selectedItem && selectedEquipment) {
+    selectedEquipment.textContent = equipmentName(selectedItem);
+  }
+
+  if (requestTitle && selectedItem) {
+    requestTitle.textContent =
+      `${t("eqRequestTitle", "Request availability")}: ${equipmentName(selectedItem)}`;
   }
 });
 
 /* =========================================================
-   Page initialization
+   18. STORY GALLERY
    ========================================================= */
 
-function initEquipmentPage() {
-  if (!equipmentGrid || !searchInput || !requestForm) return;
-
-  renderEquipment(EQUIPMENT);
-  initSearch();
-  updateDateConstraints();
-  updateSubmitButton();
-
-  const yearElement = document.querySelector("#current-year");
-
-  if (yearElement) {
-    yearElement.textContent = String(new Date().getFullYear());
-  }
-}
-
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initEquipmentPage, {
-    once: true,
-  });
-} else {
-  initEquipmentPage();
-}
-
-/* ========================================
-   OUR STORY — DATA-DRIVEN STORY GALLERY
-======================================== */
-
-(() => {
-  const grid = document.querySelector("#story-grid");
-  const count = document.querySelector("#story-count");
-  const dialog = document.querySelector("#story-dialog");
-  const closeButton = document.querySelector("#story-dialog-close");
+function initStoryGallery() {
+  const grid = select("#story-grid");
+  const count = select("#story-count");
+  const dialog = select("#story-dialog");
+  const closeButton = select("#story-dialog-close");
 
   if (!grid || !dialog || !closeButton) return;
 
-  const categoryElement = document.querySelector("#story-dialog-category");
-  const titleElement = document.querySelector("#story-dialog-title");
-  const dateElement = document.querySelector("#story-dialog-date");
-  const mediaElement = document.querySelector("#story-dialog-media");
-  const bodyElement = document.querySelector("#story-dialog-body");
+  const categoryElement = select("#story-dialog-category");
+  const titleElement = select("#story-dialog-title");
+  const dateElement = select("#story-dialog-date");
+  const mediaElement = select("#story-dialog-media");
+  const bodyElement = select("#story-dialog-body");
 
-  let activeDictionary = null;
-  let activeLanguage = document.documentElement.lang || "en";
-  let lastFocusedElement = null;
+  let dictionary = null;
+  let lastFocus = null;
 
-  function text(value) {
-    return typeof value === "string" ? value : "";
+  function element(tag, className, text = "") {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    node.textContent = text;
+    return node;
   }
 
-  function makeElement(tag, className, content) {
-    const element = document.createElement(tag);
+  function openStory(story, trigger) {
+    if (!dictionary) return;
 
-    if (className) element.className = className;
-    if (content !== undefined) element.textContent = content;
+    lastFocus = trigger || document.activeElement;
 
-    return element;
-  }
-
-  function addImageFallback(container, label) {
-    const fallback = makeElement(
-      "span",
-      "story-card-media-fallback",
-      label || "Image unavailable",
-    );
-
-    container.replaceChildren(fallback);
-  }
-
-  function makeCardMedia(story) {
-    const button = makeElement("button", "story-card-media-button");
-    button.type = "button";
-    button.setAttribute(
-      "aria-label",
-      `${text(story.title)} — ${text(activeDictionary.readStoryLabel)}`,
-    );
-
-    const image = document.createElement("img");
-    image.className = "story-card-media";
-    image.loading = "lazy";
-    image.alt = text(story.alt);
-    image.src = story.type === "video" ? text(story.poster) : text(story.image);
-
-    image.addEventListener(
-      "error",
-      () => {
-        addImageFallback(button, text(activeDictionary.imageUnavailable));
-      },
-      { once: true },
-    );
-
-    button.append(image);
-
-    if (story.type === "video") {
-      button.append(
-        makeElement(
-          "span",
-          "story-media-badge",
-          `▶ ${text(activeDictionary.videoLabel)}`,
-        ),
-      );
-    }
-
-    button.addEventListener("click", () => openStory(story, button));
-
-    return button;
-  }
-
-  function makeCard(story, index) {
-    const article = makeElement("article", "story-card");
-    const mediaButton = makeCardMedia(story);
-    const copy = makeElement("div", "story-card-copy");
-
-    copy.append(makeElement("p", "story-card-category", text(story.category)));
-
-    if (text(story.date)) {
-      copy.append(makeElement("p", "story-card-date", text(story.date)));
-    }
-
-    copy.append(
-      makeElement("h3", "", text(story.title)),
-      makeElement("p", "", text(story.excerpt)),
-    );
-
-    const readButton = makeElement(
-      "button",
-      "story-read-button",
-      `${text(activeDictionary.readStoryLabel)} →`,
-    );
-
-    readButton.type = "button";
-    readButton.addEventListener("click", () => openStory(story, readButton));
-
-    copy.append(readButton);
-    article.append(mediaButton, copy);
-
-    article.style.setProperty("--story-index", String(index));
-
-    return article;
-  }
-
-  function renderStories(dictionary, language) {
-    activeDictionary = dictionary;
-    activeLanguage = language;
-
-    const stories = Array.isArray(dictionary.stories) ? dictionary.stories : [];
-
-    grid.replaceChildren();
-
-    if (count) {
-      count.textContent = `${stories.length} ${text(dictionary.storiesCountLabel)}`;
-    }
-
-    if (stories.length === 0) {
-      grid.append(
-        makeElement("p", "story-empty", text(dictionary.storiesEmptyMessage)),
-      );
-      grid.setAttribute("aria-busy", "false");
-      return;
-    }
-
-    const fragment = document.createDocumentFragment();
-
-    stories.forEach((story, index) => {
-      fragment.append(makeCard(story, index));
-    });
-
-    grid.append(fragment);
-    grid.setAttribute("aria-busy", "false");
-  }
-
-  function addStoryParagraphs(story) {
-    bodyElement.replaceChildren();
-
-    const paragraphs = Array.isArray(story.content)
-      ? story.content
-      : [text(story.content)];
-
-    paragraphs.forEach((paragraph) => {
-      if (!text(paragraph).trim()) return;
-
-      bodyElement.append(makeElement("p", "", paragraph));
-    });
-  }
-
-  function openStory(story, triggerElement) {
-    if (!activeDictionary) return;
-
-    lastFocusedElement = triggerElement || document.activeElement;
-
-    categoryElement.textContent = text(story.category);
-    titleElement.textContent = text(story.title);
-    dateElement.textContent = text(story.date);
-    dateElement.hidden = !text(story.date);
+    categoryElement.textContent = story.category || "";
+    titleElement.textContent = story.title || "";
+    dateElement.textContent = story.date || "";
+    dateElement.hidden = !story.date;
 
     mediaElement.replaceChildren();
 
-    if (story.type === "video" && text(story.video)) {
+    if (story.type === "video" && story.video) {
       const video = document.createElement("video");
       video.controls = true;
       video.playsInline = true;
       video.preload = "metadata";
-      video.poster = text(story.poster);
+
+      if (story.poster) video.poster = story.poster;
 
       const source = document.createElement("source");
-      source.src = text(story.video);
+      source.src = story.video;
       source.type = "video/mp4";
 
       video.append(source);
       mediaElement.append(video);
-    } else if (text(story.image)) {
-      const image = document.createElement("img");
-      image.src = text(story.image);
-      image.alt = text(story.alt);
-      image.loading = "eager";
 
-      image.addEventListener(
-        "error",
-        () => {
-          addImageFallback(
-            mediaElement,
-            text(activeDictionary.imageUnavailable),
-          );
-        },
-        { once: true },
-      );
+    } else if (story.image) {
+      const image = document.createElement("img");
+      image.src = story.image;
+      image.alt = story.alt || story.title || "";
+
+      image.addEventListener("error", () => {
+        mediaElement.replaceChildren(
+          element(
+            "span",
+            "story-card-media-fallback",
+            dictionary.imageUnavailable || "Image unavailable"
+          )
+        );
+      }, { once: true });
 
       mediaElement.append(image);
     }
 
-    addStoryParagraphs(story);
+    bodyElement.replaceChildren();
 
-    if (!dialog.open) {
-      dialog.showModal();
-    }
+    const paragraphs = Array.isArray(story.content)
+      ? story.content
+      : [story.content || ""];
 
+    paragraphs.forEach((paragraph) => {
+      if (paragraph.trim()) {
+        bodyElement.append(element("p", "", paragraph));
+      }
+    });
+
+    if (!dialog.open) dialog.showModal();
     closeButton.focus();
   }
 
-  function closeStory() {
-    if (dialog.open) dialog.close();
+  function renderStories(nextDictionary) {
+    dictionary = nextDictionary;
+
+    const stories = Array.isArray(dictionary.stories)
+      ? dictionary.stories
+      : [];
+
+    grid.replaceChildren();
+
+    if (count) {
+      count.textContent =
+        `${stories.length} ${dictionary.storiesCountLabel || "stories"}`;
+    }
+
+    if (!stories.length) {
+      grid.append(
+        element(
+          "p",
+          "story-empty",
+          dictionary.storiesEmptyMessage || "No stories available."
+        )
+      );
+
+      grid.setAttribute("aria-busy", "false");
+      return;
+    }
+
+    stories.forEach((story, index) => {
+      const article = element("article", "story-card");
+      const mediaButton = element("button", "story-card-media-button");
+
+      mediaButton.type = "button";
+
+      const image = document.createElement("img");
+      image.className = "story-card-media";
+      image.loading = "lazy";
+      image.alt = story.alt || story.title || "";
+      image.src = story.type === "video"
+        ? story.poster || ""
+        : story.image || "";
+
+      image.addEventListener("error", () => {
+        mediaButton.replaceChildren(
+          element(
+            "span",
+            "story-card-media-fallback",
+            dictionary.imageUnavailable || "Image unavailable"
+          )
+        );
+      }, { once: true });
+
+      mediaButton.append(image);
+
+      if (story.type === "video") {
+        mediaButton.append(
+          element(
+            "span",
+            "story-media-badge",
+            `▶ ${dictionary.videoLabel || "Video"}`
+          )
+        );
+      }
+
+      mediaButton.addEventListener("click", () => {
+        openStory(story, mediaButton);
+      });
+
+      const copy = element("div", "story-card-copy");
+
+      copy.append(
+        element("p", "story-card-category", story.category || "")
+      );
+
+      if (story.date) {
+        copy.append(element("p", "story-card-date", story.date));
+      }
+
+      copy.append(
+        element("h3", "", story.title || ""),
+        element("p", "", story.excerpt || "")
+      );
+
+      const readButton = element(
+        "button",
+        "story-read-button",
+        `${dictionary.readStoryLabel || "Read story"} →`
+      );
+
+      readButton.type = "button";
+      readButton.addEventListener("click", () => {
+        openStory(story, readButton);
+      });
+
+      copy.append(readButton);
+      article.append(mediaButton, copy);
+
+      article.style.setProperty("--story-index", String(index));
+
+      grid.append(article);
+    });
+
+    grid.setAttribute("aria-busy", "false");
   }
 
-  closeButton.addEventListener("click", closeStory);
+  closeButton.addEventListener("click", () => dialog.close());
 
-  // Clicking the backdrop closes the dialog.
   dialog.addEventListener("click", (event) => {
-    if (event.target === dialog) {
-      closeStory();
-    }
+    if (event.target === dialog) dialog.close();
   });
 
-  // Stop any story video and restore focus when the dialog closes.
   dialog.addEventListener("close", () => {
     mediaElement.querySelectorAll("video").forEach((video) => {
       video.pause();
-      video.removeAttribute("src");
-
       video.querySelectorAll("source").forEach((source) => {
         source.removeAttribute("src");
       });
-
       video.load();
     });
 
-    if (lastFocusedElement && lastFocusedElement.isConnected) {
-      lastFocusedElement.focus();
-    }
+    if (lastFocus?.isConnected) lastFocus.focus();
   });
 
-  // app.js dispatches this event after applying the language dictionary.
   window.addEventListener("kkk:language-changed", (event) => {
-    const detail = event.detail || {};
+    if (!event.detail?.dictionary) return;
 
-    if (!detail.dictionary) return;
+    if (dialog.open) dialog.close();
 
-    if (dialog.open) closeStory();
-
-    renderStories(detail.dictionary, detail.language || "en");
+    renderStories(event.detail.dictionary);
   });
 
-  // Fallback in case app.js initialised before this listener was registered.
-  async function initialiseStories() {
-    if (activeDictionary) return;
-
-    try {
-      const language = document.documentElement.lang || "en";
-      const response = await fetch(`locales/${language}.json`);
-
-      if (!response.ok) {
-        throw new Error(`Could not load locales/${language}.json`);
-      }
-
-      const dictionary = await response.json();
-      renderStories(dictionary, language);
-    } catch (error) {
-      console.error("Could not load story data:", error);
-      grid.replaceChildren(
-        makeElement(
-          "p",
-          "story-error",
-          "Stories could not be loaded. Please refresh the page.",
-        ),
-      );
+  loadTranslations(currentLanguage)
+    .then((data) => {
+      if (!dictionary) renderStories(data);
+    })
+    .catch((error) => {
+      console.error("Story gallery error:", error);
+      grid.textContent = "Stories could not be loaded.";
       grid.setAttribute("aria-busy", "false");
-    }
-  }
+    });
+}
 
-  initialiseStories();
-})();
+/* =========================================================
+   19. START APPLICATION
+   ========================================================= */
+
+function initApp() {
+  initInternationalization();
+  initNavigation();
+  selectAll("[data-carousel]").forEach(initCarousel);
+  initFooter();
+  initEquipmentPage();
+  initStoryGallery();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initApp, {
+    once: true
+  });
+} else {
+  initApp();
+}

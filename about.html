@@ -9,7 +9,7 @@
   <meta
     name="description"
     data-i18n-attr="content:aboutMetaDescription"
-    content="Discover the journey, people, and stories behind Kailash ki Karuna."
+    content="Discover the people, purpose and journey behind Kailash ki Karuna."
   >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,9 +21,7 @@
 
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/about.css">
-
   <script src="js/app.js" defer></script>
-
 </head>
 
 <body>
@@ -31,7 +29,7 @@
     Skip to content
   </a>
 
-  <!-- Shared site header -->
+  <!-- Shared header -->
   <header class="site-header">
     <div class="container header-inner">
       <a
@@ -60,13 +58,10 @@
         data-i18n-attr="aria-label:mainNavigationLabel"
       >
         <a href="index.html" data-i18n="navHome">Home</a>
-        <a href="#" aria-current="page" data-i18n="navStory">
+        <a href="about.html" aria-current="page" data-i18n="navStory">
           Our Story
         </a>
         <a href="equipment.html" data-i18n="navEquipment">Equipment</a>
-        <a href="achivements.html" data-i18n="navImpact">
-          Social Services
-        </a>
         <a href="achivements.html" data-i18n="navAchievements">
           Achievements
         </a>
@@ -98,209 +93,664 @@
     </div>
   </header>
 
+  <br>
 
-<main class="story-page">
+  <main id="main" class="story-page">
 
-  <!-- Story hero -->
-  <section class="story-hero">
-    <div class="container story-hero-inner">
-      <p class="story-eyebrow">OUR JOURNEY</p>
-      <h1>A journey of faith, compassion and service.</h1>
-      <p class="story-hero-description">
-        Kailash ki Karuna is built around a simple belief:
-        care and compassion should reach people when they need them most.
-      </p>
-      <a href="about.html" class="button button-primary">
-        Discover Our Story ↓
-      </a>
-    </div>
-  </section>
+    <!-- HERO -->
+    <section class="story-hero">
+      <div class="container story-hero-layout">
+        <div class="story-hero-copy">
+          <p class="story-eyebrow" data-i18n="aboutHeroEyebrow">
+            A JOURNEY OF FAITH, COMPASSION & SERVICE
+          </p>
 
-  <!-- The beginning -->
-  <section class="story-section" id="our-beginning">
-    <div class="container story-split">
-      <div class="story-section-label">
-        <span class="story-number">01</span>
-        <p>THE BEGINNING</p>
-      </div>
+          <h1 data-i18n="aboutHeroTitle">
+            From a journey of faith to a lifetime of service.
+          </h1>
 
-      <div class="story-copy">
-        <h2>Where the journey began</h2>
-        <p>
-          [Write the founder's real story here. Explain what inspired
-          the journey, the challenges faced, and why this work began.]
-        </p>
-        <p>
-          [Add the personal experiences and important moments that
-          shaped the vision of Kailash ki Karuna.]
-        </p>
-      </div>
-    </div>
-  </section>
+          <p
+            class="story-hero-description"
+            data-i18n="aboutHeroDescription"
+          >
+            The story of Kailash ki Karuna is a story of people who chose
+            to turn compassion into practical support for their community.
+          </p>
 
-  <!-- Kailash Mansarovar journey -->
-  <section class="story-section story-section-soft">
-    <div class="container story-split">
-      <div class="story-section-label">
-        <span class="story-number">02</span>
-        <p>THE INSPIRATION</p>
-      </div>
+          <div class="story-hero-actions">
+            <a href="#founders" class="button button-primary" data-i18n="aboutHeroCta">
+              Meet the people behind the seva
+            </a>
+            <a href="#our-journey" class="story-text-link" data-i18n="exploreMilestones">
+              Explore our journey ↓
+            </a>
+          </div>
+        </div>
 
-      <div class="story-copy">
-        <h2>The Kailash Mansarovar journey</h2>
-        <p>
-          [Describe the actual pilgrimage, what the founder experienced,
-          and how the journey influenced the organisation's values.]
-        </p>
-        <p>
-          [Add a meaningful personal reflection or lesson from the journey.]
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- From belief to action -->
-  <section class="story-section">
-    <div class="container story-split">
-      <div class="story-section-label">
-        <span class="story-number">03</span>
-        <p>TAKING ACTION</p>
-      </div>
-
-      <div class="story-copy">
-        <h2>Turning compassion into practical support</h2>
-        <p>
-          [Explain how the idea developed into real work, including
-          the people served, the challenges addressed, and the
-          services the organisation provides.]
-        </p>
-        <p>
-          [Add verified examples of the work and its impact on families
-          and the community.]
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- People and milestones -->
-  <section class="story-section story-section-soft">
-    <div class="container">
-      <div class="story-heading">
-        <p class="story-eyebrow">OUR MILESTONES</p>
-        <h2>Every step has a story.</h2>
-        <p>
-          The people, experiences and milestones that have shaped
-          our journey so far.
-        </p>
-      </div>
-
-      <div class="milestone-list">
-
-        <article class="milestone">
-          <span class="milestone-marker"></span>
-          <div>
-            <p class="milestone-label">MILESTONE 01</p>
-            <h3>[First important milestone]</h3>
-            <p>
-              [Describe what happened, when it happened, and why
-              it mattered.]
+        <div class="story-hero-visual">
+          <!-- Replace with a real photograph of the founders or seva work -->
+          <img
+            src="images/f2.jpeg"
+            alt="Kailash ki Karuna community service"
+            onerror="this.hidden=true; this.nextElementSibling.hidden=false;"
+          >
+          <div class="story-image-placeholder" hidden>
+            <span aria-hidden="true">ॐ</span>
+            <p data-i18n="aboutHeroImagePlaceholder">
+              Add a photograph of the founders or their service work
             </p>
           </div>
-        </article>
 
-        <article class="milestone">
-          <span class="milestone-marker"></span>
-          <div>
-            <p class="milestone-label">MILESTONE 02</p>
-            <h3>[A meaningful meeting or achievement]</h3>
-            <p>
-              [Describe the event and its significance. Include
-              names and dates only when verified.]
+          <div class="hero-image-caption">
+            <span data-i18n="aboutHeroImageCaption">सेवा के लिए सदैव तत्पर</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST / CORE BELIEF -->
+    <section class="trust-section">
+      <div class="container trust-inner">
+        <div class="trust-symbol" aria-hidden="true">♡</div>
+        <div>
+          <p class="story-eyebrow" data-i18n="trustEyebrow">
+            OUR GUIDING BELIEF
+          </p>
+          <h2 data-i18n="trustTitle">
+            Service should be driven by compassion, not by profit.
+          </h2>
+          <p data-i18n="trustDescription">
+            Kailash ki Karuna is a community service initiative built
+            around personal commitment. The founders do not solicit
+            public donations or religious subscriptions. Our focus is
+            on making practical help accessible and treating every
+            family with dignity.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEGINNING -->
+    <section class="story-section" id="our-beginning">
+      <div class="container story-split">
+        <div class="story-section-label">
+          <span class="story-number">01</span>
+          <p data-i18n="beginningLabel">THE BEGINNING</p>
+        </div>
+
+        <div class="story-copy">
+          <p class="story-eyebrow" data-i18n="beginningEyebrow">
+            EVERY JOURNEY HAS A BEGINNING
+          </p>
+          <h2 data-i18n="beginningTitle">
+            A thought that grew into a commitment to serve.
+          </h2>
+
+          <p data-i18n="beginningText1">
+            The roots of this work grew in the neighbourhoods of
+            Chopasni Housing Board, Jodhpur. The belief was simple:
+            when someone around us faces difficulty, the community
+            should try to stand beside them.
+          </p>
+
+          <p data-i18n="beginningText2">
+            What began as local efforts to help people with practical
+            community needs gradually developed into a more organised
+            effort to support families during difficult times.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- KAILASH INSPIRATION -->
+    <section class="story-section story-section-soft">
+      <div class="container inspiration-layout">
+        <div class="inspiration-copy">
+          <div class="story-section-label">
+            <span class="story-number">02</span>
+            <p data-i18n="inspirationLabel">THE INSPIRATION</p>
+          </div>
+
+          <p class="story-eyebrow" data-i18n="inspirationEyebrow">
+            THE JOURNEY THAT INSPIRED THE NAME
+          </p>
+
+          <h2 data-i18n="inspirationTitle">
+            The spirit of Kailash, brought into everyday life.
+          </h2>
+
+          <p data-i18n="inspirationText1">
+            In 2016, founder Raju Vyas undertook the Kailash Mansarovar
+            Yatra. The experience left a deep impression on him and
+            strengthened his desire to make compassion part of
+            everyday action.
+          </p>
+
+          <p data-i18n="inspirationText2">
+            Alongside his wife, Chandra Harsh, he chose the name
+            Kailash ki Karuna — the compassion of Kailash — to express
+            the spirit behind their work: to serve people with humility,
+            without discrimination and without seeking personal gain.
+          </p>
+
+          <p class="story-quote" data-i18n="inspirationQuote">
+            “Let faith find its expression through service.”
+          </p>
+        </div>
+
+        <figure class="inspiration-image">
+          <!-- Replace with an authentic Kailash Mansarovar Yatra photo -->
+          <img
+            src="images/km-pic.jpeg"
+            alt="Mount Kailash and the surrounding landscape"
+            onerror="this.hidden=true; this.nextElementSibling.hidden=false;"
+          >
+          <div class="story-image-placeholder" hidden>
+            <span aria-hidden="true">ॐ</span>
+            <p data-i18n="kailashImagePlaceholder">
+              Add a photograph from the Kailash Mansarovar Yatra
             </p>
           </div>
-        </article>
+          <figcaption data-i18n="kailashImageCaption">
+            The inspiration behind the name — Kailash Mansarovar.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
 
-        <article class="milestone">
-          <span class="milestone-marker"></span>
+    <!-- EVOLUTION / TIMELINE -->
+    <section class="story-section" id="our-journey">
+      <div class="container">
+        <div class="story-heading">
+          <p class="story-eyebrow" data-i18n="journeyEyebrow">OUR JOURNEY</p>
+          <h2 data-i18n="journeyTitle">
+            From local action to a lifeline for families.
+          </h2>
+          <p data-i18n="journeyDescription">
+            Each chapter has been shaped by a need in the community
+            and a willingness to step forward.
+          </p>
+        </div>
+
+        <div class="journey-timeline">
+
+          <article class="journey-chapter">
+            <div class="timeline-marker">01</div>
+            <div class="journey-chapter-content">
+              <p class="milestone-label" data-i18n="chapterOneLabel">
+                THE EARLY YEARS
+              </p>
+              <h3 data-i18n="chapterOneTitle">
+                Beginning with neighbourhood needs
+              </h3>
+              <p data-i18n="chapterOneText">
+                Early efforts focused on local community challenges,
+                including public cleanliness, seasonal health concerns
+                and helping families find support during emergencies.
+              </p>
+            </div>
+          </article>
+
+          <article class="journey-chapter">
+            <div class="timeline-marker">02</div>
+            <div class="journey-chapter-content">
+              <p class="milestone-label" data-i18n="chapterTwoLabel">
+                2016
+              </p>
+              <h3 data-i18n="chapterTwoTitle">
+                A pilgrimage that shaped a purpose
+              </h3>
+              <p data-i18n="chapterTwoText">
+                Following the Kailash Mansarovar Yatra, Raju Vyas
+                and Chandra Harsh committed themselves to building
+                a service initiative inspired by compassion.
+              </p>
+            </div>
+          </article>
+
+          <article class="journey-chapter">
+            <div class="timeline-marker">03</div>
+            <div class="journey-chapter-content">
+              <p class="milestone-label" data-i18n="chapterThreeLabel">
+                COMMUNITY HEALTH
+              </p>
+              <h3 data-i18n="chapterThreeTitle">
+                Responding to local health challenges
+              </h3>
+              <p data-i18n="chapterThreeText">
+                During dengue outbreaks, the team undertook
+                community fogging efforts in residential areas
+                to support local mosquito-control initiatives.
+              </p>
+            </div>
+          </article>
+
+          <article class="journey-chapter">
+            <div class="timeline-marker">04</div>
+            <div class="journey-chapter-content">
+              <p class="milestone-label" data-i18n="chapterFourLabel">
+                COVID-19 PANDEMIC
+              </p>
+              <h3 data-i18n="chapterFourTitle">
+                Standing with families during the pandemic
+              </h3>
+              <p data-i18n="chapterFourText">
+                During the COVID-19 crisis, a section of Surajdevi
+                Roopa Devi Pushtikar Private School was converted
+                into a local isolation and patient-support facility,
+                with food and basic care arrangements.
+              </p>
+            </div>
+          </article>
+
+          <article class="journey-chapter">
+            <div class="timeline-marker">05</div>
+            <div class="journey-chapter-content">
+              <p class="milestone-label" data-i18n="chapterFiveLabel">
+                CONTINUING THE WORK
+              </p>
+              <h3 data-i18n="chapterFiveTitle">
+                Building a free medical equipment bank
+              </h3>
+              <p data-i18n="chapterFiveText">
+                The initiative grew into a medical equipment bank
+                that helps families access essential home-care
+                equipment when they need it.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- MEDICAL EQUIPMENT BANK -->
+    <section class="story-section story-section-blue" id="medical-bank">
+      <div class="container service-layout">
+        <div class="service-copy">
+          <p class="story-eyebrow" data-i18n="bankEyebrow">
+            OUR CENTRAL INITIATIVE
+          </p>
+
+          <h2 data-i18n="bankTitle">
+            A medical equipment bank that keeps helping, one family at a time.
+          </h2>
+
+          <p data-i18n="bankDescription">
+            Medical equipment can be expensive, especially when a
+            family needs it for a limited period during recovery.
+            Our Nishulk Chikitsa Upkaran Bank helps families access
+            essential equipment for home care.
+          </p>
+
+          <p data-i18n="bankProcess">
+            Equipment is requested, availability and applicable
+            conditions are explained, and the item is provided
+            according to the organisation's process. After use,
+            returned equipment can be prepared for the next family.
+          </p>
+
+          <a
+            href="equipment.html"
+            class="button button-primary"
+            data-i18n="bankCta"
+          >
+            Explore available equipment
+          </a>
+        </div>
+
+        <div class="service-image-grid">
+          <figure class="service-image service-image-large">
+            <img
+              src="images/at-medical-equip-bank.jpeg"
+              alt="Medical equipment available through the equipment bank"
+              onerror="this.hidden=true; this.nextElementSibling.hidden=false;"
+            >
+            <div class="story-image-placeholder" hidden>
+              <p data-i18n="bankImagePlaceholder">
+                Photograph of the medical equipment bank
+              </p>
+            </div>
+          </figure>
+
+          <figure class="service-image service-image-small">
+            <img
+              src="images/at-med-eq-bank-2.jpeg"
+              alt="Medical equipment being prepared for service"
+              onerror="this.hidden=true; this.nextElementSibling.hidden=false;"
+            >
+            <div class="story-image-placeholder" hidden>
+              <p data-i18n="serviceImagePlaceholder">
+                Add a photograph of equipment or service work
+              </p>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- OTHER SERVICES -->
+    <section class="story-section">
+      <div class="container">
+        <div class="story-heading">
+          <p class="story-eyebrow" data-i18n="otherSevaEyebrow">
+            BEYOND THE MEDICAL EQUIPMENT BANK
+          </p>
+          <h2 data-i18n="otherSevaTitle">
+            Service wherever the community needs it.
+          </h2>
+          <p data-i18n="otherSevaDescription">
+            Our work has also included initiatives that respond
+            to everyday public needs.
+          </p>
+        </div>
+
+        <div class="seva-cards">
+          <article class="seva-card">
+            <span class="seva-card-number">01</span>
+            <div class="seva-card-icon" aria-hidden="true">✚</div>
+            <h3 data-i18n="sevaFoggingTitle">Community fogging</h3>
+            <p data-i18n="sevaFoggingText">
+              Fogging efforts in residential areas during local
+              dengue and mosquito-related health concerns.
+            </p>
+          </article>
+
+          <article class="seva-card">
+            <span class="seva-card-number">02</span>
+            <div class="seva-card-icon" aria-hidden="true">💧</div>
+            <h3 data-i18n="sevaWaterTitle">Public drinking water</h3>
+            <p data-i18n="sevaWaterText">
+              Jalgrah initiatives that provide drinking water
+              to people during the hot Rajasthan summer.
+            </p>
+          </article>
+
+          <article class="seva-card">
+            <span class="seva-card-number">03</span>
+            <div class="seva-card-icon" aria-hidden="true">♡</div>
+            <h3 data-i18n="sevaEmergencyTitle">Emergency community support</h3>
+            <p data-i18n="sevaEmergencyText">
+              Practical assistance and coordination for families
+              facing difficult situations.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOUNDERS -->
+    <section class="story-section story-section-soft" id="founders">
+      <div class="container">
+        <div class="story-heading founders-heading">
+          <p class="story-eyebrow" data-i18n="foundersEyebrow">
+            THE PEOPLE BEHIND THE SEVA
+          </p>
+          <h2 data-i18n="foundersTitle">
+            Ordinary people. A lasting commitment to serve.
+          </h2>
+          <p data-i18n="foundersDescription">
+            The work of Kailash ki Karuna is shaped by the dedication
+            of its founders, who balance their professional lives
+            with a commitment to community service.
+          </p>
+        </div>
+
+        <div class="founder-grid">
+
+          <article class="founder-card">
+            <div class="founder-photo">
+              <img
+                src="images/f3.jpeg"
+                alt="Raju Vyas"
+                loading="lazy"
+                onerror="this.hidden=false; this.nextElementSibling.hidden=false;"
+              >
+              <!-- <div class="founder-photo-placeholder" hidden>
+                <span>RV</span>
+                <p data-i18n="rajuPhotoPlaceholder">
+                  Add Raju Vyas's photograph
+                </p>
+              </div> -->
+            </div>
+
+            <div class="founder-card-content">
+              <p class="founder-role" data-i18n="rajuRole">
+                FOUNDER
+              </p>
+              <h3 data-i18n="rajuName">Raju Vyas</h3>
+              <p data-i18n="rajuBio">
+                A government school headmaster in Pratap Nagar,
+                Jodhpur, Raju Vyas leads the initiative's field
+                coordination, equipment procurement and service
+                logistics beyond his professional responsibilities.
+              </p>
+            </div>
+          </article>
+
+          <article class="founder-card">
+            <div class="founder-photo">
+              <img
+                src="images/ch2.jpeg"
+                alt="Chandra Harsh"
+                loading="lazy"
+                onerror="this.hidden=true; this.nextElementSibling.hidden=false;"
+              >
+              <!-- <div class="founder-photo-placeholder" hidden>
+                <span>CH</span>
+                <p data-i18n="chandraPhotoPlaceholder">
+                  Add Chandra Harsh's photograph
+                </p>
+              </div> -->
+            </div>
+
+            <div class="founder-card-content">
+              <p class="founder-role" data-i18n="chandraRole">
+                CO-FOUNDER
+              </p>
+              <h3 data-i18n="chandraName">Chandra Harsh</h3>
+              <p data-i18n="chandraBio">
+                A Senior Grade-One Nurse at Umaid Hospital, Jodhpur,
+                Chandra Harsh brings clinical experience to the
+                initiative and contributes to equipment-care,
+                sanitisation and medical operations.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PRINCIPLES / TRUST -->
+    <section class="story-section">
+      <div class="container">
+        <div class="story-heading">
+          <p class="story-eyebrow" data-i18n="principlesEyebrow">
+            WHAT GUIDES OUR WORK
+          </p>
+          <h2 data-i18n="principlesTitle">
+            Trust is built through the way we serve.
+          </h2>
+        </div>
+
+        <div class="story-values">
+          <article class="story-value">
+            <span class="value-symbol">01</span>
+            <h3 data-i18n="valueRespectTitle">Respect for everyone</h3>
+            <p data-i18n="valueRespectText">
+              Every family deserves to be treated with dignity,
+              kindness and respect, without discrimination.
+            </p>
+          </article>
+
+          <article class="story-value">
+            <span class="value-symbol">02</span>
+            <h3 data-i18n="valueTransparencyTitle">Transparent process</h3>
+            <p data-i18n="valueTransparencyText">
+              Availability, applicable deposits, usage and return
+              conditions should be explained clearly.
+            </p>
+          </article>
+
+          <article class="story-value">
+            <span class="value-symbol">03</span>
+            <h3 data-i18n="valueResponsibilityTitle">Responsible care</h3>
+            <p data-i18n="valueResponsibilityText">
+              Equipment should be used carefully, returned
+              responsibly and prepared for future use.
+            </p>
+          </article>
+
+          <article class="story-value">
+            <span class="value-symbol">04</span>
+            <h3 data-i18n="valueSelflessTitle">Service over recognition</h3>
+            <p data-i18n="valueSelflessText">
+              Our purpose is to help people. Recognition is
+              secondary to the work itself.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHOTO / STORY GALLERY -->
+    <!-- <section class="story-section story-section-soft" id="story-library">
+      <div class="container">
+        <div class="story-heading story-gallery-heading">
           <div>
-            <p class="milestone-label">MILESTONE 03</p>
-            <h3>[The next chapter]</h3>
-            <p>
-              [Explain how the organisation has grown and what it
-              hopes to accomplish next.]
+            <p class="story-eyebrow" data-i18n="storyLibraryEyebrow">
+              MOMENTS FROM OUR JOURNEY
+            </p>
+            <h2 data-i18n="storyLibraryTitle">
+              Every photograph holds a story.
+            </h2>
+            <p data-i18n="storyLibraryDescription">
+              Explore moments from the journey, the people and
+              the work that continues to shape our purpose.
             </p>
           </div>
-        </article>
 
+          <span class="story-count" id="story-count" aria-live="polite"></span>
+        </div>
+
+        <!-- app.js fills this grid using the stories array in locale JSON -->
+        <!-- <div
+          class="story-grid"
+          id="story-grid"
+          aria-live="polite"
+          aria-busy="true"
+        >
+          <p class="story-loading" data-i18n="storiesLoading">
+            Our stories are loading…
+          </p>
+        </div>
+
+        <p class="story-gallery-note" data-i18n="storyLibraryNote">
+          These moments are part of our journey. We are grateful
+          to everyone who has been part of it.
+        </p>
       </div>
-    </div>
-  </section>
+    </section>  -->
 
-  <!-- Our values -->
-  <section class="story-section">
-    <div class="container">
-      <div class="story-heading">
-        <p class="story-eyebrow">WHAT GUIDES US</p>
-        <h2>Compassion in action.</h2>
+    <!-- FOUNDER MESSAGE -->
+    <section class="story-section founder-message-section">
+      <div class="container founder-message">
+        <div class="founder-message-copy">
+          <p class="story-eyebrow" data-i18n="founderEyebrow">
+            A MESSAGE FROM OUR FOUNDER
+          </p>
+          <h2 data-i18n="founderTitle">
+            Hear the story from the people who live it.
+          </h2>
+          <p data-i18n="founderDescription">
+            A personal message about the inspiration, the purpose
+            and the responsibility behind Kailash ki Karuna.
+          </p>
+        </div>
+
+        <!-- Add the real video file when ready -->
+        <video
+          class="founder-video"
+          controls
+          playsinline
+          preload="metadata"
+          poster="images/founder-video-poster.jpg"
+        >
+          <source
+            src="videos/founder-introduction.mp4"
+            type="video/mp4"
+          >
+          Your browser does not support video playback.
+        </video>
+
+        <p class="video-caption" data-i18n="founderVideoCaption">
+          A message from the founders of Kailash ki Karuna.
+        </p>
       </div>
+    </section>
 
-      <div class="story-values">
-        <article class="story-value">
-          <span class="value-symbol" aria-hidden="true">01</span>
-          <h3>Dignity</h3>
-          <p>Every person deserves to be treated with respect.</p>
-        </article>
+    <!-- CLOSING -->
+    <section class="story-closing">
+      <div class="container">
+        <p class="story-eyebrow" data-i18n="closingEyebrow">
+          THE JOURNEY CONTINUES
+        </p>
+        <h2 data-i18n="closingTitle">
+          When a family needs support, let them know they are not alone.
+        </h2>
+        <p data-i18n="closingDescription">
+          Learn more about our services, explore the equipment
+          available and contact our team for assistance.
+        </p>
 
-        <article class="story-value">
-          <span class="value-symbol" aria-hidden="true">02</span>
-          <h3>Compassion</h3>
-          <p>We believe care should be guided by understanding and kindness.</p>
-        </article>
-
-        <article class="story-value">
-          <span class="value-symbol" aria-hidden="true">03</span>
-          <h3>Transparency</h3>
-          <p>Clear communication and responsible service matter.</p>
-        </article>
+        <div class="closing-actions">
+          <a
+            href="equipment.html"
+            class="button button-primary"
+            data-i18n="closingEquipmentCta"
+          >
+            Explore equipment
+          </a>
+          <a
+            href="contact.html"
+            class="button button-secondary"
+            data-i18n="closingContactCta"
+          >
+            Contact our team
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Founder video: optional -->
-  <section class="story-section story-section-soft" id="founder-message">
-    <div class="container founder-message">
-      <p class="story-eyebrow">A MESSAGE FROM OUR FOUNDER</p>
-      <h2>The story, in our own words.</h2>
-      <p>
-        Hear directly from the founder about the journey,
-        the purpose, and the vision for the future.
-      </p>
+    <!-- Story detail modal: required by existing app.js -->
+    <dialog class="story-dialog" id="story-dialog">
+      <div class="story-dialog-inner">
+        <button
+          class="story-dialog-close"
+          id="story-dialog-close"
+          type="button"
+          aria-label="Close story"
+          data-i18n-attr="aria-label:closeStoryLabel"
+        >×</button>
 
-      <video class="founder-video" controls playsinline preload="metadata">
-        <source src="videos/founder-introduction.mp4" type="video/mp4">
-        Your browser does not support video playback.
-      </video>
-    </div>
-  </section>
+        <div class="story-dialog-media" id="story-dialog-media"></div>
 
-  <!-- Closing CTA -->
-  <section class="story-closing">
-    <div class="container">
-      <p class="story-eyebrow">THE JOURNEY CONTINUES</p>
-      <h2>Be part of a more compassionate community.</h2>
-      <p>
-        Learn more about our work and how we support people
-        who need home-care assistance.
-      </p>
-      <a href="contact.html" class="button button-primary">
-        Connect With Us
-      </a>
-    </div>
-  </section>
+        <div class="story-dialog-copy">
+          <p
+            class="story-dialog-category"
+            id="story-dialog-category"
+          ></p>
+          <p class="story-dialog-date" id="story-dialog-date"></p>
+          <h2 id="story-dialog-title"></h2>
+          <div class="story-dialog-body" id="story-dialog-body"></div>
+        </div>
+      </div>
+    </dialog>
 
-</main>
+  </main>
 
-  <!-- Shared site footer -->
+  <!-- Shared footer -->
   <footer class="site-footer" id="contact">
     <div class="container">
       <div class="footer-grid">
@@ -322,7 +772,6 @@
           <p data-i18n="footerDescription">
             Compassionate support for better care at home.
           </p>
-
           <p class="footer-mantra" lang="hi">शिव ही सेवा है</p>
         </div>
 
@@ -331,23 +780,14 @@
           <a href="index.html" data-i18n="navHome">Home</a>
           <a href="about.html" data-i18n="navStory">Our Story</a>
           <a href="equipment.html" data-i18n="navEquipment">Equipment</a>
-          <a href="achivements.html" data-i18n="navImpact">
-            Social Services
-          </a>
-          <a href="achievements.html" data-i18n="navAchievements">
-            Achievements
-          </a>
+          <a href="achievements.html" data-i18n="navAchievements">Achievements</a>
         </div>
 
         <div class="footer-column">
           <h2 data-i18n="footerGetInTouch">Get in touch</h2>
           <a href="contact.html" data-i18n="navContact">Contact Us</a>
-          <a href="privacy.html" data-i18n="footerPrivacy">
-            Privacy Policy
-          </a>
-          <a href="terms.html" data-i18n="footerTerms">
-            Terms &amp; Conditions
-          </a>
+          <a href="privacy.html" data-i18n="footerPrivacy">Privacy Policy</a>
+          <a href="terms.html" data-i18n="footerTerms">Terms &amp; Conditions</a>
         </div>
       </div>
 

@@ -1,48 +1,51 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#164e8a" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#164e8a">
 
-    <title>Home-Care Medical Equipment | Kailash ki Karuna</title>
-    <meta
-      name="description"
-      content="Explore home-care medical equipment from Kailash ki Karuna and request availability with a refundable security deposit."
-    />
+  <title>Achievements & Impact | Kailash ki Karuna</title>
+  <meta
+    name="description"
+    content="Explore the journey, community initiatives, awards and media coverage of Kailash ki Karuna."
+  >
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/equipment.css" />
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/achievements.css">
 
-    <script src="js/app.js" defer></script>
-  </head>
+  <script src="js/app.js" defer></script>
+</head>
 
 <body>
-    <!-- Reusable site header -->
+
+<a class="skip-link" href="#main" data-i18n="skipLink">
+  Skip to content
+</a>
+
+<!-- HEADER -->
 <header class="site-header">
   <div class="container header-inner">
 
-    <a
-      class="brand"
-      href="index.html"
-      aria-label="Kailash ki Karuna home"
-      data-i18n-attr="aria-label:brandHomeLabel"
-    >
+    <a class="brand" href="index.html"
+       aria-label="Kailash ki Karuna home"
+       data-i18n-attr="aria-label:brandHomeLabel">
+
       <img
         class="brand-logo"
         src="images/logo.png"
         alt=""
-        width="48"
-        height="48"
-        onerror="this.hidden = true"
-      />
+        width="58"
+        height="58"
+      >
 
       <span class="brand-name">
         <span>Kailash</span>
@@ -54,27 +57,29 @@
       class="site-navigation"
       id="site-navigation"
       aria-label="Main navigation"
+      data-i18n-attr="aria-label:mainNavigationLabel"
     >
       <a href="index.html" data-i18n="navHome">Home</a>
       <a href="about.html" data-i18n="navStory">Our Story</a>
       <a href="equipment.html" data-i18n="navEquipment">Equipment</a>
-      <a href="achivements.html" data-i18n="navImpact">Social Services</a>
-      <a href="achvements.html" data-i18n="navAchievements">Achievements</a>
+      <a href="index.html#social-impact" data-i18n="navImpact">
+        Social Services
+      </a>
+      <a href="achivements.html" aria-current="page"
+         data-i18n="navAchievements">Achievements</a>
       <a class="nav-contact" href="contact.html" data-i18n="navContact">
         Contact Us
       </a>
     </nav>
 
-    <!-- Always visible, even when navigation is collapsed -->
     <div class="header-actions">
       <button
         class="language-toggle"
         id="language-toggle"
         type="button"
         aria-label="Switch language to Hindi"
-      >
-        हिन्दी
-      </button>
+        aria-pressed="false"
+      >हिन्दी</button>
 
       <button
         class="menu-toggle"
@@ -84,90 +89,869 @@
         aria-controls="site-navigation"
         aria-expanded="false"
       >
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
     </div>
 
   </div>
 </header>
 
-<br><br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<main id="main" class="achievements-page">
 
-<h1> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Achivements, Activities, Articles will come here</h1>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+  <!-- HERO -->
+  <section class="achievement-hero">
 
-    <!-- Shared footer -->
-    <footer class="site-footer" id="contact">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <a class="brand footer-brand-link" href="index.html">
-              <img
-                class="brand-logo"
-                src="images/logo.png"
-                alt=""
-                width="48"
-                height="48"
-              />
-              <span class="brand-name">
-                <span>Kailash</span>
-                <span class="brand-subtitle">ki Karuna</span>
-              </span>
-            </a>
-            <p>Compassionate support for better care at home.</p>
-            <p class="footer-mantra" lang="hi">शिव ही सेवा है</p>
-          </div>
+    <img
+      class="achievement-hero-image"
+      src="images/achievements/hero.jpg"
+      alt="Kailash ki Karuna community service"
+    >
 
-          <div class="footer-column">
-            <h2>Explore</h2>
-            <a href="index.html">Home</a>
-            <a href="equipment.html">Home-care equipment</a>
-            <a href="about.html">Our Story</a>
-            <a href="about.html">Social Services</a>
-            <a href="achivements.html">Achievements</a>
-          </div>
+    <div class="achievement-hero-shade"></div>
 
-          <div class="footer-column">
-            <h2>Get in touch</h2>
-            <a href="contact.html">Contact Us</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms &amp; Conditions</a>
-          </div>
+    <div class="container achievement-hero-content">
+
+      <p class="achievement-kicker">
+        <span class="lang-en">OUR WORK. OUR JOURNEY. OUR IMPACT.</span>
+        <span class="lang-hi">हमारे कार्य। हमारी यात्रा। हमारा प्रभाव।</span>
+      </p>
+
+      <h1>
+        <span class="lang-en">
+          Every act of care<br>
+          leaves a lasting mark.
+        </span>
+        <span class="lang-hi">
+          सेवा का हर प्रयास<br>
+          एक अमिट छाप छोड़ता है।
+        </span>
+      </h1>
+
+      <p class="achievement-hero-description">
+        <span class="lang-en">
+          A visual journey through the people, initiatives,
+          milestones and moments that define Kailash ki Karuna.
+        </span>
+        <span class="lang-hi">
+          उन लोगों, पहलों, उपलब्धियों और यादगार पलों की
+          एक झलक, जो कैलाश की करुणा की पहचान हैं।
+        </span>
+      </p>
+
+      <a href="#our-impact" class="achievement-hero-link">
+        <span class="lang-en">EXPLORE OUR JOURNEY</span>
+        <span class="lang-hi">हमारी यात्रा देखें</span>
+        <span aria-hidden="true">↓</span>
+      </a>
+
+    </div>
+
+    <div class="achievement-hero-index">
+      <span>01</span>
+      <span class="hero-index-line"></span>
+      <span>06</span>
+    </div>
+
+  </section>
+
+
+  <!-- INTRO / EDITORIAL OPENING -->
+  <section class="achievement-opening section" id="our-impact">
+
+    <div class="container">
+
+      <div class="opening-layout">
+
+        <div class="opening-label">
+          <span class="section-index">01 / THE JOURNEY</span>
+          <span class="opening-vertical-line"></span>
         </div>
 
-        <div class="footer-bottom">
-          <p>
-            © <span id="current-year"></span> Kailash ki Karuna. All rights
-            reserved.
+        <div class="opening-copy">
+
+          <p class="section-eyebrow">
+            <span class="lang-en">MORE THAN MILESTONES</span>
+            <span class="lang-hi">उपलब्धियों से बढ़कर</span>
           </p>
-          <p>Equipment availability and deposit terms apply.</p>
-        </div>
-      </div>
-    </footer>
 
+          <h2>
+            <span class="lang-en">
+              The real achievement<br>
+              is making a difference.
+            </span>
+            <span class="lang-hi">
+              असली उपलब्धि है<br>
+              किसी के जीवन में बदलाव लाना।
+            </span>
+          </h2>
+
+          <p>
+            <span class="lang-en">
+              Every photograph represents a moment. Every story
+              represents a person. And every initiative reflects
+              our belief that compassion becomes meaningful when
+              it reaches someone in need.
+            </span>
+            <span class="lang-hi">
+              हर तस्वीर एक पल को दर्शाती है। हर कहानी किसी व्यक्ति
+              से जुड़ी है। हमारी हर पहल इस विश्वास को दर्शाती है कि
+              करुणा तभी सार्थक होती है जब वह जरूरतमंद तक पहुँचती है।
+            </span>
+          </p>
+
+        </div>
+
+        <div class="opening-side-note">
+          <span class="opening-side-mark">“</span>
+          <p>
+            <span class="lang-en">Shiv hi Seva Hai</span>
+            <span class="lang-hi">शिव ही सेवा है</span>
+          </p>
+        </div>
+
+      </div>
+
+      <div class="achievement-stats">
+
+        <div class="achievement-stat">
+          <span class="stat-number">50<span>+</span></span>
+          <span class="stat-label">
+            <span class="lang-en">Moments captured</span>
+            <span class="lang-hi">यादगार तस्वीरें</span>
+          </span>
+        </div>
+
+        <div class="achievement-stat">
+          <span class="stat-number">20<span>+</span></span>
+          <span class="stat-label">
+            <span class="lang-en">Media features</span>
+            <span class="lang-hi">समाचार कवरेज</span>
+          </span>
+        </div>
+
+        <div class="achievement-stat">
+          <span class="stat-number">03</span>
+          <span class="stat-label">
+            <span class="lang-en">Video stories</span>
+            <span class="lang-hi">वीडियो कहानियाँ</span>
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- IMPACT STORY 1: MEDICAL EQUIPMENT -->
+  <section class="impact-story">
+
+    <div class="container impact-story-layout">
+
+      <div class="impact-story-image impact-image-large">
+        <img
+          src="images/WhatsApp Image 2026-10-28 at 11.47.13 PM-2.jpeg"
+          alt="Medical equipment bank"
+          loading="lazy"
+        >
+        <span class="image-caption-number">01</span>
+      </div>
+
+      <div class="impact-story-copy">
+
+        <span class="section-index">02 / CARE AT HOME</span>
+
+        <p class="section-eyebrow">
+          <span class="lang-en">SUPPORT WHEN IT MATTERS</span>
+          <span class="lang-hi">जरूरत के समय सहयोग</span>
+        </p>
+
+        <h2>
+          <span class="lang-en">
+            Helping families access essential medical equipment.
+          </span>
+          <span class="lang-hi">
+            परिवारों तक जरूरी चिकित्सा उपकरण पहुँचाने में सहयोग।
+          </span>
+        </h2>
+
+        <p>
+          <span class="lang-en">
+            Through our Nishulk Chikitsa Upkaran Bank, we help
+            families access essential home-care equipment such as
+            hospital beds, oxygen equipment, wheelchairs, walkers
+            and other care-support devices.
+          </span>
+          <span class="lang-hi">
+            नि:शुल्क चिकित्सा उपकरण बैंक के माध्यम से हम परिवारों
+            को अस्पताल बेड, ऑक्सीजन उपकरण, व्हीलचेयर, वॉकर और
+            अन्य जरूरी घरेलू चिकित्सा उपकरण उपलब्ध कराने में सहयोग करते हैं।
+          </span>
+        </p>
+
+        <a href="equipment.html" class="text-link">
+          <span class="lang-en">Explore our equipment support</span>
+          <span class="lang-hi">उपकरण सहायता के बारे में जानें</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- IMPACT STORY 2: COVID -->
+  <section class="impact-story impact-story-reverse">
+
+    <div class="container impact-story-layout">
+
+      <div class="impact-story-image impact-image-large">
+        <img
+          src="images/TNIE_import_2021_5_9_original_FROM_PADHAI.avif"
+          alt="Community support during the COVID-19 period"
+          loading="lazy"
+          style="object-fit: contain;"
+        >
+        <span class="image-caption-number">02</span>
+      </div>
+
+      <div class="impact-story-copy">
+
+        <span class="section-index">03 / STANDING TOGETHER</span>
+
+        <p class="section-eyebrow">
+          <span class="lang-en">A TIME OF NEED</span>
+          <span class="lang-hi">संकट के समय साथ</span>
+        </p>
+
+        <h2>
+          <span class="lang-en">
+            Supporting the community during COVID-19.
+          </span>
+          <span class="lang-hi">
+            कोविड-19 के कठिन समय में समुदाय का साथ।
+          </span>
+        </h2>
+
+        <p>
+          <span class="lang-en">
+            During the pandemic, a local isolation and patient-support
+            facility was arranged at Surajdevi Roopa Devi Pushtikar
+            Private School, with food and basic care support for people
+            who needed assistance.
+          </span>
+          <span class="lang-hi">
+            महामारी के दौरान सूरजदेवी रूपा देवी पुष्टिकर प्राइवेट
+            स्कूल में स्थानीय आइसोलेशन और मरीज सहायता केंद्र की
+            व्यवस्था की गई, जहाँ जरूरतमंदों को भोजन और बुनियादी
+            देखभाल में सहयोग दिया गया।
+          </span>
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- IMPACT STORY 3: COMMUNITY -->
+  <section class="impact-story">
+
+    <div class="container impact-story-layout">
+
+      <div class="impact-story-image impact-image-large">
+        <img
+          src="images/sVahan.jpeg"
+          alt="Community service activity"
+          loading="lazy"
+        >
+        <span class="image-caption-number">03</span>
+      </div>
+
+      <div class="impact-story-copy">
+
+        <span class="section-index">04 / COMMUNITY CARE</span>
+
+        <p class="section-eyebrow">
+          <span class="lang-en">Social Service</span>
+          <span class="lang-hi">सामाजिक सेवा</span>
+        </p>
+
+        <h2>
+          <span class="lang-en">
+            Serving the community beyond healthcare.
+          </span>
+          <span class="lang-hi">
+            स्वास्थ्य सेवा से आगे बढ़कर समाज की सेवा।
+          </span>
+        </h2>
+
+        <p>
+          <span class="lang-en">
+            Our community initiatives have included dengue fogging
+            activities and free drinking-water booths (Jalgrah), Ambulance services, providing a hearse / dead body transport vehicle (Shav Vahan) for final funeral rites
+            reflecting our commitment to practical support for
+            people around us.
+          </span>
+          <span class="lang-hi">
+            हमारी सामुदायिक पहलों में डेंगू रोधी छिड़काव
+गतिविधियाँ और निशुल्क पेयजल बूथ (जलग्रह), एम्बुलेंस सेवाएँ, अंतिम संस्कार के लिए शव वाहन/शव परिवहन वाहन उपलब्ध कराना शामिल हैं,
+जो हमारे आस-पास के लोगों के लिए व्यावहारिक सहायता के प्रति हमारी प्रतिबद्धता को दर्शाते हैं।
+          </span>
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- AWARD FEATURE -->
+  <section class="award-section">
+
+    <div class="container">
+
+      <div class="award-layout">
+
+        <div class="award-image">
+          <img
+            src="images/achievements/national-maru-ratna.jpg"
+            alt="National Maru Ratna Award"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="award-copy">
+
+          <span class="section-index">05 / RECOGNITION</span>
+
+          <p class="section-eyebrow">
+            <span class="lang-en">AN HONOUR ALONG THE WAY</span>
+            <span class="lang-hi">यात्रा का एक सम्मान</span>
+          </p>
+
+          <h2>
+            <span class="lang-en">National Maru Ratna Award</span>
+            <span class="lang-hi">राष्ट्रीय मरु रत्न सम्मान</span>
+          </h2>
+
+          <p>
+            <span class="lang-en">
+              Raju Vyas was honoured with the National Maru Ratna Award.
+              A moment of recognition in a journey shaped by service
+              and commitment.
+            </span>
+            <span class="lang-hi">
+              राजू व्यास को राष्ट्रीय मरु रत्न सम्मान से सम्मानित किया गया।
+              सेवा और समर्पण से जुड़ी यात्रा का यह एक महत्वपूर्ण सम्मान है।
+            </span>
+          </p>
+
+          <span class="award-signature">
+            KAILASH KI KARUNA
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- MEDIA / NEWSPAPER ARCHIVE -->
+  <section class="press-section" id="media">
+
+    <div class="container">
+
+      <div class="press-heading">
+
+        <div>
+          <span class="section-index">06 / IN THE MEDIA</span>
+
+          <p class="section-eyebrow">
+            <span class="lang-en">OUR WORK, REPORTED</span>
+            <span class="lang-hi">समाचारों में हमारे कार्य</span>
+          </p>
+
+          <h2>
+            <span class="lang-en">In the news.</span>
+            <span class="lang-hi">समाचारों में।</span>
+          </h2>
+        </div>
+
+        <p>
+          <span class="lang-en">
+            A collection of newspaper articles and media coverage
+            documenting different moments of our journey.
+          </span>
+          <span class="lang-hi">
+            हमारी यात्रा के विभिन्न पड़ावों को दर्शाते
+            समाचार पत्रों और मीडिया कवरेज का संग्रह।
+          </span>
+        </p>
+
+      </div>
+
+
+      <!-- FEATURED NEWSPAPER STORY -->
+      <div class="press-feature">
+
+        <a
+          class="press-feature-image"
+          href="images/in_the_news/itn4.jpeg"
+          target="_blank"
+          rel="noopener"
+          aria-label="Open newspaper clipping"
+        >
+          <img
+            src="images/in_the_news/itn2.jpeg"
+            alt="Featured newspaper coverage"
+            loading="lazy"
+          >
+          <span class="press-open-mark">↗</span>
+        </a>
+
+        <div class="press-feature-copy">
+          <span class="press-label">
+            <span class="lang-en">FEATURED COVERAGE</span>
+            <span class="lang-hi">प्रमुख समाचार</span>
+          </span>
+
+          <h3>
+            <span class="lang-en">
+              Stories of service deserve to be shared.
+            </span>
+            <span class="lang-hi">
+              सेवा की कहानियाँ साझा की जानी चाहिए।
+            </span>
+          </h3>
+
+          <p>
+            <span class="lang-en">
+              Open the original newspaper image to read the
+              complete article.
+            </span>
+            <span class="lang-hi">
+              पूरा समाचार पढ़ने के लिए मूल समाचार पत्र की
+              तस्वीर खोलें।
+            </span>
+          </p>
+        </div>
+
+      </div>
+
+
+      <!-- NEWSPAPER ARCHIVE GRID -->
+      <div class="press-archive">
+
+        <!-- NEWS 02 -->
+        <a class="press-item"
+           href="images/achievements/news-02.jpg"
+           target="_blank" rel="noopener">
+          <img src="images/in_the_news/itn3.jpeg"
+               alt="Newspaper clipping 2" loading="lazy">
+          <span class="press-item-caption">
+            <span class="lang-en">Read coverage ↗</span>
+            <span class="lang-hi">समाचार देखें ↗</span>
+          </span>
+        </a>
+
+        <!-- NEWS 03 -->
+        <a class="press-item"
+           href="images/in_the_news/int5.jpeg"
+           target="_blank" rel="noopener">
+          <img src="images/in_the_news/int6.jpeg"
+               alt="Newspaper clipping 3" loading="lazy">
+          <span class="press-item-caption">
+            <span class="lang-en">Read coverage ↗</span>
+            <span class="lang-hi">समाचार देखें ↗</span>
+          </span>
+        </a>
+
+        <!-- NEWS 04 -->
+        <a class="press-item"
+           href="images/in_the_news/int7.jpeg"
+           target="_blank" rel="noopener">
+          <img src="images/in_the_news/int7.jpeg"
+               alt="Newspaper clipping 4" loading="lazy">
+          <span class="press-item-caption">
+            <span class="lang-en">Read coverage ↗</span>
+            <span class="lang-hi">समाचार देखें ↗</span>
+          </span>
+        </a>
+
+        <!-- NEWS 05 -->
+        <a class="press-item"
+           href="images/in_the_news/itn8.jpeg"
+           target="_blank" rel="noopener">
+          <img src="images/in_the_news/int8.jpeg"
+               alt="Newspaper clipping 5" loading="lazy">
+          <span class="press-item-caption">
+            <span class="lang-en">Read coverage ↗</span>
+            <span class="lang-hi">समाचार देखें ↗</span>
+          </span>
+        </a>
+
+        <!--
+          ADD NEWS ONWARDS:
+          Duplicate a press-item and change the image filename.
+          Keep all 20+ clippings here.
+        -->
+
+      </div>
+
+      <p class="press-note">
+        <span class="lang-en">
+          Select any clipping to view it at full size.
+        </span>
+        <span class="lang-hi">
+          किसी भी समाचार की तस्वीर को बड़े आकार में देखने के लिए चुनें।
+        </span>
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- PHOTO GALLERY -->
+  <section class="moments-section" id="gallery">
+
+    <div class="container">
+
+      <div class="moments-heading">
+
+        <div>
+          <span class="section-index">07 / THROUGH THE LENS</span>
+
+          <p class="section-eyebrow">
+            <span class="lang-en">PEOPLE. PLACES. PURPOSE.</span>
+            <span class="lang-hi">लोग। स्थान। उद्देश्य।</span>
+          </p>
+
+          <h2>
+            <span class="lang-en">Moments that stay with us.</span>
+            <span class="lang-hi">कुछ पल जो हमेशा याद रहते हैं।</span>
+          </h2>
+        </div>
+
+        <p>
+          <span class="lang-en">
+            A visual collection of the people and experiences
+            that make this journey meaningful.
+          </span>
+          <span class="lang-hi">
+            उन लोगों और अनुभवों का चित्र संग्रह,
+            जो इस यात्रा को सार्थक बनाते हैं।
+          </span>
+        </p>
+
+      </div>
+
+
+      <div class="moments-masonry">
+
+        <a class="moment-photo moment-photo-tall"
+           href="images/WhatsApp Image 2026-10-28 at 11.47.12 PM-2.jpeg"
+           target="_blank" rel="noopener">
+          <img src="images/WhatsApp Image 2026-10-28 at 11.47.12 PM-2.jpeg"
+               alt="Community service moment 1" loading="lazy" style="object-fit: contain;">
+          <span class="moment-photo-overlay">
+            <span>01</span><span>↗</span>
+          </span>
+        </a>
+
+        <a class="moment-photo"
+           href="images/WhatsApp Image 2026-10-28 at 11.47.30 PM-2.jpeg"
+           target="_blank" rel="noopener">
+          <img src="images/WhatsApp Image 2026-10-28 at 11.47.30 PM-2.jpeg"
+               alt="Community service moment 2" loading="lazy" style="object-fit: contain;">
+          <span class="moment-photo-overlay">
+            <span>02</span><span>↗</span>
+          </span>
+        </a>
+
+        <a class="moment-photo moment-photo-wide"
+           href="images/WhatsApp Image 2026-10-28 at 11.47.32 PM-2.jpeg"
+           target="_blank" rel="noopener">
+          <img src="images/WhatsApp Image 2026-10-28 at 11.47.32 PM-2.jpeg"
+               alt="Community service moment 3" loading="lazy">
+          <span class="moment-photo-overlay">
+            <span>03</span><span>↗</span>
+          </span>
+        </a>
+
+        <a class="moment-photo"
+           href="images/WhatsApp Image 2026-10-28 at 11.47.28 PM-4.jpeg"
+           target="_blank" rel="noopener">
+          <img src="images/WhatsApp Image 2026-10-28 at 11.47.28 PM-4.jpeg"
+               alt="Community service moment 4" loading="lazy" style="object-fit: contain;">
+          <span class="moment-photo-overlay">
+            <span>04</span><span>↗</span>
+          </span>
+        </a>
+
+        <a class="moment-photo moment-photo-tall"
+           href="images/WhatsApp Image 2026-10-31 at 11.57.26 PM-3.jpeg"
+           target="_blank" rel="noopener">
+          <img src="images/WhatsApp Image 2026-10-31 at 11.57.26 PM-3.jpeg"
+               alt="Community service moment 5" loading="lazy" style="object-fit: contain;">
+          <span class="moment-photo-overlay">
+            <span>05</span><span>↗</span>
+          </span>
+        </a>
+
+        <a class="moment-photo"
+           href="images/f1.jpeg"
+           target="_blank" rel="noopener">
+          <img src="images/f1.jpeg"
+               alt="Community service moment 6" loading="lazy">
+          <span class="moment-photo-overlay">
+            <span>06</span><span>↗</span>
+          </span>
+        </a>
+
+        <a class="moment-photo"
+           href="images/WhatsApp Image 2026-10-28 at 11.47.34 PM.jpeg"
+           target="_blank" rel="noopener">
+          <img src="images/WhatsApp Image 2026-10-28 at 11.47.34 PM.jpeg"
+               alt="Community service moment 7" loading="lazy" style="object-fit: contain;">
+          <span class="moment-photo-overlay">
+            <span>07</span><span>↗</span>
+          </span>
+        </a>
+
+        <a class="moment-photo moment-photo-wide"
+           href="images/WhatsApp Image 2026-10-28 at 11.47.30 PM.jpeg.jpeg"
+           target="_blank" rel="noopener">
+          <img src="images/WhatsApp Image 2026-10-28 at 11.47.30 PM.jpeg"
+               alt="Community service moment 8" loading="lazy">
+          <span class="moment-photo-overlay">
+            <span>08</span><span>↗</span>
+          </span>
+        </a>
+
+        <!--
+          ADD MOMENT 09 ONWARDS:
+          Duplicate any moment-photo link.
+          Change the image path and alt text.
+        -->
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- VIDEO STORIES -->
+  <section class="video-stories-section" id="videos">
+
+    <div class="container">
+
+      <div class="video-heading">
+
+        <span class="section-index">08 / WATCH & DISCOVER</span>
+
+        <p class="section-eyebrow">
+          <span class="lang-en">OUR STORIES IN MOTION</span>
+          <span class="lang-hi">चलचित्रों में हमारी कहानियाँ</span>
+        </p>
+
+        <h2>
+          <span class="lang-en">Some stories are best experienced.</span>
+          <span class="lang-hi">कुछ कहानियाँ अनुभव की जाती हैं।</span>
+        </h2>
+
+      </div>
+
+
+      <div class="video-editorial-grid">
+
+        <article class="video-feature">
+
+          <div class="video-frame">
+            <video controls playsinline preload="metadata"
+                   poster="images/achievements/video-poster-01.jpg">
+              <source src="videos/achievements/video-01.mp4"
+                      type="video/mp4">
+              Your browser does not support video playback.
+            </video>
+          </div>
+
+          <div class="video-caption">
+            <span class="video-number">VIDEO 01</span>
+            <h3>
+              <span class="lang-en">Our journey and purpose</span>
+              <span class="lang-hi">हमारी यात्रा और उद्देश्य</span>
+            </h3>
+          </div>
+
+        </article>
+
+
+        <div class="video-secondary-column">
+
+          <article class="video-secondary">
+
+            <div class="video-frame">
+              <video controls playsinline preload="metadata"
+                     poster="images/achievements/video-poster-02.jpg">
+                <source src="videos/achievements/video-02.mp4"
+                        type="video/mp4">
+                Your browser does not support video playback.
+              </video>
+            </div>
+
+            <div class="video-caption">
+              <span class="video-number">VIDEO 02</span>
+              <h3>
+                <span class="lang-en">A moment of service</span>
+                <span class="lang-hi">सेवा का एक पल</span>
+              </h3>
+            </div>
+
+          </article>
+
+
+          <article class="video-secondary">
+
+            <div class="video-frame">
+              <video controls playsinline preload="metadata"
+                     poster="images/achievements/video-poster-03.jpg">
+                <source src="videos/achievements/video-03.mp4"
+                        type="video/mp4">
+                Your browser does not support video playback.
+              </video>
+            </div>
+
+            <div class="video-caption">
+              <span class="video-number">VIDEO 03</span>
+              <h3>
+                <span class="lang-en">Voices from our journey</span>
+                <span class="lang-hi">हमारी यात्रा के अनुभव</span>
+              </h3>
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CLOSING -->
+  <section class="achievement-closing">
+
+    <div class="container closing-content">
+
+      <p class="section-eyebrow">
+        <span class="lang-en">THE JOURNEY CONTINUES</span>
+        <span class="lang-hi">यात्रा जारी है</span>
+      </p>
+
+      <h2>
+        <span class="lang-en">
+          Recognition is meaningful.<br>
+          Service is the purpose.
+        </span>
+        <span class="lang-hi">
+          सम्मान महत्वपूर्ण है।<br>
+          सेवा ही हमारा उद्देश्य है।
+        </span>
+      </h2>
+
+      <p>
+        <span class="lang-en">
+          Discover the people and purpose behind Kailash ki Karuna.
+        </span>
+        <span class="lang-hi">
+          कैलाश की करुणा के पीछे के लोगों और उद्देश्य को जानें।
+        </span>
+      </p>
+
+      <a href="about.html" class="button button-primary">
+        <span class="lang-en">Discover our story</span>
+        <span class="lang-hi">हमारी कहानी जानें</span>
+        <span aria-hidden="true">↗</span>
+      </a>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer class="site-footer" id="contact">
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+
+        <a class="brand footer-brand-link" href="index.html">
+          <img class="brand-logo" src="images/logo.png"
+               alt="" width="48" height="48">
+
+          <span class="brand-name">
+            <span>Kailash</span>
+            <span class="brand-subtitle">ki Karuna</span>
+          </span>
+        </a>
+
+        <p data-i18n="footerDescription">
+          Compassionate support for better care at home.
+        </p>
+
+        <p class="footer-mantra" lang="hi">शिव ही सेवा है</p>
+
+      </div>
+
+      <div class="footer-column">
+        <h2 data-i18n="footerExplore">Explore</h2>
+        <a href="index.html" data-i18n="navHome">Home</a>
+        <a href="about.html" data-i18n="navStory">Our Story</a>
+        <a href="equipment.html" data-i18n="navEquipment">Equipment</a>
+        <a href="index.html#social-impact" data-i18n="navImpact">
+          Social Services
+        </a>
+        <a href="achievements.html" data-i18n="navAchievements">
+          Achievements
+        </a>
+      </div>
+
+      <div class="footer-column">
+        <h2 data-i18n="footerGetInTouch">Get in touch</h2>
+        <a href="contact.html" data-i18n="navContact">Contact Us</a>
+        <a href="privacy.html" data-i18n="footerPrivacy">
+          Privacy Policy
+        </a>
+        <a href="terms.html" data-i18n="footerTerms">
+          Terms &amp; Conditions
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        © <span id="current-year"></span>
+        <span data-i18n="copyrightText">
+          Kailash ki Karuna. All rights reserved.
+        </span>
+      </p>
+    </div>
+
+  </div>
+
+</footer>
 
 </body>
 </html>
