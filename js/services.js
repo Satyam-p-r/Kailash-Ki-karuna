@@ -486,15 +486,19 @@
         throw new Error(result.message || "Submission failed.");
       }
 
-      // Prepare the WhatsApp link only after the email succeeds.
-      const whatsappNumber = CONTACT_CONFIG.whatsappNumber.replace(/\D/g, "");
+      const whatsappNumber = String(
+        CONTACT_CONFIG.whatsappNumber || "",
+      ).replace(/\D/g, "");
 
-      if (whatsappNumber && !whatsappNumber.includes("XXXXXXXXXX")) {
+      if (/^[1-9]\d{9,14}$/.test(whatsappNumber)) {
         whatsappLink.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
         whatsappOption.hidden = false;
       } else {
         whatsappOption.hidden = true;
+        console.error(
+          "Invalid WhatsApp number. Check CONTACT_CONFIG.whatsappNumber.",
+        );
       }
 
       form.reset();
