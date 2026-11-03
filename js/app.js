@@ -8,7 +8,7 @@
 
 const CONTACT_CONFIG = {
   web3formsAccessKey: "60733148-9061-4b9b-934f-6ab2b7700deb",
-  whatsappNumber: "91XXXXXXXXXX",
+  whatsappNumber: "9829097424",
   emailAddress: "YOUR_NGO_EMAIL@example.com",
 };
 

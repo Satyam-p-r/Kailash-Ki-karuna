@@ -2412,3 +2412,33 @@ html[lang="hi"] button {
   text-align: center;
   margin-top: 12px;
 }
+
+.service-whatsapp-option {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #edf8f0;
+  border: 1px solid #b9dfc2;
+}
+
+.service-whatsapp-option p {
+  margin: 0 0 14px;
+  line-height: 1.6;
+}
+
+.button-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #168447;
+  color: #fff;
+  text-decoration: none;
+  padding: 13px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.button-whatsapp:hover {
+  background: #116b38;
+}

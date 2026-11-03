@@ -1,4 +1,3 @@
-
 "use strict";
 
 /* =========================================================
@@ -46,6 +45,9 @@
     hypo: $("#terms-hypo"),
   };
 
+  const whatsappOption = $("#service-whatsapp-option");
+  const whatsappLink = $("#service-whatsapp-link");
+
   let currentLatitude = "";
   let currentLongitude = "";
 
@@ -66,8 +68,7 @@
     fogging:
       "The fogging machine will be provided by the organization. Diesel and the required chemical must be arranged by the requester. The service is subject to availability and confirmation.",
 
-    hypo:
-      "The spraying machine will be provided by the organization. Diesel and the required chemical must be arranged by the requester. The service is subject to availability and confirmation.",
+    hypo: "The spraying machine will be provided by the organization. Diesel and the required chemical must be arranged by the requester. The service is subject to availability and confirmation.",
   };
 
   function setStatus(message, type = "") {
@@ -120,19 +121,13 @@
 
     showSection(pickupSection, needsLiveLocation);
 
-    showSection(
-      ambulanceDropSection,
-      selected === "ambulance"
-    );
+    showSection(ambulanceDropSection, selected === "ambulance");
 
-    showSection(
-      deadBodyDestinationSection,
-      selected === "dead-body"
-    );
+    showSection(deadBodyDestinationSection, selected === "dead-body");
 
     showSection(
       serviceLocationSection,
-      selected === "fogging" || selected === "hypo"
+      selected === "fogging" || selected === "hypo",
     );
 
     showSection(termsSection, Boolean(selected));
@@ -243,11 +238,9 @@
         latitudeInput.value = currentLatitude;
         longitudeInput.value = currentLongitude;
 
-        locationCoordinates.textContent =
-          `${currentLatitude}, ${currentLongitude}`;
+        locationCoordinates.textContent = `${currentLatitude}, ${currentLongitude}`;
 
-        const mapUrl =
-          `https://www.google.com/maps?q=${currentLatitude},${currentLongitude}`;
+        const mapUrl = `https://www.google.com/maps?q=${currentLatitude},${currentLongitude}`;
 
         locationMapLink.href = mapUrl;
         locationResult.hidden = false;
@@ -286,7 +279,7 @@
         enableHighAccuracy: true,
         timeout: 15000,
         maximumAge: 0,
-      }
+      },
     );
   }
 
@@ -339,7 +332,7 @@
       lines.push(
         `Latitude: ${data.pickupLatitude}`,
         `Longitude: ${data.pickupLongitude}`,
-        `Google Maps: https://www.google.com/maps?q=${data.pickupLatitude},${data.pickupLongitude}`
+        `Google Maps: https://www.google.com/maps?q=${data.pickupLatitude},${data.pickupLongitude}`,
       );
     }
 
@@ -377,7 +370,57 @@
       "Requester accepted the displayed service conditions: Yes",
       "",
       "This is a service request only. It is not a confirmed booking.",
-      "Please contact the requester to confirm availability and arrangements."
+      "Please contact the requester to confirm availability and arrangements.",
+    );
+
+    return lines.join("\n");
+  }
+
+  function buildWhatsAppMessage(data) {
+    const lines = [
+      "Namaste Kailash ki Karuna 🙏",
+      "",
+      "I have submitted a service request through your website.",
+      "",
+      "SERVICE DETAILS",
+      `Service: ${data.service}`,
+      `Name: ${data.name}`,
+      `Date: ${formatDate(data.date)}`,
+      "",
+      "LOCATION DETAILS",
+    ];
+
+    if (data.pickupLatitude && data.pickupLongitude) {
+      const mapUrl = `https://www.google.com/maps?q=${data.pickupLatitude},${data.pickupLongitude}`;
+
+      lines.push(
+        `GPS Coordinates: ${data.pickupLatitude}, ${data.pickupLongitude}`,
+        `Google Maps Location: ${mapUrl}`,
+      );
+    }
+
+    if (data.pickupAddress) {
+      lines.push(`Pickup Address: ${data.pickupAddress}`);
+    }
+
+    if (data.serviceLocation) {
+      lines.push(`Service Address: ${data.serviceLocation}`);
+    }
+
+    if (data.serviceId === "ambulance") {
+      lines.push("", `Drop Location: ${data.ambulanceDrop}`);
+    }
+
+    if (data.serviceId === "dead-body") {
+      lines.push("", `Destination: ${data.deadBodyDestination}`);
+    }
+
+    lines.push(
+      "",
+      "I would like to discuss the availability and arrangements.",
+      "Please contact me regarding this request.",
+      "",
+      "Thank you.",
     );
 
     return lines.join("\n");
@@ -400,13 +443,16 @@
     ) {
       setStatus(
         "Email service is not configured. Please contact the organization directly.",
-        "error"
+        "error",
       );
       return;
     }
 
     const data = getFormData();
     const message = buildEmailMessage(data);
+
+    // Prepare WhatsApp message using the same submitted form data.
+    const whatsappMessage = buildWhatsAppMessage(data);
 
     const payload = {
       access_key: CONTACT_CONFIG.web3formsAccessKey,
@@ -425,17 +471,14 @@
     setStatus("Please wait while your request is being sent.");
 
     try {
-      const response = await fetch(
-        "https://api.web3forms.com/submit",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify(payload),
-        }
-      );
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
 
       const result = await response.json();
 
@@ -443,27 +486,36 @@
         throw new Error(result.message || "Submission failed.");
       }
 
+      // Prepare the WhatsApp link only after the email succeeds.
+      const whatsappNumber = CONTACT_CONFIG.whatsappNumber.replace(/\D/g, "");
+
+      if (whatsappNumber && !whatsappNumber.includes("XXXXXXXXXX")) {
+        whatsappLink.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+        whatsappOption.hidden = false;
+      } else {
+        whatsappOption.hidden = true;
+      }
+
       form.reset();
       updateServiceFields();
 
       setStatus(
         "Your request has been sent successfully. Our team will contact you after checking availability.",
-        "success"
+        "success",
       );
 
       window.scrollTo({
         top: statusMessage.getBoundingClientRect().top + window.scrollY - 120,
         behavior: "smooth",
       });
-
     } catch (error) {
       console.error("Service request error:", error);
 
       setStatus(
         "We could not send your request. Please try again or contact our team directly.",
-        "error"
+        "error",
       );
-
     } finally {
       submitButton.textContent = "Send service request →";
       updateSubmitButton();
@@ -475,15 +527,11 @@
 
   serviceType.addEventListener("change", updateServiceFields);
 
-  getLocationButton.addEventListener(
-    "click",
-    captureCurrentLocation
-  );
+  getLocationButton.addEventListener("click", captureCurrentLocation);
 
   form.addEventListener("input", updateSubmitButton);
   form.addEventListener("change", updateSubmitButton);
   form.addEventListener("submit", submitServiceRequest);
 
   updateServiceFields();
-
 })();
