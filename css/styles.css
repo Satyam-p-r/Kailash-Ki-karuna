@@ -2442,3 +2442,75 @@ html[lang="hi"] button {
 .button-whatsapp:hover {
   background: #116b38;
 }
+
+
+
+/* =========================================
+   REQUEST SENDING ANIMATION
+========================================= */
+
+#submit-request[aria-busy="true"] {
+  pointer-events: none;
+  opacity: 0.85;
+  cursor: wait;
+}
+
+#submit-request[aria-busy="true"]::after {
+  content: "✉";
+  display: inline-block;
+  margin-left: 12px;
+  font-size: 23px;
+  animation: flyingMail 0.65s ease-in-out infinite alternate;
+}
+
+@keyframes flyingMail {
+  0% {
+    transform: translate(0, 4px) rotate(-15deg);
+    opacity: 0.55;
+  }
+  100% {
+    transform: translate(12px, -5px) rotate(15deg);
+    opacity: 1;
+  }
+}
+
+/* =========================================
+   SUCCESS DIALOG ANIMATION
+========================================= */
+
+#contact-title::before {
+  content: "✓";
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: #e3f8e9;
+  color: #188447;
+  font-size: 43px;
+  font-weight: 800;
+  animation: successPop 0.55s cubic-bezier(.2, 1.6, .5, 1) both;
+}
+
+@keyframes successPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #submit-request[aria-busy="true"]::after,
+  #contact-title::before {
+    animation: none;
+  }
+}
