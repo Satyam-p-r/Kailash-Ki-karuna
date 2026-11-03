@@ -1,4 +1,3 @@
-
 "use strict";
 
 /* =========================================================
@@ -10,13 +9,12 @@
 const CONTACT_CONFIG = {
   web3formsAccessKey: "60733148-9061-4b9b-934f-6ab2b7700deb",
   whatsappNumber: "91XXXXXXXXXX",
-  emailAddress: "YOUR_NGO_EMAIL@example.com"
+  emailAddress: "YOUR_NGO_EMAIL@example.com",
 };
 
 /* ---------- Utilities ---------- */
 
-const select = (selector, root = document) =>
-  root.querySelector(selector);
+const select = (selector, root = document) => root.querySelector(selector);
 
 const selectAll = (selector, root = document) =>
   Array.from(root.querySelectorAll(selector));
@@ -94,13 +92,14 @@ async function setLanguage(language) {
     const toggle = select("#language-toggle");
 
     if (toggle) {
-      toggle.textContent = language === "en" ? "हिन्दी" : "English";
+      toggle.textContent =
+        language === "en" ? "हिंदी में पढ़ें" : "Read in English";
 
       toggle.setAttribute(
         "aria-label",
         language === "en"
           ? "Switch language to Hindi"
-          : "Switch language to English"
+          : "Switch language to English",
       );
     }
 
@@ -113,8 +112,8 @@ async function setLanguage(language) {
     // Update dynamic content.
     window.dispatchEvent(
       new CustomEvent("kkk:language-changed", {
-        detail: { dictionary, language }
-      })
+        detail: { dictionary, language },
+      }),
     );
 
     return true;
@@ -165,7 +164,7 @@ function initNavigation() {
     button.setAttribute("aria-expanded", String(open));
     button.setAttribute(
       "aria-label",
-      open ? "Close navigation menu" : "Open navigation menu"
+      open ? "Close navigation menu" : "Open navigation menu",
     );
 
     navigation.classList.toggle("is-open", open);
@@ -218,7 +217,7 @@ function initCarousel(carousel) {
   const state = {
     index: 0,
     paused: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
-    timer: null
+    timer: null,
   };
 
   function visibleCount() {
@@ -256,8 +255,7 @@ function initCarousel(carousel) {
     const gap = parseFloat(getComputedStyle(track).gap) || 0;
     const width = slides[0].getBoundingClientRect().width;
 
-    track.style.transform =
-      `translateX(-${state.index * (width + gap)}px)`;
+    track.style.transform = `translateX(-${state.index * (width + gap)}px)`;
 
     selectAll(".carousel-dot", dots).forEach((dot, index) => {
       dot.setAttribute("aria-current", String(index === state.index));
@@ -342,25 +340,25 @@ const EQUIPMENT = [
     image: "images/wheelchair.jpg",
     deposit: null,
     description: "Mobility support for suitable home-care needs.",
-    descriptionKey: "eqWheelchairDescription"
+    descriptionKey: "eqWheelchairDescription",
   },
   {
-    id: "Water-bed",
+    id: "water-bed",
     name: "Water Bed",
     nameKey: "eqWaterBed",
     image: "images/water-bed.jpg",
     deposit: null,
     description: "Support for comfortable rest and recovery at home.",
-    descriptionKey: "eqWaterBedDescription"
+    descriptionKey: "eqWaterBedDescription",
   },
   {
-    id: "oxygen-concentrator",
-    name: "Oxygen Concentrator",
+    id: "oxygen-cylinder",
+    name: "Oxygen Cylinder",
     nameKey: "eqOxygen",
-    image: "images/oxygen-concentrator.jpg",
+    image: "images/o2cylinder.jpeg",
     deposit: null,
     description: "Oxygen-support equipment when medically prescribed.",
-    descriptionKey: "eqOxygenDescription"
+    descriptionKey: "eqOxygenDescription",
   },
   {
     id: "nebulizer",
@@ -369,7 +367,7 @@ const EQUIPMENT = [
     image: "images/nebulizer.jpg",
     deposit: null,
     description: "Equipment for prescribed respiratory care.",
-    descriptionKey: "eqNebulizerDescription"
+    descriptionKey: "eqNebulizerDescription",
   },
   {
     id: "walker",
@@ -378,7 +376,7 @@ const EQUIPMENT = [
     image: "images/walker.jpg",
     deposit: 600,
     description: "Additional stability and support while walking.",
-    descriptionKey: "eqWalkerDescription"
+    descriptionKey: "eqWalkerDescription",
   },
   {
     id: "air-mattress",
@@ -387,9 +385,55 @@ const EQUIPMENT = [
     image: "images/air-mattress.jpg",
     deposit: null,
     description: "Pressure-relief support for suitable care needs.",
-    descriptionKey: "eqAirMattressDescription"
-  }
+    descriptionKey: "eqAirMattressDescription",
+  },
+  {
+    id: "dead-body-freezer",
+    name: "Dead Body Freezer",
+    nameKey: "eqDeadBodyFreezer",
+    image: "images/Dead-Body-Freezer-Box.jpg",
+    deposit: null,
+    description: "Freezer facility for temporary preservation of deceased persons.",
+    descriptionKey: "eqDeadBodyFreezerDescription",
+  },
+  {
+    id: "commode-chair",
+    name: "Commode Chair",
+    nameKey: "eqCommodeChair",
+    image: "images/commode-chair.webp",
+    deposit: null,
+    description: "Toilet assistance for people with limited mobility.",
+    descriptionKey: "eqCommodeChairDescription",
+  },
+  {
+    id: "suction-machine",
+    name: "Suction Machine",
+    nameKey: "eqSuctionMachine",
+    image: "images/suction-machine.avif",
+    deposit: null,
+    description: "Medical suction equipment for prescribed care.",
+    descriptionKey: "eqSuctionMachineDescription",
+  },
+  {
+    id: "stretcher",
+    name: "Stretcher",
+    nameKey: "eqStretcher",
+    image: "images/stretcher.jpg",
+    deposit: null,
+    description: "Support for patient transfer and transportation.",
+    descriptionKey: "eqStretcherDescription",
+  },
+  {
+    id: "surgical-bed",
+    name: "Surgical Bed",
+    nameKey: "eqSurgicalBed",
+    image: "images/surgical-bed.jpg",
+    deposit: null,
+    description: "Adjustable bed support for patient care and recovery.",
+    descriptionKey: "eqSurgicalBedDescription",
+  },
 ];
+
 
 function equipmentName(item) {
   return t(item.nameKey, item.name);
@@ -404,14 +448,11 @@ function formatDeposit(amount) {
     return t("eqConfirmDeposit", "Confirm with our team");
   }
 
-  return new Intl.NumberFormat(
-    currentLanguage === "hi" ? "hi-IN" : "en-IN",
-    {
-      style: "currency",
-      currency: "INR",
-      maximumFractionDigits: 0
-    }
-  ).format(amount);
+  return new Intl.NumberFormat(currentLanguage === "hi" ? "hi-IN" : "en-IN", {
+    style: "currency",
+    currency: "INR",
+    maximumFractionDigits: 0,
+  }).format(amount);
 }
 
 /* =========================================================
@@ -456,7 +497,7 @@ function createEquipmentCard(item) {
   imageLink.href = `#request-${item.id}`;
   imageLink.setAttribute(
     "aria-label",
-    `${t("eqCheckAvailability", "Check availability")}: ${equipmentName(item)}`
+    `${t("eqCheckAvailability", "Check availability")}: ${equipmentName(item)}`,
   );
 
   const image = document.createElement("img");
@@ -465,9 +506,13 @@ function createEquipmentCard(item) {
   image.loading = "lazy";
   image.decoding = "async";
 
-  image.addEventListener("error", () => {
-    imageLink.classList.add("image-missing");
-  }, { once: true });
+  image.addEventListener(
+    "error",
+    () => {
+      imageLink.classList.add("image-missing");
+    },
+    { once: true },
+  );
 
   const placeholder = document.createElement("span");
   placeholder.className = "image-placeholder-label";
@@ -486,29 +531,24 @@ function createEquipmentCard(item) {
 
   const priceLabel = document.createElement("p");
   priceLabel.className = "catalogue-card-price-label";
-  priceLabel.textContent = t(
-    "eqDepositLabel",
-    "Refundable security deposit"
-  );
+  priceLabel.textContent = t("eqDepositLabel", "Refundable security deposit");
 
   const price = document.createElement("p");
   price.className = "catalogue-card-price";
   price.textContent = formatDeposit(item.deposit);
 
   const note = document.createElement("small");
-  note.textContent = item.deposit === null
-    ? t("eqDepositConfirmNote", " · confirm amount")
-    : t("eqDepositRefundNote", " · refundable, subject to terms");
+  note.textContent =
+    item.deposit === null
+      ? t("eqDepositConfirmNote", " · confirm amount")
+      : t("eqDepositRefundNote", " · refundable, subject to terms");
 
   price.append(note);
 
   const button = document.createElement("button");
   button.type = "button";
   button.className = "button button-primary";
-  button.textContent = t(
-    "eqCheckAvailability",
-    "Check availability now"
-  );
+  button.textContent = t("eqCheckAvailability", "Check availability now");
 
   button.addEventListener("click", () => openRequestDialog(item));
 
@@ -535,9 +575,10 @@ function renderEquipment(items) {
   if (emptyResults) emptyResults.hidden = found;
 
   if (resultCount) {
-    const label = items.length === 1
-      ? t("eqOneResult", "item found")
-      : t("eqManyResults", "items found");
+    const label =
+      items.length === 1
+        ? t("eqOneResult", "item found")
+        : t("eqManyResults", "items found");
 
     resultCount.textContent = found
       ? `${items.length} ${label}`
@@ -559,12 +600,10 @@ function filterEquipment(query) {
       item.name,
       equipmentName(item),
       item.description,
-      equipmentDescription(item)
+      equipmentDescription(item),
     ];
 
-    return values.some((value) =>
-      value.toLocaleLowerCase().includes(q)
-    );
+    return values.some((value) => value.toLocaleLowerCase().includes(q));
   });
 }
 
@@ -598,9 +637,9 @@ function initEquipmentSearch() {
 function updateReplyFields() {
   if (!requestForm) return;
 
-  const method = requestForm.querySelector(
-    'input[name="replyMethod"]:checked'
-  )?.value || "email";
+  const method =
+    requestForm.querySelector('input[name="replyMethod"]:checked')?.value ||
+    "email";
 
   const emailField = select("#email-field");
   const phoneField = select("#phone-field");
@@ -652,13 +691,9 @@ function updateDateConstraints() {
   const today = localDate();
 
   start.min = today;
-  end.min = start.value && start.value >= today
-    ? start.value
-    : today;
+  end.min = start.value && start.value >= today ? start.value : today;
 
-  end.max = start.value
-    ? addDays(start.value, 29)
-    : addDays(today, 29);
+  end.max = start.value ? addDays(start.value, 29) : addDays(today, 29);
 
   if (end.value && (end.value < end.min || end.value > end.max)) {
     end.value = "";
@@ -681,7 +716,7 @@ function getFormValues() {
     startDate: String(data.get("startDate") || ""),
     endDate: String(data.get("endDate") || ""),
     address: String(data.get("address") || "").trim(),
-    acceptedTerms: Boolean(acceptTerms?.checked)
+    acceptedTerms: Boolean(acceptTerms?.checked),
   };
 }
 
@@ -717,7 +752,10 @@ function validateRequest(values) {
   }
 
   if (values.endDate < values.startDate) {
-    return t("eqErrorDateOrder", "The return date must be after the start date.");
+    return t(
+      "eqErrorDateOrder",
+      "The return date must be after the start date.",
+    );
   }
 
   const start = new Date(`${values.startDate}T00:00:00Z`);
@@ -744,8 +782,7 @@ function updateSubmitButton() {
 
   const error = validateRequest(getFormValues());
 
-  submitButton.disabled =
-    Boolean(error) || !requestForm.checkValidity();
+  submitButton.disabled = Boolean(error) || !requestForm.checkValidity();
 
   if (formStatus) formStatus.textContent = error;
 }
@@ -768,8 +805,7 @@ function openRequestDialog(item) {
   }
 
   if (requestTitle) {
-    requestTitle.textContent =
-      `${t("eqRequestTitle", "Request availability")}: ${equipmentName(item)}`;
+    requestTitle.textContent = `${t("eqRequestTitle", "Request availability")}: ${equipmentName(item)}`;
   }
 
   if (formStatus) formStatus.textContent = "";
@@ -794,21 +830,19 @@ function closeRequestForm() {
 function displayDate(value) {
   const [y, m, d] = value.split("-").map(Number);
 
-  return new Intl.DateTimeFormat(
-    currentLanguage === "hi" ? "hi-IN" : "en-IN",
-    {
-      day: "2-digit",
-      month: "short",
-      year: "numeric",
-      timeZone: "UTC"
-    }
-  ).format(new Date(Date.UTC(y, m - 1, d)));
+  return new Intl.DateTimeFormat(currentLanguage === "hi" ? "hi-IN" : "en-IN", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(Date.UTC(y, m - 1, d)));
 }
 
 function buildRequestMessage(values, item) {
-  const contact = values.replyMethod === "email"
-    ? `Preferred reply: Email\nEmail: ${values.email}`
-    : `Preferred reply: Phone call / SMS\nPhone: ${values.phone}`;
+  const contact =
+    values.replyMethod === "email"
+      ? `Preferred reply: Email\nEmail: ${values.email}`
+      : `Preferred reply: Phone call / SMS\nPhone: ${values.phone}`;
 
   return [
     "Kailash ki Karuna - Equipment Availability Request",
@@ -824,7 +858,7 @@ function buildRequestMessage(values, item) {
     "Terms accepted: Yes",
     "",
     "Please confirm availability and applicable deposit.",
-    "This is a request, not a confirmed booking."
+    "This is a request, not a confirmed booking.",
   ].join("\n");
 }
 
@@ -844,8 +878,8 @@ async function handleRequestSubmit(event) {
 
   if (error || !selectedItem) {
     if (formStatus) {
-      formStatus.textContent = error ||
-        t("eqErrorSelectEquipment", "Please select equipment.");
+      formStatus.textContent =
+        error || t("eqErrorSelectEquipment", "Please select equipment.");
     }
     return;
   }
@@ -856,7 +890,7 @@ async function handleRequestSubmit(event) {
   ) {
     formStatus.textContent = t(
       "eqErrorService",
-      "Email service is not configured."
+      "Email service is not configured.",
     );
     return;
   }
@@ -880,7 +914,7 @@ async function handleRequestSubmit(event) {
     equipment_name: selectedItem.name,
     request_status: "REQUESTED_NOT_CONFIRMED",
     message,
-    botcheck: ""
+    botcheck: "",
   };
 
   const oldText = submitButton.textContent;
@@ -893,17 +927,14 @@ async function handleRequestSubmit(event) {
   }
 
   try {
-    const response = await fetch(
-      "https://api.web3forms.com/submit",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json"
-        },
-        body: JSON.stringify(payload)
-      }
-    );
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
 
     const result = await response.json();
 
@@ -919,14 +950,13 @@ async function handleRequestSubmit(event) {
     requestForm.reset();
     updateReplyFields();
     updateSubmitButton();
-
   } catch (error) {
     console.error("Web3Forms error:", error);
 
     if (formStatus) {
       formStatus.textContent = t(
         "eqErrorSubmit",
-        "Unable to send your request. Please try again."
+        "Unable to send your request. Please try again.",
       );
     }
 
@@ -947,8 +977,7 @@ function handleWhatsApp() {
     return;
   }
 
-  const url =
-    `https://wa.me/${number}?text=${encodeURIComponent(preparedMessage)}`;
+  const url = `https://wa.me/${number}?text=${encodeURIComponent(preparedMessage)}`;
 
   window.open(url, "_blank", "noopener,noreferrer");
 }
@@ -992,9 +1021,7 @@ function initEquipmentPage() {
   requestForm.addEventListener("change", updateSubmitButton);
   requestForm.addEventListener("submit", handleRequestSubmit);
 
-  requestForm.querySelectorAll(
-    'input[name="replyMethod"]'
-  ).forEach((radio) => {
+  requestForm.querySelectorAll('input[name="replyMethod"]').forEach((radio) => {
     radio.addEventListener("change", () => {
       updateReplyFields();
       updateSubmitButton();
@@ -1003,7 +1030,7 @@ function initEquipmentPage() {
 
   requestForm.elements.startDate?.addEventListener(
     "change",
-    updateSubmitButton
+    updateSubmitButton,
   );
 
   sendWhatsApp?.addEventListener("click", handleWhatsApp);
@@ -1039,8 +1066,7 @@ window.addEventListener("kkk:language-changed", () => {
   }
 
   if (requestTitle && selectedItem) {
-    requestTitle.textContent =
-      `${t("eqRequestTitle", "Request availability")}: ${equipmentName(selectedItem)}`;
+    requestTitle.textContent = `${t("eqRequestTitle", "Request availability")}: ${equipmentName(selectedItem)}`;
   }
 });
 
@@ -1098,21 +1124,24 @@ function initStoryGallery() {
 
       video.append(source);
       mediaElement.append(video);
-
     } else if (story.image) {
       const image = document.createElement("img");
       image.src = story.image;
       image.alt = story.alt || story.title || "";
 
-      image.addEventListener("error", () => {
-        mediaElement.replaceChildren(
-          element(
-            "span",
-            "story-card-media-fallback",
-            dictionary.imageUnavailable || "Image unavailable"
-          )
-        );
-      }, { once: true });
+      image.addEventListener(
+        "error",
+        () => {
+          mediaElement.replaceChildren(
+            element(
+              "span",
+              "story-card-media-fallback",
+              dictionary.imageUnavailable || "Image unavailable",
+            ),
+          );
+        },
+        { once: true },
+      );
 
       mediaElement.append(image);
     }
@@ -1136,15 +1165,12 @@ function initStoryGallery() {
   function renderStories(nextDictionary) {
     dictionary = nextDictionary;
 
-    const stories = Array.isArray(dictionary.stories)
-      ? dictionary.stories
-      : [];
+    const stories = Array.isArray(dictionary.stories) ? dictionary.stories : [];
 
     grid.replaceChildren();
 
     if (count) {
-      count.textContent =
-        `${stories.length} ${dictionary.storiesCountLabel || "stories"}`;
+      count.textContent = `${stories.length} ${dictionary.storiesCountLabel || "stories"}`;
     }
 
     if (!stories.length) {
@@ -1152,8 +1178,8 @@ function initStoryGallery() {
         element(
           "p",
           "story-empty",
-          dictionary.storiesEmptyMessage || "No stories available."
-        )
+          dictionary.storiesEmptyMessage || "No stories available.",
+        ),
       );
 
       grid.setAttribute("aria-busy", "false");
@@ -1170,19 +1196,22 @@ function initStoryGallery() {
       image.className = "story-card-media";
       image.loading = "lazy";
       image.alt = story.alt || story.title || "";
-      image.src = story.type === "video"
-        ? story.poster || ""
-        : story.image || "";
+      image.src =
+        story.type === "video" ? story.poster || "" : story.image || "";
 
-      image.addEventListener("error", () => {
-        mediaButton.replaceChildren(
-          element(
-            "span",
-            "story-card-media-fallback",
-            dictionary.imageUnavailable || "Image unavailable"
-          )
-        );
-      }, { once: true });
+      image.addEventListener(
+        "error",
+        () => {
+          mediaButton.replaceChildren(
+            element(
+              "span",
+              "story-card-media-fallback",
+              dictionary.imageUnavailable || "Image unavailable",
+            ),
+          );
+        },
+        { once: true },
+      );
 
       mediaButton.append(image);
 
@@ -1191,8 +1220,8 @@ function initStoryGallery() {
           element(
             "span",
             "story-media-badge",
-            `▶ ${dictionary.videoLabel || "Video"}`
-          )
+            `▶ ${dictionary.videoLabel || "Video"}`,
+          ),
         );
       }
 
@@ -1202,9 +1231,7 @@ function initStoryGallery() {
 
       const copy = element("div", "story-card-copy");
 
-      copy.append(
-        element("p", "story-card-category", story.category || "")
-      );
+      copy.append(element("p", "story-card-category", story.category || ""));
 
       if (story.date) {
         copy.append(element("p", "story-card-date", story.date));
@@ -1212,13 +1239,13 @@ function initStoryGallery() {
 
       copy.append(
         element("h3", "", story.title || ""),
-        element("p", "", story.excerpt || "")
+        element("p", "", story.excerpt || ""),
       );
 
       const readButton = element(
         "button",
         "story-read-button",
-        `${dictionary.readStoryLabel || "Read story"} →`
+        `${dictionary.readStoryLabel || "Read story"} →`,
       );
 
       readButton.type = "button";
@@ -1289,7 +1316,7 @@ function initApp() {
 
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initApp, {
-    once: true
+    once: true,
   });
 } else {
   initApp();

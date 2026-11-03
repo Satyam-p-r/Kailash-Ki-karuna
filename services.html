@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#164e8a" />
+
+  <title>Request a Service | Kailash ki Karuna</title>
+  <meta name="description" content="Request ambulance, deceased-person transportation, fogging or hypo spray services from Kailash ki Karuna." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+
+
+  <script src="js/app.js" defer></script>
+  <script src="js/services.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Kailash ki Karuna home">
+        <img class="brand-logo" src="images/logo.png" alt="" width="48" height="48" onerror="this.hidden=true" />
+        <span class="brand-name">
+          <span>Kailash</span>
+          <span class="brand-subtitle">ki Karuna</span>
+        </span>
+      </a>
+
+      <nav class="site-navigation" id="site-navigation" aria-label="Main navigation">
+        <a href="index.html" data-i18n="navHome">Home</a>
+        <a href="about.html" data-i18n="navStory">Our Story</a>
+        <a href="equipment.html" data-i18n="navEquipment">Equipment</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="achivements.html" data-i18n="navAchievements">Achievements</a>
+        <a class="nav-contact" href="contact.html" data-i18n="navContact">Contact Us</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="language-toggle" id="language-toggle" type="button">
+          हिन्दी
+        </button>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-controls="site-navigation"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="services-hero">
+      <div class="container">
+        <span class="eyebrow" data-i18n="svcEyebrow">Community support</span>
+        <h1 data-i18n="svcTitle">Request a service</h1>
+        <p data-i18n="svcIntro">
+          Choose the service you need and share the required details.
+          Our team will contact you to discuss availability.
+        </p>
+      </div>
+    </section>
+
+    <section class="services-form-section">
+      <div class="container services-layout">
+
+        <div class="services-information">
+          <span class="eyebrow" data-i18n="svcChooseEyebrow">Our services</span>
+          <h2 data-i18n="svcChooseTitle">How can we help?</h2>
+
+          <div class="service-list">
+            <div class="service-list-item">
+              <span class="service-list-icon">✚</span>
+              <div>
+                <h3 data-i18n="svcAmbulance">Ambulance</h3>
+                <p data-i18n="svcAmbulanceShort">Ambulance assistance and transportation.</p>
+              </div>
+            </div>
+
+            <div class="service-list-item">
+              <span class="service-list-icon">♡</span>
+              <div>
+                <h3 data-i18n="svcDeadBody">Deceased-person transportation</h3>
+                <p data-i18n="svcDeadBodyShort">Transportation to selected destinations.</p>
+              </div>
+            </div>
+
+            <div class="service-list-item">
+              <span class="service-list-icon">✳</span>
+              <div>
+                <h3 data-i18n="svcFogging">Fogging</h3>
+                <p data-i18n="svcFoggingShort">Community mosquito-control fogging service.</p>
+              </div>
+            </div>
+
+            <div class="service-list-item">
+              <span class="service-list-icon">◇</span>
+              <div>
+                <h3 data-i18n="svcHypo">Hypo spray</h3>
+                <p data-i18n="svcHypoShort">Hypo spray service for the requested location.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-request-card">
+          <div class="service-card-heading">
+            <span class="eyebrow" data-i18n="svcFormEyebrow">Service request</span>
+            <h2 data-i18n="svcFormTitle">Request assistance</h2>
+            <p data-i18n="svcFormDescription">
+              Fill in the details below. Fields will change depending on the service selected.
+            </p>
+          </div>
+
+          <form id="service-form">
+            <div class="form-field">
+              <label for="service-type" data-i18n="svcTypeLabel">Select service *</label>
+              <select id="service-type" name="serviceType" required>
+                <option value="" data-i18n="svcTypePlaceholder">Choose a service</option>
+                <option value="ambulance" data-i18n="svcAmbulance">Ambulance</option>
+                <option value="dead-body" data-i18n="svcDeadBody">Deceased-person transportation</option>
+                <option value="fogging" data-i18n="svcFogging">Fogging</option>
+                <option value="hypo" data-i18n="svcHypo">Hypo spray</option>
+              </select>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="service-name" data-i18n="svcNameLabel">Your name *</label>
+                <input
+                  id="service-name"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  maxlength="100"
+                  required
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="service-date" data-i18n="svcDateLabel">Date of service *</label>
+                <input id="service-date" name="serviceDate" type="date" required />
+              </div>
+            </div>
+
+            <!-- Ambulance and deceased-person transportation pickup -->
+            <div class="form-field service-conditional" id="pickup-section" hidden>
+              <label data-i18n="svcPickupLabel">Pickup location *</label>
+
+              <div class="location-actions">
+                <button class="button button-primary location-button" id="get-location" type="button">
+                  <span aria-hidden="true">⌖</span>
+                  <span data-i18n="svcUseLocation">Use my current location</span>
+                </button>
+              </div>
+
+              <p class="location-status" id="location-status" role="status" aria-live="polite" data-i18n="svcLocationHelp">
+                Allow location access when your browser asks. You can also enter the address manually below.
+              </p>
+
+              <div class="location-result" id="location-result" hidden>
+                <span class="location-result-icon">✓</span>
+                <div>
+                  <strong data-i18n="svcLocationCaptured">Location captured</strong>
+                  <span id="location-coordinates"></span>
+                  <a id="location-map-link" href="#" target="_blank" rel="noopener noreferrer" data-i18n="svcOpenMap">
+                    Open in Google Maps
+                  </a>
+                </div>
+              </div>
+
+              <label for="pickup-address" data-i18n="svcPickupManual">
+                Pickup address (if current location is unavailable)
+              </label>
+              <textarea
+                id="pickup-address"
+                name="pickupAddress"
+                rows="2"
+                maxlength="500"
+                placeholder="Enter pickup address or landmark"
+                data-i18n-attr="placeholder:svcPickupPlaceholder"
+              ></textarea>
+
+              <input type="hidden" id="pickup-latitude" name="pickupLatitude" />
+              <input type="hidden" id="pickup-longitude" name="pickupLongitude" />
+            </div>
+
+            <!-- Ambulance drop -->
+            <div class="form-field service-conditional" id="ambulance-drop-section" hidden>
+              <label for="ambulance-drop" data-i18n="svcDropLabel">Drop location / destination *</label>
+              <textarea
+                id="ambulance-drop"
+                name="ambulanceDrop"
+                rows="2"
+                maxlength="500"
+                placeholder="Enter hospital or destination address"
+                data-i18n-attr="placeholder:svcDropPlaceholder"
+              ></textarea>
+            </div>
+
+            <!-- Dead-body transportation destination -->
+            <div class="form-field service-conditional" id="dead-body-destination-section" hidden>
+              <label for="dead-body-destination" data-i18n="svcDestinationLabel">Select destination *</label>
+              <select id="dead-body-destination" name="deadBodyDestination">
+                <option value="" data-i18n="svcDestinationPlaceholder">Choose destination</option>
+                <option value="chand-paul">City </option>
+                <option value="chb">Chb</option>
+                <option value="pratap-nagar">pratap nagar</option>
+
+              </select>
+              <small data-i18n="svcDestinationNote">These are temporary sample destinations.</small>
+            </div>
+
+            <!-- Fogging / hypo location -->
+            <div class="form-field service-conditional" id="service-location-section" hidden>
+              <label for="service-location" data-i18n="svcAreaLabel">Location / area to be serviced *</label>
+              <textarea
+                id="service-location"
+                name="serviceLocation"
+                rows="3"
+                maxlength="500"
+                placeholder="Enter full address, area or landmark"
+                data-i18n-attr="placeholder:svcAreaPlaceholder"
+              ></textarea>
+            </div>
+
+            <!-- Service terms -->
+            <div class="service-terms service-conditional" id="service-terms" hidden>
+              <h3 data-i18n="svcTermsHeading">Service conditions</h3>
+
+              <div id="terms-ambulance" class="service-term-panel" hidden>
+                <p data-i18n="svcAmbulanceTerms">
+                  An ambulance request is subject to availability and confirmation. Arrival may be delayed or the service may not be possible due to circumstances such as vehicle availability, traffic, weather or other operational reasons. Our team will communicate the status as soon as possible. Do not delay contacting emergency services while waiting for a response.
+                </p>
+              </div>
+
+              <div id="terms-dead-body" class="service-term-panel" hidden>
+                <p data-i18n="svcDeadBodyTerms">
+                  Transportation is subject to availability, route conditions and confirmation by our team. Delays or inability to complete the journey may occur due to circumstances beyond our control. The family or requester is responsible for required documents and applicable permissions.
+                </p>
+              </div>
+
+              <div id="terms-fogging" class="service-term-panel" hidden>
+                <p data-i18n="svcFoggingTerms">
+                  The fogging machine will be provided by the organization. Diesel and the required chemical must be arranged by the requester. The service is subject to availability and confirmation.
+                </p>
+              </div>
+
+              <div id="terms-hypo" class="service-term-panel" hidden>
+                <p data-i18n="svcHypoTerms">
+                  The spraying machine will be provided by the organization. Diesel and the required chemical must be arranged by the requester. The service is subject to availability and confirmation.
+                </p>
+              </div>
+
+              <label class="service-terms-accept">
+                <input type="checkbox" id="accept-service-terms" name="acceptTerms" />
+                <span data-i18n="svcAcceptTerms">
+                  I have read and understood the conditions for this service. *
+                </span>
+              </label>
+            </div>
+
+            <button class="button button-primary service-submit" id="service-submit" type="submit" disabled>
+              <span data-i18n="svcSubmit">Send service request</span>
+              <span aria-hidden="true">→</span>
+            </button>
+
+            <p id="service-status" class="service-status-message" role="status" aria-live="polite"></p>
+
+            <p class="service-privacy-note" data-i18n="svcPrivacy">
+              Your details will be shared with our team to process this service request. Please provide accurate information.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand footer-brand-link" href="index.html">
+            <img class="brand-logo" src="images/logo.png" alt="" width="48" height="48" />
+            <span class="brand-name">
+              <span>Kailash</span>
+              <span class="brand-subtitle">ki Karuna</span>
+            </span>
+          </a>
+          <p data-i18n="svcFooterTagline">Compassionate support for our community.</p>
+          <p class="footer-mantra" lang="hi">शिव ही सेवा है</p>
+        </div>
+
+        <div class="footer-column">
+          <h2 data-i18n="svcFooterExplore">Explore</h2>
+          <a href="index.html" data-i18n="navHome">Home</a>
+          <a href="equipment.html" data-i18n="navEquipment">Equipment</a>
+          <a href="services.html" data-i18n="svcFooterServices">Our services</a>
+          <a href="about.html" data-i18n="navStory">Our Story</a>
+        </div>
+
+        <div class="footer-column">
+          <h2 data-i18n="svcFooterContact">Get in touch</h2>
+          <a href="contact.html" data-i18n="navContact">Contact Us</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms &amp; Conditions</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="current-year"></span> Kailash ki Karuna. <span data-i18n="eqRights">All rights reserved.</span></p>
+        <p data-i18n="svcFooterNote">All service requests are subject to confirmation.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
