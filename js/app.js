@@ -393,7 +393,8 @@ const EQUIPMENT = [
     nameKey: "eqDeadBodyFreezer",
     image: "images/Dead-Body-Freezer-Box.jpg",
     deposit: null,
-    description: "Freezer facility for temporary preservation of deceased persons.",
+    description:
+      "Freezer facility for temporary preservation of deceased persons.",
     descriptionKey: "eqDeadBodyFreezerDescription",
   },
   {
@@ -433,7 +434,6 @@ const EQUIPMENT = [
     descriptionKey: "eqSurgicalBedDescription",
   },
 ];
-
 
 function equipmentName(item) {
   return t(item.nameKey, item.name);
@@ -920,8 +920,8 @@ async function handleRequestSubmit(event) {
   const oldText = submitButton.textContent;
 
   submitButton.disabled = true;
-  submitButton.textContent = t("eqSending", "Sending request...");
-
+  submitButton.setAttribute("aria-busy", "true");
+  submitButton.textContent = "Sending request...";
   if (formStatus) {
     formStatus.textContent = t("eqSendingStatus", "Please wait...");
   }
@@ -944,12 +944,18 @@ async function handleRequestSubmit(event) {
 
     preparedMessage = message;
 
-    requestDialog.close();
-    contactDialog?.showModal();
+    // Restore button state
+    submitButton.removeAttribute("aria-busy");
+    submitButton.disabled = false;
 
+    // Reset form
     requestForm.reset();
     updateReplyFields();
     updateSubmitButton();
+
+    // Close request form and show success dialog
+    requestDialog.close();
+    contactDialog?.showModal();
   } catch (error) {
     console.error("Web3Forms error:", error);
 
@@ -959,8 +965,8 @@ async function handleRequestSubmit(event) {
         "Unable to send your request. Please try again.",
       );
     }
-
     submitButton.disabled = false;
+    submitButton.removeAttribute("aria-busy");
     submitButton.textContent = oldText;
   }
 }
